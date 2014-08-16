@@ -1,2 +1,9 @@
 <h1>WORLD MAP NEWS</h1>
 <div id="vmap" style="width: 960px; height: 500px;"></div>
+
+<div class="contry_code_api" style='display:none;'>
+  <% @countries.each do |country| %>
+    <p id="<%=country['country_code']%>" class="api_country_code"><%= country["country_code"] %>_</p>
+  <% end %>
+
+<div>
