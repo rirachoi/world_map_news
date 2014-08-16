@@ -22,6 +22,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find params[:id]
+    # unless @user.id == @current_user.id
+    #   redirect_to root_path
+    # end
   end
 
   def update
@@ -30,20 +33,27 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path
     else
-      redirect_to root
+      redirect_to edit_user_path
     end
   end
 
   def show
+    @user = @current_user
+    # if @user.nil?
+    #   redirect_to root_path
+    # end
     @user = User.find params[:id]
-    #render :json => @user
+    respond_to do |format|
+      format.html{}
+      format.json { render :json => @user }
+    end
   end
 
   def destroy
     user = User.find params[:id]
     user.destroy
 
-    redirect_to root
+    redirect_to root_path
   end
 
   private

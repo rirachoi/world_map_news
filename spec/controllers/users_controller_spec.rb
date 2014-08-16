@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
 
+
   describe "GET index" do
     before do
 
@@ -111,6 +112,7 @@ RSpec.describe UsersController, :type => :controller do
       end
 
       it 'should redirect to the new template' do
+        expect(response.status).to eq(302)
         expect(response).to redirect_to(new_user_path(assigns(:user)) )
       end
 
@@ -141,15 +143,8 @@ RSpec.describe UsersController, :type => :controller do
         expect(response).to be_success
       end
 
-      it 'assigns the requested user as @user' do
+      it 'should assign the requested user as @user' do
         expect(assigns(:user)).to eq(@user1)
-        # expect(assigns(:user)).to be
-        # expect(assigns(:user).length).to eq(1)
-        # expect(assigns(:user).class).to eq(User)
-        # expect(assigns(:user).username).to eq('user1')
-        # expect(assigns(:user).email).to eq('user10@test.com')
-        # expect(assigns(:user).native_country).to eq('Australia')
-        # expect(assigns(:user).native_language).to eq('English')
       end
 
       it 'should render the user show' do
@@ -157,40 +152,156 @@ RSpec.describe UsersController, :type => :controller do
       end
     end #AS HTML
 
-    # describe "as JSON" do
+    describe "as JSON" do
+      before do
+        get :show, {:id => @user1.id, :format => :json }
+      end
 
-    # end # AS JSON
+      it 'should respond with a status 200' do
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+
+      it 'should give content type as JSON' do
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'should parse as valid JSON' do
+        expect(lambda { JSON.parse(response.body) }).to_not raise_error
+      end
+
+      it 'should have the name of user in the JSON' do
+        user = JSON.parse(response.body)
+        expect(response.body).to eq(@user1.to_json)
+        # this is same as,
+        ## expect(user["username"]).to eq("user1")
+        ## expect(user["email"]).to eq('user1@test.com')
+        ## expect(user["native_country"]).to eq('Australia')
+        ## expect(user["native_language"]).to eq('English')
+      end
+
+    end # AS JSON
   end # GET SHOW
 
 
+  describe "GET edit" do
+    before do
+      @user1 = User.create!(
+        username: "user1",
+        email: "user1@test.com",
+        native_country: "Australia",
+        native_language: "English",
+        password:'user1-aus',
+        password_confirmation: 'user1-aus'
+      )
+
+      get :edit, { id: @user1.id }
+
+    end
+
+    it "returns http success" do
+      expect(response).to be_success
+    end
+
+    it 'should assign the requested user as @user' do
+      expect(assigns(:user)).to eq(@user1)
+    end
+
+    it "should render the user edit" do
+      expect(response).to render_template('edit')
+    end
+  end # GET EDIT
+
+  describe "PUT update" do
+    describe "with vaild data" do
+      before do
+        @user1 = User.create(
+          username: "user1",
+          email: "user1@test.com",
+          native_country: "Australia",
+          native_language: "English",
+          password:'user1-aus',
+          password_confirmation: 'user1-aus'
+        )
 
 
-  # describe "GET edit" do
-  #   it "returns http success" do
-  #     get :edit
-  #     expect(response).to be_success
-  #   end
-  # end
+        # user: { actual data to edit! }
+        put :update, id: @user1.id, user: {
+          username: @user1.username,
+          email: @user1.email,
+          native_country: @user1.native_country,
+          native_language: @user1.native_language
+        }
+      end
 
-  # describe "GET create" do
-  #   it "returns http success" do
-  #     get :show
-  #     expect(response).to be_success
-  #   end
-  # end
+      it "updates the requested user" do
+        @user1.reload
+      end
 
-  # describe "GET update" do
-  #   it "returns http success" do
-  #     get :show
-  #     expect(response).to be_success
-  #   end
-  # end
+      it "should assign the requested user as @user" do
+        expect(assigns(:user)).to eq(@user1)
+      end
 
-  # describe "GET destroy" do
-  #   it "returns http success" do
-  #     get :index
-  #     expect(response).to be_success
-  #   end
-  # end
+      it "should redirect to the user show" do
+        expect(response).to redirect_to(user_path(assigns(:user)) )
+      end
+
+    end
+
+    describe "with invaild data" do
+      before do
+        @user1 = User.create(
+          username: "user1",
+          email: "user1@test.com",
+          native_country: "Australia",
+          native_language: "English",
+          password:'user1-aus',
+          password_confirmation: 'user1-aus'
+        )
+
+        put :update, id: @user1.id, user: {
+          username: @user1.username,
+          email: "",
+          native_country: @user1.native_country,
+          native_language: @user1.native_language
+        }
+      end
+
+      it "should assign the requested user as @user" do
+        expect(assigns(:user)).to eq(@user1)
+      end
+
+      it "re-direct to the user edit" do
+        expect(response.body).to redirect_to(edit_user_path(@user1))
+      end
+
+    end
+
+  end # PUT UPDATE
+
+  describe "DELETE user" do
+    before do
+      @user1 = User.create!(
+        username: "user1",
+        email: "user1@test.com",
+        native_country: "Australia",
+        native_language: "English",
+        password:'user1-aus',
+        password_confirmation: 'user1-aus'
+      )
+
+    end
+
+    it "should destroy the requested user" do
+       expect{ delete :destroy, id: @user1.id
+        }.to change{User.count}.by(-1)
+    end
+
+    it "should re-direct to the root" do
+      delete :destroy, id: @user1.id
+      expect(response).to redirect_to(root_path)
+    end
+
+  end # DELETE
 
 end
