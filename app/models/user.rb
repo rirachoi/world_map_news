@@ -13,6 +13,9 @@
 #
 
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :categories
+  has_and_belongs_to_many :countries
+
   has_secure_password
   validates :username, :presence => true, :length => { :minimum => 3 }, :uniqueness => true
   validates :password, :presence => true, :length => { :minimum => 6 }, :on => :create

@@ -224,7 +224,6 @@ RSpec.describe UsersController, :type => :controller do
           password_confirmation: 'user1-aus'
         )
 
-
         # user: { actual data to edit! }
         put :update, id: @user1.id, user: {
           username: @user1.username,

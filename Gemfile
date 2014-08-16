@@ -34,7 +34,7 @@ gem 'rails_12factor', group: :production
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'devise'
+# gem 'devise'
 
 group :development do
   gem 'pry-rails'
