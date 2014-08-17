@@ -2,3 +2,17 @@ body{
   max-width: 960px;
   margin: auto;
 }
+
+.content_article{
+  width: 60%;
+}
+
+.article_info{
+  width: 30%;
+}
+
+.content_article, .article_info{
+  display: inline-block;
+  vertical-align: top;
+  margin: 2%;
+}

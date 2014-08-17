@@ -150,6 +150,7 @@
       if (this.mode == 'svg') {
         node = this.createSvgNode('path');
         node.setAttribute('d', config.path);
+        node.setAttribute('class', mapData.pathes[code].name);
 
         if (this.params.borderColor !== null) {
           node.setAttribute('stroke', this.params.borderColor);
