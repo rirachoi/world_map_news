@@ -7,7 +7,51 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1 id="world_map_news"><span class='title_letter'>W</span>ORLD <span class='title_letter'>M</span>AP <span class='title_letter'>N</span>EWS</h1>
+    <div class="nav">
+      <ul id="sdt_menu" class="sdt_menu">
+        <li>
+          <a href="/">
 
+            <span class="sdt_active"></span>
+            <span class="sdt_wrap">
+              <span class="sdt_link">Home</span>
+              <span class="sdt_descr">World Map News</span>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="sdt_active"></span>
+            <span class="sdt_wrap">
+              <span class="sdt_link">Categories</span>
+              <span class="sdt_descr">Find Your Interests</span>
+            </span>
+          </a>
+          <div class="sdt_box">
+              <a href="#">Categories List</a>
+              <a href="#">My Category</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="#">
+            <span class="sdt_active"></span>
+            <span class="sdt_wrap">
+              <span class="sdt_link">Account</span>
+              <span class="sdt_descr">Rira Choi</span>
+            </span>
+          </a>
+          <div class="sdt_box">
+            <a href="#">Add Account</a>
+            <a href="#">Sign Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div id="blank"></div>>
 <%= yield %>
 
 </body>

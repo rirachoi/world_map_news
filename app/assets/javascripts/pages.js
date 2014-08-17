@@ -26,7 +26,11 @@ $(document).ready(function() {
     $('#article_container > div').hide();
     $('#'+countryCodeInMap).show();
     //console.log(countryCodeInMap);
-    countryNameLabel = $('.jqvmap-label').text();
+    if ($('.jqvmap-label').text() === 'United States of America'){
+      countryNameLabel = "USA"
+    } else {
+      countryNameLabel = $('.jqvmap-label').text();
+    }
     //console.log(countryNameLabel);;
 
     $.getJSON(
@@ -41,10 +45,13 @@ $(document).ready(function() {
           $('#'+countryCodeInMap).append($cateCountry)
 
           for (var d=0;d<data.articles.length;d++){
-            // var articles = data.articles
             var titleOfArticle = data.articles[d].title;
             var dateOfArticle = data.articles[d].publish_date;
-            var authorOfArticle = data.articles[d].author;
+            if (data.articles[d].author === undefined){
+              var authorOfArticle = "Anonymous Author"
+            } else {
+              var authorOfArticle = data.articles[d].author
+            }
             var sourceOfArticle = data.articles[d].source;
             var sourceUrl = data.articles[d].source_url;
             var summaryOfArticle = data.articles[d].summary;
@@ -87,13 +94,10 @@ $(document).ready(function() {
                 .append($sideDiv);
 
             $('#'+countryCodeInMap).append($single_article);
-
-            //$('#article_container').append($single_article);
           }//end of the loop
        }// end of createArticlesBox
 
        createArticlesBox();
-
     })//end of getJSON
 
 

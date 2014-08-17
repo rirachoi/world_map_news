@@ -1,8 +1,13 @@
-<h1>WORLD MAP NEWS</h1>
+
 <div id="vmap" style="width: 960px; height: 500px;"></div>
 
 <div id='article_container'>
   <% @country_codes.each do |contry_code|%>
-    <div id='<%=contry_code%>' style='display:none;'></div>
+    <div id='<%=contry_code %>' style='display:none;'></div>
   <% end %>
+</div>
+
+<div id='btn_nav'>
+  <a href="#" id="btn_top" title="Back to the Map">TOP</a>
+<!--   <%= link_to %> -->
 </div>
