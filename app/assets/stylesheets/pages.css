@@ -5,14 +5,25 @@ body{
 
 .content_article{
   width: 60%;
+  margin: 2%;
 }
 
 .article_info{
-  width: 30%;
+  width: 25%;
+  height: 200px;
+  border: 10px solid black;
+  margin: 2%;
+  text-align: center;
+}
+
+.single_article{
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 300px;
+  overflow: auto;
+  margin: auto auto 2% auto;
 }
 
 .content_article, .article_info{
   display: inline-block;
-  vertical-align: top;
-  margin: 2%;
+  vertical-align: middle;
 }

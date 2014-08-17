@@ -13,23 +13,23 @@ class Country < ActiveRecord::Base
 
   has_and_belongs_to_many :users
 
-  def self.get_names
-    url = "http://api.feedzilla.com/v1/cultures.json"
-    countries_names = HTTParty.get( url )
-  end
+  # def self.get_names
+  #   url = "http://api.feedzilla.com/v1/cultures.json"
+  #   countries_names = HTTParty.get( url )
+  # end
 
-  def self.search_country_article(country_name)
-    url ='http://api.feedzilla.com/v1/articles/search.json?q='
-    url += country_name
-    saerch_result = HTTParty.get( url )
-  end
+  # def self.search_country_article(country_name)
+  #   url ='http://api.feedzilla.com/v1/articles/search.json?q='
+  #   url += country_name
+  #   saerch_result = HTTParty.get( url )
+  # end
 
-  def self.search_country_five_article(country_name)
-    url ='http://api.feedzilla.com/v1/articles/search.json?q='
-    url += URI.encode(country_name)
-    url += "&count=5"
-    saerch_result = HTTParty.get( url )
-  end
+  # def self.search_country_five_article(country_name)
+  #   url ='http://api.feedzilla.com/v1/articles/search.json?q='
+  #   url += URI.encode(country_name)
+  #   url += "&count=5"
+  #   saerch_result = HTTParty.get( url )
+  # end
 
   def self.countries_list
     countries_list = [

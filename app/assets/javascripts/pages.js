@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   var countryCodeInMap;
   var countryNameLabel;
-  var availableCountriesList = [];
 
   var showTheWorldMap = function(){
     $('#vmap').vectorMap({
@@ -19,91 +18,27 @@ $(document).ready(function() {
     });
   }
 
-  var isAvailable = function(){
-    for(var a=0;a<availableCountriesList.length;a++){
-      $(availableCountriesList[a]).attr('class','available');
-    }
-  }
-
-  var pickAvailableCountires = function(){
-    $('.available').css({'opacity':1});
-  }
-
-  $.ajax({
-    url: '/pages',
-    dataType: 'json'
-  }).done(function(res){
-    // if (res[0]["culture_code"] === 'ar_all'){
-    //   availableCountriesList.push("#jqvmap1_ar");
-    // }
-
-    // for (var r=1;r<res.length;r++){
-    //   var available = "#jqvmap1_"+res[r]["country_code"];
-    //   availableCountriesList.push(available);
-    //   if (res[r]["country_code"] === "uk"){
-    //     availableCountriesList.push('#jqvmap1_gb');
-    //     }
-
-    // }
-
-    showTheWorldMap();
-    pickAvailableCountires();
-    //console.log(availableCountriesList);
-  });
-
-  // var createArticlesBox = function(){
-  //   $artiTitle = $('<h3>'+titleOfArticle+'</h3>').addClass('artiTitle');
-  //   $artiSummary = $('<p>'+summaryOfArticle+'</p>').addClass('artiSummary');
-  //   $artiOriginal = $('<a>Read More..</a>')
-  //       .addClass('artiOriginal')
-  //       .attr('href', originalUrl)
-  //       .attr('target', '_blank')
-  //       .attr('title', 'Read Full Content');
-
-  //   $contentDiv = $('<div/>')
-  //       .addClass('content_article')
-  //       .append($artiTitle)
-  //       .append($artiSummary)
-  //       .append($artiOriginal);
-
-  //   $artiAuthor = $('<h3>'+authorOfArticle+'</h3>').addClass('artiAuthor');
-  //   $artiSource = $('<a>'+sourceOfArticle+'</a>')
-  //       .addClass('artiSource')
-  //       .attr({
-  //         'href':sourceUrl,
-  //         'target':'_blank',
-  //         'title':'Go to the original source'
-  //       });
-  //   //$artiImage = $('<img>').addClass('artiImage');
-  //   $sideDiv = $('<div/>')
-  //       .addClass('article_info')
-  //       .append($artiAuthor)
-  //       .append($artiSource);
-
-  //   $cateCountry = $('<h2>'+categoryInCountry+'</h2>').addClass('cateCountry');
-  //   $artiDate = $('<p>'+dateOfArticle+'</p>').addClass('artiDate');
-  //   $('#article_container')
-  //       .append($cateCountry)
-  //       .append($artiDate)
-  //       .append($contentDiv)
-  //       .append($sideDiv);
-  // }
+  showTheWorldMap();
 
   //getting country_code when click!
   $('#vmap').on('click', function(event){
     var countryCodeInMap = event.target.id.split('_').pop();
+    $('#article_container > div').hide();
+    $('#'+countryCodeInMap).show();
     //console.log(countryCodeInMap);
     countryNameLabel = $('.jqvmap-label').text();
-    //console.log(countryNameLabel);
+    //console.log(countryNameLabel);;
 
     $.getJSON(
       'http://api.feedzilla.com/v1/articles/search.json?q='
-      + countryNameLabel
+      + encodeURIComponent(countryNameLabel)
       + '&count=5'
       , function( data ) {
-          categoryInCountry = data.description;
+
+        var createArticlesBox = function() {
+          categoryInCountry = decodeURIComponent(data.description);
           $cateCountry = $('<h2>'+categoryInCountry+'</h2>').addClass('cateCountry');
-          $('#article_container').append($cateCountry)
+          $('#'+countryCodeInMap).append($cateCountry)
 
           for (var d=0;d<data.articles.length;d++){
             // var articles = data.articles
@@ -123,7 +58,7 @@ $(document).ready(function() {
                 .attr({
                   'href':originalUrl,
                   'target':'_blank',
-                  'title':'Read Full Content'
+                  'title':'Read the full article'
                 });
             $contentDiv = $('<div/>')
                 .addClass('content_article')
@@ -146,13 +81,34 @@ $(document).ready(function() {
                 .append($artiAuthor)
                 .append($artiSource);
 
-            $('#article_container')
+            $single_article = $('<div/>')
+                .addClass('single_article')
                 .append($contentDiv)
                 .append($sideDiv);
 
-          }
+            $('#'+countryCodeInMap).append($single_article);
+
+            //$('#article_container').append($single_article);
+          }//end of the loop
+       }// end of createArticlesBox
+
+       createArticlesBox();
 
     })//end of getJSON
+
+
+    // var jqxhr = $.getJSON( "example.json", function() {
+    //   console.log( "success" );
+    //   })
+    //   .done(function() {
+    //     console.log( "second success" );
+    //   })
+    //   .fail(function() {
+    //     console.log( "error" );
+    //   })
+    //   .always(function() {
+    //     console.log( "complete" );
+    //   });
 
   })//end of vmap click
 
