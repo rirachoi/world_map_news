@@ -1,0 +1,44 @@
+<div class="nav">
+  <ul id="sdt_menu" class="sdt_menu">
+
+    <li>
+      <a href="/">
+
+        <span class="sdt_active"></span>
+        <span class="sdt_wrap">
+          <span class="sdt_link">Home</span>
+          <span class="sdt_descr">World Map News</span>
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        <span class="sdt_active"></span>
+        <span class="sdt_wrap">
+          <span class="sdt_link">Sign UP</span>
+          <span class="sdt_descr">Join Us </span>
+        </span>
+      </a>
+      <div class="sdt_box">
+          <%= link_to 'Sign Up', new_user_path %>
+          <%#= link_to 'World Map News', '#' %>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">
+        <span class="sdt_active"></span>
+        <span class="sdt_wrap">
+          <span class="sdt_link">Sign In</span>
+          <span class="sdt_descr">Welcome</span>
+        </span>
+      </a>
+      <div class="sdt_box">
+        <%= link_to 'Sign In', login_path %>
+        <%= link_to 'Contact Us', '#'%>
+      </div>
+    </li>
+  </ul>
+
+</div>

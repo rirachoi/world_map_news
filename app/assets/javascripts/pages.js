@@ -37,9 +37,8 @@ $(document).ready(function() {
       'http://api.feedzilla.com/v1/articles/search.json?q='
       + encodeURIComponent(countryNameLabel)
       + '&count=5'
-      , function( data ) {
-
-        var createArticlesBox = function() {
+    ).done(function(data){
+              var createArticlesBox = function() {
           categoryInCountry = decodeURIComponent(data.description);
           $cateCountry = $('<h2>'+categoryInCountry+'</h2>').addClass('cateCountry');
           $('#'+countryCodeInMap).append($cateCountry)
@@ -96,23 +95,8 @@ $(document).ready(function() {
             $('#'+countryCodeInMap).append($single_article);
           }//end of the loop
        }// end of createArticlesBox
-
        createArticlesBox();
-    })//end of getJSON
-
-
-    // var jqxhr = $.getJSON( "example.json", function() {
-    //   console.log( "success" );
-    //   })
-    //   .done(function() {
-    //     console.log( "second success" );
-    //   })
-    //   .fail(function() {
-    //     console.log( "error" );
-    //   })
-    //   .always(function() {
-    //     console.log( "complete" );
-    //   });
+     });
 
   })//end of vmap click
 

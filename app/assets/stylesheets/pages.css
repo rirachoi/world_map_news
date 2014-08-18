@@ -1,14 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Codystar);
 
 body{
+  max-width: 1000px;
+  margin: auto;
+  background-color: rgba(0,0,0,0.9);
+  background: url(bg.jpg);
+  background-size: 100%;
+  color: white;
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+#nav_container{
   max-width: 960px;
   margin: auto;
-  /*background-color: rgba(0,0,0,0.9);*/
-  background: url(bg.jpg);
+}
+
+#body_container{
+  max-width:  960px;
+  margin: auto;
+
 }
 
 #blank{
-  height:50px;
+  height:70px;
 }
 
 #world_map_news{
@@ -42,16 +56,20 @@ body{
 .article_info{
   width: 25%;
   height: 200px;
-  border: 10px solid black;
+  border: 5px solid rgba(225, 225, 225, 0.3);
+  border-radius: 1em;
   margin: 2%;
   text-align: center;
 }
 
 .single_article{
-  border: 1px solid rgba(0,0,0,0.3);
   height: 300px;
   overflow: auto;
   margin: auto auto 2% auto;
+  background: url(overlay.png) no-repeat;
+  background-size: 100% 100%;
+  border-radius: 5px;
+  color: white;
 }
 
 .content_article, .article_info{
@@ -68,7 +86,7 @@ ul.sdt_menu{
   list-style: none;
   font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
   font-size:14px;
-  width:1020px;
+  width: 930px;
 }
 ul.sdt_menu a{
   text-decoration:none;
@@ -151,7 +169,7 @@ ul.sdt_menu li div.sdt_box{
   position:absolute;
   width:170px;
   overflow:hidden;
-  height:170px;
+  height:80px;
   top:85px;
   left:0px;
   display:none;

@@ -1,0 +1,42 @@
+<div class="nav">
+  <ul id="sdt_menu" class="sdt_menu">
+    <li>
+      <a href="/">
+
+        <span class="sdt_active"></span>
+        <span class="sdt_wrap">
+          <span class="sdt_link">Home</span>
+          <span class="sdt_descr">World Map News</span>
+        </span>
+      </a>
+    </li>
+
+    <li>
+      <a href="#">
+        <span class="sdt_active"></span>
+        <span class="sdt_wrap">
+          <span class="sdt_link">Categories</span>
+          <span class="sdt_descr">Find Your Interests</span>
+        </span>
+      </a>
+      <div class="sdt_box">
+          <%= link_to 'Categories List', categories_path %>
+          <%= link_to 'My Category', '#' %>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">
+        <span class="sdt_active"></span>
+        <span class="sdt_wrap">
+          <span class="sdt_link">Account</span>
+          <span class="sdt_descr">Rira Choi</span>
+        </span>
+      </a>
+      <div class="sdt_box">
+        <%= link_to 'Edit Account', '#' %>
+        <%= link_to 'Sign Out', '#'%>
+      </div>
+    </li>
+  </ul>
+</div>

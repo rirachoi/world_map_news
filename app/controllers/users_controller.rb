@@ -22,9 +22,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find params[:id]
-    # unless @user.id == @current_user.id
-    #   redirect_to root_path
-    # end
+    unless @user.id == @current_user.id
+      redirect_to root_path
+    end
   end
 
   def update
@@ -39,9 +39,9 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
-    # if @user.nil?
-    #   redirect_to root_path
-    # end
+    if @user.nil?
+      redirect_to root_path
+    end
     @user = User.find params[:id]
     respond_to do |format|
       format.html{}

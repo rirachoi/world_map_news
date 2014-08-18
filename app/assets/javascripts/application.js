@@ -62,4 +62,17 @@ $(function() {
        .stop(true)
        .animate({'top':'25px'},500);
   });
+
+  $('.categories-index #vmap').hide();
 });
+
+// $(document).ready(function(){
+//   $(window).scroll(function(e){
+//     parallax();
+//   });
+
+//   function parallax(){
+//     var scrolled = $(window).scrollTop();
+//     $('body').css('top',-(scrolled*0.2)+'px');
+//   }
+// });
