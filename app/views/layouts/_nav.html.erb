@@ -2,7 +2,7 @@
   <ul id="sdt_menu" class="sdt_menu">
 
     <li>
-      <a href="/">
+      <a href="/pages">
 
         <span class="sdt_active"></span>
         <span class="sdt_wrap">
@@ -16,13 +16,13 @@
       <a href="#">
         <span class="sdt_active"></span>
         <span class="sdt_wrap">
-          <span class="sdt_link">Sign UP</span>
-          <span class="sdt_descr">Join Us </span>
+          <span class="sdt_link">My News</span>
+          <span class="sdt_descr">Find Your Interests</span>
         </span>
       </a>
       <div class="sdt_box">
           <%= link_to 'Sign Up', new_user_path %>
-          <%#= link_to 'World Map News', '#' %>
+          <%= link_to 'Sign In', login_path %>
       </div>
     </li>
 
@@ -30,13 +30,13 @@
       <a href="#">
         <span class="sdt_active"></span>
         <span class="sdt_wrap">
-          <span class="sdt_link">Sign In</span>
+          <span class="sdt_link">Contact Us</span>
           <span class="sdt_descr">Welcome</span>
         </span>
       </a>
       <div class="sdt_box">
-        <%= link_to 'Sign In', login_path %>
-        <%= link_to 'Contact Us', '#'%>
+        <%= link_to 'World Map News', '#' %>
+        <%= link_to 'Email', '#'%>
       </div>
     </li>
   </ul>

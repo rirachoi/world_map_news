@@ -17,7 +17,7 @@ u1 = User.create(
   password: "rirachoi",
   password_confirmation: "rirachoi",
   admin: true
-
+)
 
 u2 = User.create(
   username: "Jane Austen",
@@ -25,14 +25,14 @@ u2 = User.create(
   native_country: "gb",
   password: "janeausten",
   password_confirmation: "janeausten"
-  )
+)
 
-c1 = Category.find_by(english_category_name: 'Top News')
-c2 = Category.find_by(english_category_name: 'Art')
-c3 = Category.find_by(english_category_name: 'Programming')
+c1 = Category.find_by(title: 'Top News')
+c2 = Category.find_by(title: 'Art')
+c3 = Category.find_by(title: 'Programming')
 
-c4 = Category.find_by(english_category_name: 'Society')
-c5 = Category.find_by(english_category_name: 'Politics')
+c4 = Category.find_by(title: 'Society')
+c5 = Category.find_by(title: 'Politics')
 
 u1.categories << c1 << c2 << c3
 u2.categories << c4 << c5

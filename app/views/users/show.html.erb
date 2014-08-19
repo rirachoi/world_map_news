@@ -1,2 +1,22 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1><%= @user.username %>'s Details</h1>
+
+<div class='user_info'>
+  <p>Name : <%= @user.username %></p>
+  <p>Email : <%= @user.email %></p>
+  <p>Native Country :
+    <% Country.countries_list.each do |c|%>
+      <%= c[:name] if c[:code].downcase == @user.native_country %>
+    <% end %>
+  </p>
+
+  <ul>
+    <% @user.categories.each do |cate|%>
+    <li><%= cate.title %></li>
+    <% end %>
+  </ul>
+
+  <div class='show_options'>
+    <%= link_to('Edit Your Details', edit_user_path(@user) )%>
+    <%= link_to('Manage Your News', '#')%>
+  </div>
+</div>

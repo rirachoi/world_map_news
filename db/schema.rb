@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20140816080502) do
     t.string   "username"
     t.string   "email"
     t.string   "native_country"
-    t.string   "native_language"
     t.string   "password_digest"
     t.boolean  "admin",           default: false
     t.datetime "created_at"

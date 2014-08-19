@@ -11,7 +11,6 @@
 <p>
   <%= f.label :native_country, 'Country' %><br/>
   <%= f.select :native_country, options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]})%>
-
 </p>
 <p>
   <%= f.label :password %><br/>

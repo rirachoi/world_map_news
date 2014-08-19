@@ -6,7 +6,6 @@
 #  username        :string(255)
 #  email           :string(255)
 #  native_country  :string(255)
-#  native_language :string(255)
 #  password_digest :string(255)
 #  admin           :boolean          default(FALSE)
 #  created_at      :datetime

@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :check_if_logged_in, :except => [:new, :create]
+  before_action :check_if_admin, :only => [:index]
+
   def index
     @users = User.all
     respond_to do |format|
@@ -14,7 +17,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create users_params
     if @user.save
-      redirect_to @user
+      redirect_to pages_path
     else
       redirect_to new_user_path
     end
@@ -58,6 +61,6 @@ class UsersController < ApplicationController
 
   private
   def users_params
-    params.require(:user).permit(:username, :email, :native_country, :native_language, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :native_country, :password, :password_confirmation)
   end
 end
