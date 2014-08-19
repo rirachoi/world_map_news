@@ -1,26 +1,34 @@
 <div class='user_form'>
 <%= form_for @user do |f| %>
-<p>
-  <%= f.label :username %><br/>
-  <%= f.text_field :username, :autofocs => true %>
-</p>
-<p>
-  <%= f.label :email %><br/>
-  <%= f.email_field :email, :placeholder => 'hello@worldmapnews.com' %>
-</p>
-<p>
-  <%= f.label :native_country, 'Country' %><br/>
-  <%= f.select :native_country, options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]})%>
-</p>
-<p>
-  <%= f.label :password %><br/>
-  <%= f.password_field :password %><br/>
+  <p>
+    <%= f.label :username %><br/>
+    <%= f.text_field :username, :autofocs => true %>
 
-  <%= f.label :password_confirmation %><br/>
-  <%= f.password_field :password_confirmation %>
-</p>
-<p class='submit_sign_up'>
-  <%= f.submit :class => 'submit_sign_up' %>
-  <% end %>
-</p>
+  <p>
+    <%= f.label :email %><br/>
+    <%= f.email_field :email, :placeholder => 'hello@worldmapnews.com' %>
+  </p>
+  <p>
+    <%= f.label :native_country, 'Country' %><br/>
+    <%= f.select :native_country, options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]})%>
+  </p>
+  <p>
+    <%= f.label :password %><br/>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br/>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p class='submit_sign_up'>
+    <% if @current_user.present? %>
+      <%= f.submit 'EDIT YOUR DETAILS', :class => 'submit_sign_up' %>
+    <% else %>
+      <%= f.submit 'JOIN WORLD MAP NEWS', :class => 'submit_sign_up' %>
+    <% end %>
+  </p>
+
+<% end %>
 </div>
+
+<div id="vmap" style="width: 960px; height: 500px; display:none;"></div>

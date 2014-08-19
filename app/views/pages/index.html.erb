@@ -8,14 +8,14 @@
 
 <div class="search_bar">
   <%= form_tag("/pages", remote: true, method: 'get') do %>
-    <%= text_field_tag(:keyword, 'Type Keyword For Searching')%>
+    <%= text_field_tag(:keyword)%>
     <%= button_tag("Search", class: 'btn_search') %>
   <% end %>
 </div>
 
 <div id='article_container'>
-  <% @country_codes.each do |contry_code|%>
-    <div id='<%=contry_code %>' style='display:none;'></div>
+  <% @countries.each do |c|%>
+    <div id='<%=c[:code].downcase %>' style='display:none;'><%= c[:name] %></div>
   <% end %>
 </div>
 

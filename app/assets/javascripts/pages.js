@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   var countryCodeInMap;
   var countryNameLabel;
+  var countryName;
 
   var mapData;
   var searchData;
@@ -22,11 +23,10 @@ $(document).ready(function() {
   }
 
   var createArticlesBox = function(data) {
-    console.log('sdfisjlsjfdsdfl');
-    categoryInCountry = decodeURIComponent(data.description);
-    console.log(categoryInCountry);
-    $cateCountry = $('<h2>'+categoryInCountry+'</h2>').addClass('cateCountry');
-    $('#'+countryCodeInMap).append($cateCountry)
+    var countryName= $('#'+countryCodeInMap).text();
+    console.log(countryName)
+    //categoryInCountry.addClass('cateCountry');
+    //$('#'+countryCodeInMap).append($cateCountry)
 
     // sort by data.date!!
     data.articles.sort(function (a, b) {
@@ -93,6 +93,11 @@ $(document).ready(function() {
     }//end of the loop
   }// end of createArticlesBox
 
+
+//////////////////////////////////////////////////////////////
+/////////////////////// END OF FUNCTIONS /////////////////////
+//////////////////////////////////////////////////////////////
+
   showTheWorldMap();
 
   //getting country_code when click!
@@ -104,16 +109,10 @@ $(document).ready(function() {
     $('#article_container > div').hide();
     $('#'+countryCodeInMap).show();
 
-    if ($('.jqvmap-label').text() === 'United States of America'){
-      countryNameLabel = "USA"
-    } else {
-      countryNameLabel = $('.jqvmap-label').text();
-    }
-
   //// getting JSON
     $.getJSON(
       'http://api.feedzilla.com/v1/articles/search.json?q='
-      + encodeURIComponent(countryNameLabel)
+      + encodeURIComponent(countryName)
       + '&count=5'
     ).done(function(data){
 
@@ -138,17 +137,18 @@ $(document).ready(function() {
       $('#article_container > div').hide();
       $('#'+countryCodeInMap).show();
 
-      if ($('.jqvmap-label').text() === 'United States of America'){
-        countryNameLabel = "USA"
-      } else {
-        countryNameLabel = $('.jqvmap-label').text();
-      }
+      // if ($('.jqvmap-label').text() === 'United States of America'){
+      //   countryNameLabel = "USA"
+      // } else {
+      //   countryNameLabel = $('.jqvmap-label').text();
+      // }
 
       $.getJSON(
         'http://api.feedzilla.com/v1/articles/search.json?q='
-        + encodeURIComponent(countryNameLabel)
+        + encodeURIComponent(countryName)
+        //+ encodeURIComponent(countryNameLabel)
         + "&q="
-        + userKeyword
+        + encodeURIComponent(userKeyword)
       ).done(function(d){
         searchData = d;
         console.log('is it working?');
@@ -156,24 +156,26 @@ $(document).ready(function() {
         $('.loading_animation').fadeOut(1000);
         $('.search_bar').fadeIn(1000);
 
+        $('#' + countryCodeInMap)
+            .append($('<h2>'+ userKeyword +'</h2>'));
+
         createArticlesBox(searchData);
 
         var $containerHeight = $('#body_container').height();
         $("html, body").animate({ scrollTop: $containerHeight / 2 }, 'slow');
 
       });//end of get json
-
-    }
+    }// end of doSearch
 
     $('.btn_search').on('click', doSearch);
 
-    $('#keyword').on('keydown', function(event) {
-      if (event.which == 13){
+    $('#keyword').on('keydown', function(key) {
+      if (key.which == 13){
         doSearch();
       }
     });
+
+
   })//end of vmap click
-
-
 
 });
