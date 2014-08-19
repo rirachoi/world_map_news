@@ -6,6 +6,13 @@
 
 <div id="vmap" style="width: 960px; height: 500px;"></div>
 
+<div class="search_bar">
+  <%= form_tag("/pages", remote: true, method: 'get') do %>
+    <%= text_field_tag(:keyword, 'Type Keyword For Searching')%>
+    <%= button_tag("Search", class: 'btn_search') %>
+  <% end %>
+</div>
+
 <div id='article_container'>
   <% @country_codes.each do |contry_code|%>
     <div id='<%=contry_code %>' style='display:none;'></div>

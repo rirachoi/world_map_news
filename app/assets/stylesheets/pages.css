@@ -10,6 +10,10 @@ body{
   font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
 }
 
+footer{
+  height: 50px;
+}
+
 #main_img{
   margin: 2%;
   width: 960px;
@@ -102,6 +106,28 @@ body{
 .content_article, .article_info{
   display: inline-block;
   vertical-align: middle;
+}
+
+.search_bar{
+  margin: auto;
+  padding: 10px;
+  display: none;
+}
+
+.search_bar input {
+  width: 700px;
+  padding: 10px;
+  margin: 3%;
+  background-color: (0,0,0,0.5);
+}
+
+.search_bar button {
+  width: 100px;
+  padding: 10px;
+  background-color: rgba(225, 0, 0, 0.7);
+  outline: none;
+  color: white;
+  border-radius: 5px;
 }
 
 /************* nav ***************/
