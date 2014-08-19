@@ -22,9 +22,20 @@ $(document).ready(function() {
     });
   }
 
+  var categoriesMenu = function(){
+    $("#extruderLeft").buildMbExtruder({
+        position:"left",
+        width:400,
+        extruderOpacity:.8,
+        hidePanelsOnClose:true,
+        accordionPanels:true,
+        onExtOpen:function(){},
+        onExtContentLoad:function(){},
+        onExtClose:function(){}
+    });
+  }
+
   var createArticlesBox = function(data) {
-
-
     // sort by data.date!!
     data.articles.sort(function (a, b) {
       var aDate = new Date(a.publish_date);
@@ -96,6 +107,10 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////
 
   showTheWorldMap();
+  categoriesMenu();
+
+
+
 
   //getting country_code when click!
   $('#vmap').on('click', function(event){
@@ -147,13 +162,14 @@ $(document).ready(function() {
         + encodeURIComponent(userKeyword)
       ).done(function(d){
         searchData = d;
+        var leng = searchData.size();
+        console.log(leng);
         $('.loading_animation').fadeOut(1000);
         $('.search_bar').fadeIn(1000);
 
-        if (searchData === null || undefined){
-          console.log('data is null');
+        if (searchData.length === 0 || undefined){
+          console.log('data is wrong');
         } else {
-
           createArticlesBox(searchData);
         }
 
@@ -167,8 +183,9 @@ $(document).ready(function() {
       event.preventDefault();
       $('#' + countryCodeInMap)
             .prepend($('<h2>'+ userKeyword+' In '+ countryName +'</h2>'));
-      $('#keyword').empty();
+
       doSearch();
+      $('#keyword').val("");
     });
 
     $('#keyword').on('keydown', function(event) {
@@ -177,8 +194,9 @@ $(document).ready(function() {
         event.preventDefault();
         $('#' + countryCodeInMap)
             .prepend($('<h2>'+ userKeyword+' In '+ countryName +'</h2>'));
-        $('#keyword').empty();
         doSearch();
+
+        $('#keyword').val("");
       }
     });
 

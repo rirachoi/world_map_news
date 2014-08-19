@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= f.label :native_country, 'Country' %><br/>
-    <%= f.select :native_country, options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]})%>
+    <%= f.select :native_country, options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]}, {:prompt => 'SELECT YOUR COUNTRY'})%>
   </p>
   <p>
     <%= f.label :password %><br/>
@@ -22,7 +22,7 @@
   </p>
   <p class='submit_sign_up'>
     <% if @current_user.present? %>
-      <%= f.submit 'EDIT YOUR DETAILS', :class => 'submit_sign_up' %>
+      <%= f.submit "EDIT YOUR DETAILS", :class => 'submit_sign_up' %>
     <% else %>
       <%= f.submit 'JOIN WORLD MAP NEWS', :class => 'submit_sign_up' %>
     <% end %>
