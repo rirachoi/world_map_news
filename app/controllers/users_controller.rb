@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create users_params
     if @user.save
+      session[:user_id] = @user.id
+      authenticate_user
       redirect_to pages_path
     else
       redirect_to new_user_path
@@ -56,7 +58,7 @@ class UsersController < ApplicationController
     user = User.find params[:id]
     user.destroy
 
-    redirect_to root_path
+    redirect_to users_path
   end
 
   private

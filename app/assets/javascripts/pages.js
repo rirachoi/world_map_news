@@ -22,6 +22,8 @@ $(document).ready(function() {
 
   //getting country_code when click!
   $('#vmap').on('click', function(event){
+    $('.loading_animation').fadeIn(1000);
+
     var countryCodeInMap = event.target.id.split('_').pop();
     $('#article_container > div').hide();
     $('#'+countryCodeInMap).show();
@@ -38,10 +40,21 @@ $(document).ready(function() {
       + encodeURIComponent(countryNameLabel)
       + '&count=5'
     ).done(function(data){
-              var createArticlesBox = function() {
+        var createArticlesBox = function() {
           categoryInCountry = decodeURIComponent(data.description);
           $cateCountry = $('<h2>'+categoryInCountry+'</h2>').addClass('cateCountry');
           $('#'+countryCodeInMap).append($cateCountry)
+
+          // sort by data.date!!
+          data.articles.sort(function (a, b) {
+            var aDate = new Date(a.publish_date);
+            var bDate = new Date(b.publish_date);
+            if (aDate > bDate) {
+              return -1;
+            } else {
+              return 1;
+            }
+          });
 
           for (var d=0;d<data.articles.length;d++){
             var titleOfArticle = data.articles[d].title;
@@ -95,7 +108,12 @@ $(document).ready(function() {
             $('#'+countryCodeInMap).append($single_article);
           }//end of the loop
        }// end of createArticlesBox
+       $('.loading_animation').fadeOut(1000);
+
        createArticlesBox();
+
+       var $containerHeight = $('#body_container').height();
+      $("html, body").animate({ scrollTop: $containerHeight / 5 }, 'slow');
      });
 
   })//end of vmap click

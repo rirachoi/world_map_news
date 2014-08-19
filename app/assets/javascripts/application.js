@@ -22,9 +22,9 @@ $(function() {
     $elem.find('img')
        .stop(true)
        .animate({
-        'width':'170px',
-        'height':'170px',
-        'left':'0px'
+        'width':'70px',
+        'height':'70px',
+        'left':'40px'
        },400,'easeOutBack')
        .andSelf()
        .find('.sdt_wrap')

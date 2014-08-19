@@ -8,8 +8,9 @@
   </head>
   <body>
     <div id="nav_container">
-      <h1 id="world_map_news"><span class='title_letter'>W</span>ORLD <span class='title_letter'>M</span>AP <span class='title_letter'>N</span>EWS</h1>
-
+      <a href='/' title='World Map'>
+        <h1 id="world_map_news"><span class='title_letter'>W</span>ORLD <span class='title_letter'>M</span>AP <span class='title_letter'>N</span>EWS</h1>
+    </a>
     <% if @current_user %>
       <%= render :partial => 'layouts/usernav' %>
     <% else %>
