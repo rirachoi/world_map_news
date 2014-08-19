@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   var countryCodeInMap;
-  var countryNameLabel;
+  var userKeyword;
   var countryName;
 
   var mapData;
@@ -23,10 +23,7 @@ $(document).ready(function() {
   }
 
   var createArticlesBox = function(data) {
-    var countryName= $('#'+countryCodeInMap).text();
-    console.log(countryName)
-    //categoryInCountry.addClass('cateCountry');
-    //$('#'+countryCodeInMap).append($cateCountry)
+
 
     // sort by data.date!!
     data.articles.sort(function (a, b) {
@@ -104,10 +101,15 @@ $(document).ready(function() {
   $('#vmap').on('click', function(event){
   //// before JSON
     $('.loading_animation').fadeIn(1000);
-
     countryCodeInMap = event.target.id.split('_').pop();
     $('#article_container > div').hide();
+    $('#article_container > div').empty();
     $('#'+countryCodeInMap).show();
+
+    var $this = $('#'+countryCodeInMap);
+    countryName = $this.attr('class');
+    console.log(countryName)
+
 
   //// getting JSON
     $.getJSON(
@@ -118,8 +120,8 @@ $(document).ready(function() {
 
       mapData = data;
 
-        $('.loading_animation').fadeOut(1000);
-        $('.search_bar').fadeIn(1000);
+      $('.loading_animation').fadeOut(1000);
+      $('.search_bar').fadeIn(1000);
 
       createArticlesBox(mapData);
 
@@ -130,36 +132,30 @@ $(document).ready(function() {
 
 
     var doSearch = function(c){
-      var userKeyword = $('#keyword').val();
+      userKeyword = $('#keyword').val();
       console.log(userKeyword)
 
       $('.loading_animation').fadeIn(1000);
       $('#article_container > div').hide();
+      $('#article_container > div').empty();
       $('#'+countryCodeInMap).show();
-
-      // if ($('.jqvmap-label').text() === 'United States of America'){
-      //   countryNameLabel = "USA"
-      // } else {
-      //   countryNameLabel = $('.jqvmap-label').text();
-      // }
 
       $.getJSON(
         'http://api.feedzilla.com/v1/articles/search.json?q='
         + encodeURIComponent(countryName)
-        //+ encodeURIComponent(countryNameLabel)
         + "&q="
         + encodeURIComponent(userKeyword)
       ).done(function(d){
         searchData = d;
-        console.log('is it working?');
-
         $('.loading_animation').fadeOut(1000);
         $('.search_bar').fadeIn(1000);
 
-        $('#' + countryCodeInMap)
-            .append($('<h2>'+ userKeyword +'</h2>'));
+        if (searchData === null || undefined){
+          console.log('data is null');
+        } else {
 
-        createArticlesBox(searchData);
+          createArticlesBox(searchData);
+        }
 
         var $containerHeight = $('#body_container').height();
         $("html, body").animate({ scrollTop: $containerHeight / 2 }, 'slow');
@@ -167,10 +163,21 @@ $(document).ready(function() {
       });//end of get json
     }// end of doSearch
 
-    $('.btn_search').on('click', doSearch);
+    $('.btn_search').on('click', function(event){
+      event.preventDefault();
+      $('#' + countryCodeInMap)
+            .prepend($('<h2>'+ userKeyword+' In '+ countryName +'</h2>'));
+      $('#keyword').empty();
+      doSearch();
+    });
 
-    $('#keyword').on('keydown', function(key) {
-      if (key.which == 13){
+    $('#keyword').on('keydown', function(event) {
+      // event.preventDefault();
+      if (event.which === 13){
+        event.preventDefault();
+        $('#' + countryCodeInMap)
+            .prepend($('<h2>'+ userKeyword+' In '+ countryName +'</h2>'));
+        $('#keyword').empty();
         doSearch();
       }
     });

@@ -15,7 +15,7 @@
 
 <div id='article_container'>
   <% @countries.each do |c|%>
-    <div id='<%=c[:code].downcase %>' style='display:none;'><%= c[:name] %></div>
+    <div id='<%=c[:code].downcase %>' class="<%= c[:name] %>" style='display:none;'></div>
   <% end %>
 </div>
 
