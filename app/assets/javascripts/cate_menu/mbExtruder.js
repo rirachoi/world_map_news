@@ -113,7 +113,7 @@ jQuery.browser.mobile = jQuery.browser.android || jQuery.browser.blackberry || j
 				extruder.css("zIndex",100);
 				var isVertical = this.options.position=="left" || this.options.position=="right";
 				var extW= isVertical?1: this.options.width;
-				var c= $("<div/>").addClass("extruder-content").css({overflow:"hidden", width:extW});
+				var c= $("<div/>").addClass("extruder-content").css({overflow:"auto", width:extW});
 				c.append(extruderContent);
 				extruder.html(c);
 
@@ -359,10 +359,10 @@ jQuery.browser.mobile = jQuery.browser.android || jQuery.browser.blackberry || j
 				extruder.find('.extruder-content').slideUp(opt.slideTimer);
 				if(opt.onExtClose) opt.onExtClose();
 			}else if (opt.position=="left" || opt.position=="right"){
-				extruder.find('.extruder-content').css({overflow:"hidden"});
+				extruder.find('.extruder-content').css({overflow:"auto"});
 				extruder.find('.extruder-content').animate({ width: 1 }, opt.slideTimer,function(){
 					extruder.find('.ext_wrapper').css({width:1});
-					extruder.find('.extruder-content').css({overflow:"hidden",display:"none"});
+					extruder.find('.extruder-content').css({overflow:"auto",display:"none"});
 					if(opt.onExtClose) opt.onExtClose();
 				});
 			}
