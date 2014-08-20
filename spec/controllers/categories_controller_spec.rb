@@ -61,58 +61,60 @@ RSpec.describe CategoriesController, :type => :controller do
     end # AS JSON
 
   end # GET INDEX
+
+  describe "GET show" do
+
+    before do
+      @category1 = Category.create!(
+        title: "category1",
+        api_id: "1",
+      )
+
+      get :show, { id: @category1.id }
+
+    end
+
+    describe "as HTML" do
+      it "returns http success" do
+        expect(response).to be_success
+      end
+
+      it 'should assign the requested category as @category' do
+        expect(assigns(:category)).to eq(@category1)
+      end
+
+      it 'should render the category show' do
+        expect(response).to render_template('show')
+      end
+    end #AS HTML
+
+    describe "as JSON" do
+      before do
+        get :show, {:id => @category1.id, :format => :json }
+      end
+
+      it 'should respond with a status 200' do
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+
+      it 'should give content type as JSON' do
+        expect(response.content_type).to eq('application/json')
+      end
+
+      it 'should parse as valid JSON' do
+        expect(lambda { JSON.parse(response.body) }).to_not raise_error
+      end
+
+      it 'should have the name of user in the JSON' do
+        user = JSON.parse(response.body)
+        # expect(response.body).to eq(@categoy1.to_json)
+      end
+
+    end # AS JSON
+  end # GET SHOW
 end
 
-# describe "GET show" do
 
-#     before do
-#       @category1 = Category.create!(
-#         title: "category1",
-#         api_id: "1",
-#       )
-
-#       get :show, { id: @category1.id }
-
-#     end
-
-#     describe "as HTML" do
-#       it "returns http success" do
-#         expect(response).to be_success
-#       end
-
-#       it 'should assign the requested category as @category' do
-#         expect(assigns(:category)).to eq(@category1)
-#       end
-
-#       it 'should render the category show' do
-#         expect(response).to render_template('show')
-#       end
-#     end #AS HTML
-
-#     describe "as JSON" do
-#       before do
-#         get :show, {:id => @categoy1.id, :format => :json }
-#       end
-
-#       it 'should respond with a status 200' do
-#         expect(response).to be_success
-#         expect(response.status).to eq(200)
-#       end
-
-#       it 'should give content type as JSON' do
-#         expect(response.content_type).to eq('application/json')
-#       end
-
-#       it 'should parse as valid JSON' do
-#         expect(lambda { JSON.parse(response.body) }).to_not raise_error
-#       end
-
-#       it 'should have the name of user in the JSON' do
-#         user = JSON.parse(response.body)
-#         expect(response.body).to eq(@categoy1.to_json)
-#       end
-
-#     end # AS JSON
-#   end # GET SHOW
 
 

@@ -13,9 +13,7 @@ body{
   max-width: 1000px;
   margin: auto;
   background-color: rgba(0,0,0,0.9);
-  background: url(bg.jpg);
-  background-size: 100%;
-  color: white;
+  color: rgb(153, 150, 150);
   font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
 }
 
@@ -96,25 +94,44 @@ footer{
 .article_info{
   width: 25%;
   height: 200px;
-  border: 5px solid rgba(225, 225, 225, 0.3);
-  border-radius: 1em;
+  background: url(main1.png) no-repeat;
+  background-size: 100% 70%;
   margin: 2%;
   text-align: center;
+  margin-top: 85px;
 }
 
 .single_article{
-  height: 300px;
-  overflow: auto;
+  min-height: 350px;
   margin: auto auto 2% auto;
-  background: url(overlay.png) no-repeat;
-  background-size: 100% 100%;
-  border-radius: 5px;
+  border-bottom: 1px solid rgba(225,225,225,0.4);
+  color: white;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.artiTitle{
+  font-size: 30px;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.artiAuthor{
+  margin-top: 170px;
+  color: #0B75AF;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.artiOriginal{
+  margin-left: 450px;
+  color: rgba(225,225,225,0.6);
+}
+
+.artiOriginal a:hover{
   color: white;
 }
 
 .content_article, .article_info{
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 .search_bar{

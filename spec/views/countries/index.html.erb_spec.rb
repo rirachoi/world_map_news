@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "countries/index.html.erb", :type => :view do
-  it 'should respond with a status 200' do
-    expect(response).to be_success
-    expect(response.status).to eq(200)
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
+
 end

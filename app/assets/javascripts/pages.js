@@ -48,6 +48,17 @@ $(document).ready(function() {
       }
     });
 
+    if(userKeyword) {
+      $('#' + countryCodeInMap)
+          .prepend($('<h2>NEWS FOR <span class="words">'
+            + userKeyword.toUpperCase()+'</span> IN <span class="words">'
+            + countryName.toUpperCase() +'</span></h2>'));
+     }else {
+      $('#'+countryCodeInMap)
+          .prepend($('<h2>TOP NEWS FOR <span class="words">'
+            + countryName.toUpperCase() +'</span></h2>'))
+     }
+
     for (var d=0;d<data.articles.length;d++){
       var titleOfArticle = data.articles[d].title;
       var dateOfArticle = data.articles[d].publish_date;
@@ -114,9 +125,12 @@ $(document).ready(function() {
   //getting country_code when click!
   $('#vmap').on('click', function(event){
   //// before JSON
-
+    event.preventDefault();
     countryCodeInMap = event.target.id.split('_').pop();
+    userKeyword === "";
+
     //console.log(countryCodeInMap);
+    $('#msg_no_result').hide();
     if (countryCodeInMap === "" || undefined ){
       alert('Please Select A Country On The Map');
       $('#keyword').hide();
@@ -146,12 +160,13 @@ $(document).ready(function() {
 
       $('.loading_animation').fadeOut(1000);
       $('.search_bar').fadeIn(1000);
-      $('#'+countryCodeInMap).prepend($('<h2>NEWS FOR <span class="words">'+ countryName.toUpperCase() +'</span></h2>'))
 
       createArticlesBox(mapData);
 
-      var $containerHeight = $('#body_container').height();
-      $("html, body").animate({ scrollTop: $containerHeight / 5 }, 'slow');
+      $('#keyword').val("");
+
+      var $containerHeight = $('#vmap').height();
+      $("html, body").animate({ scrollTop: $containerHeight / 4 }, 'slow');
 
     });//end of get JSON
 
@@ -181,17 +196,14 @@ $(document).ready(function() {
           console.log('data is wrong');
           $('#msg_no_result').fadeIn(1000);
           $('search_bar').fadeIn(1000);
+          $('#keyword').val("");
         } else {
           createArticlesBox(searchData);
-          $('#' + countryCodeInMap)
-            .prepend($('<h2>NEWS FOR <span class="words">'
-              + userKeyword.toUpperCase()+'</span> IN <span class="words">'
-              + countryName.toUpperCase() +'</span></h2>'));
-
+          $('#keyword').val("");
         }
 
-        var $containerHeight = $('#body_container').height();
-        $("html, body").animate({ scrollTop: $containerHeight / 5 }, 'slow');
+        var $containerHeight = $('#vmap').height();
+        $("html, body").animate({ scrollTop: $containerHeight / 4 }, 'slow');
 
       });//end of get json
     }// end of doSearch
@@ -200,7 +212,7 @@ $(document).ready(function() {
       event.preventDefault();
       doSearch();
 
-      $('#keyword').val("");
+
     });
 
     $('#keyword').on('keydown', function(event) {
@@ -209,7 +221,7 @@ $(document).ready(function() {
         event.preventDefault();
         doSearch();
 
-        $('#keyword').val("");
+        // $('#keyword').val() == "";
       }
     });
 
