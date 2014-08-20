@@ -10,7 +10,8 @@
   </p>
   <p>
     <%= f.label :native_country, 'Country' %><br/>
-    <%= f.select :native_country, options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]}, {:prompt => 'SELECT YOUR COUNTRY'})%>
+    <%= f.select :native_country,
+    options_for_select(Country.countries_list.collect{|country| [country[:name], country[:code].downcase ]}, @user.native_country), {:prompt => 'SELECT YOUR COUNTRY' }%>
   </p>
   <p>
     <%= f.label :password %><br/>

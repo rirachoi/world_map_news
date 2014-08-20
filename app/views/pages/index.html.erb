@@ -8,7 +8,7 @@
 
 <div class="search_bar">
   <%= form_tag("/pages", remote: true, method: 'get') do %>
-    <%= text_field_tag(:keyword)%>
+    <%= text_field_tag(:keyword, nil, :placeholder => 'Type Keyword')%>
     <%= button_tag("Search", class: 'btn_search') %>
   <% end %>
 </div>

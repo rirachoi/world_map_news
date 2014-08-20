@@ -156,6 +156,10 @@ footer{
   background-color: rgba(225, 0, 0, 0.7);
 }
 
+.words{
+  font-size: 40px;
+  color: rgba(225, 20, 20, 0.6);
+}
 /************* nav ***************/
 
 
@@ -266,3 +270,12 @@ ul.sdt_menu li div.sdt_box a:first-child{
 ul.sdt_menu li div.sdt_box a:hover{
   color:#fff;
 }
+
+@media (max-width: 600px) {
+  #body_container, #nav_container {
+    margin: 3%;
+  }
+
+  #vmap{
+    max-width: 550px;
+  }

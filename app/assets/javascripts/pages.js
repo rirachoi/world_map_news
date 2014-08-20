@@ -1,7 +1,8 @@
+var userKeyword;
+
 $(document).ready(function() {
 
   var countryCodeInMap;
-  var userKeyword;
   var countryName;
 
   var mapData;
@@ -110,21 +111,29 @@ $(document).ready(function() {
   categoriesMenu();
 
 
-
-
   //getting country_code when click!
   $('#vmap').on('click', function(event){
   //// before JSON
-    $('.loading_animation').fadeIn(1000);
+
     countryCodeInMap = event.target.id.split('_').pop();
-    $('#article_container > div').hide();
-    $('#article_container > div').empty();
-    $('#'+countryCodeInMap).show();
+    //console.log(countryCodeInMap);
+    if (countryCodeInMap === "" || undefined ){
+      alert('Please Select A Country On The Map');
+      $('#keyword').hide();
+      $('.btn_search').hide();
+      $('#article_container > div').empty();
+    } else {
+      $('.loading_animation').fadeIn(1000);
+      $('#article_container > div').hide();
+      $('#article_container > div').empty();
+      $('#'+countryCodeInMap).show();
+      $('#keyword').fadeIn(1000);
+      $('.btn_search').fadeIn(1000);
 
-    var $this = $('#'+countryCodeInMap);
-    countryName = $this.attr('class');
-    console.log(countryName)
-
+      var $this = $('#'+countryCodeInMap);
+      countryName = $this.attr('class');
+      console.log(countryName)
+    }
 
   //// getting JSON
     $.getJSON(
@@ -137,6 +146,7 @@ $(document).ready(function() {
 
       $('.loading_animation').fadeOut(1000);
       $('.search_bar').fadeIn(1000);
+      $('#'+countryCodeInMap).prepend($('<h2>NEWS FOR <span class="words">'+ countryName.toUpperCase() +'</span></h2>'))
 
       createArticlesBox(mapData);
 
@@ -162,29 +172,32 @@ $(document).ready(function() {
         + encodeURIComponent(userKeyword)
       ).done(function(d){
         searchData = d;
-        var leng = searchData.size();
-        console.log(leng);
+        // var leng = searchData.size();
+        // console.log(leng);
         $('.loading_animation').fadeOut(1000);
         $('.search_bar').fadeIn(1000);
 
-        if (searchData.length === 0 || undefined){
+        if (searchData.articles.length === 0 || undefined){
           console.log('data is wrong');
         } else {
           createArticlesBox(searchData);
+          $('#' + countryCodeInMap)
+            .prepend($('<h2>NEWS FOR <span class="words">'
+              + userKeyword.toUpperCase()+'</span> IN <span class="words">'
+              + countryName.toUpperCase() +'</span></h2>'));
+
         }
 
         var $containerHeight = $('#body_container').height();
-        $("html, body").animate({ scrollTop: $containerHeight / 2 }, 'slow');
+        $("html, body").animate({ scrollTop: $containerHeight / 5 }, 'slow');
 
       });//end of get json
     }// end of doSearch
 
     $('.btn_search').on('click', function(event){
       event.preventDefault();
-      $('#' + countryCodeInMap)
-            .prepend($('<h2>'+ userKeyword+' In '+ countryName +'</h2>'));
-
       doSearch();
+
       $('#keyword').val("");
     });
 
@@ -192,8 +205,6 @@ $(document).ready(function() {
       // event.preventDefault();
       if (event.which === 13){
         event.preventDefault();
-        $('#' + countryCodeInMap)
-            .prepend($('<h2>'+ userKeyword+' In '+ countryName +'</h2>'));
         doSearch();
 
         $('#keyword').val("");
