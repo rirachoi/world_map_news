@@ -9,7 +9,7 @@
   <% @categories.each do |cate| %>
    <div class="voice {}">
     <span class="label">
-      <a class="label" href="#" id="<%= cate.api_id%>">
+      <a class="label" href="#" id="<%= cate.api_id%>_<%= cate.title %>">
         <%= cate.title %>
       </a>
     </span>

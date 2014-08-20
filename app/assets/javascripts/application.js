@@ -67,7 +67,7 @@ $(function() {
   $('.categories-index #vmap').hide();
   $('.countries-index #vmap').hide();
   $('.login-new #vmap').hide();
-
+  $('#extruderLeft').hide();
 
 
 });

@@ -4,9 +4,12 @@ $(document).ready(function() {
 
   var countryCodeInMap;
   var countryName;
+  var cateApiId;
+  var cateName;
 
   var mapData;
   var searchData;
+  var cateData;
 
   var showTheWorldMap = function(){
     $('#vmap').vectorMap({
@@ -53,7 +56,12 @@ $(document).ready(function() {
           .prepend($('<h2>NEWS FOR <span class="words">'
             + userKeyword.toUpperCase()+'</span> IN <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'));
-     }else {
+     } else if(cateName){
+      $('#' + countryCodeInMap)
+          .prepend($('<h2>NEWS OF <span class="words">'
+            + cateName.toUpperCase()+'</span> IN <span class="words">'
+            + countryName.toUpperCase() +'</span></h2>'));
+     } else {
       $('#'+countryCodeInMap)
           .prepend($('<h2>TOP NEWS FOR <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'))
@@ -97,7 +105,7 @@ $(document).ready(function() {
             'target':'_blank',
             'title':'Go to the original source'
           });
-      //$artiImage = $('<img>').addClass('artiImage');
+
       $sideDiv = $('<div/>')
           .addClass('article_info')
           .append($artiAuthor)
@@ -122,7 +130,7 @@ $(document).ready(function() {
   categoriesMenu();
 
 
-  //getting country_code when click!
+///////// Clicked the map
   $('#vmap').on('click', function(event){
   //// before JSON
     event.preventDefault();
@@ -160,6 +168,7 @@ $(document).ready(function() {
 
       $('.loading_animation').fadeOut(1000);
       $('.search_bar').fadeIn(1000);
+      $('#extruderLeft').fadeIn(1000); //categories
 
       createArticlesBox(mapData);
 
@@ -174,7 +183,7 @@ $(document).ready(function() {
     var doSearch = function(c){
       userKeyword = $('#keyword').val();
       console.log(userKeyword)
-
+      $('#msg_no_result').hide();
       $('.loading_animation').fadeIn(1000);
       $('#article_container > div').hide();
       $('#article_container > div').empty();
@@ -187,8 +196,7 @@ $(document).ready(function() {
         + encodeURIComponent(userKeyword)
       ).done(function(d){
         searchData = d;
-        // var leng = searchData.size();
-        // console.log(leng);
+
         $('.loading_animation').fadeOut(1000);
         $('.search_bar').fadeIn(1000);
 
@@ -208,32 +216,54 @@ $(document).ready(function() {
       });//end of get json
     }// end of doSearch
 
+//////////// Search options
     $('.btn_search').on('click', function(event){
       event.preventDefault();
       doSearch();
 
-
     });
 
     $('#keyword').on('keydown', function(event) {
-      // event.preventDefault();
       if (event.which === 13){
         event.preventDefault();
         doSearch();
 
-        // $('#keyword').val() == "";
       }
     });
   })//end of vmap click
 
-
-  $('.cateSlide').on('click', function(){
-    $('.cateSheet').slideToggle('slow');
-  });
-
+////////// Clicked categories menu
   $('#extruderLeft span').on('click', function(event){
-    var cateApiId = event.target.id;
-    console.log(cateApiId);
-  });
+    cateApiId = event.target.id.split('_').shift();
+    cateName = event.target.id.split('_').pop();
+
+    $('#msg_no_result').hide();
+    $('.loading_animation').fadeIn(1000);
+    $('#article_container > div').hide();
+    $('#article_container > div').empty();
+    $('#'+countryCodeInMap).show();
+
+    $.getJSON(
+      'http://api.feedzilla.com/v1/categories/'
+      + cateApiId
+      +'/articles/search.json?q='
+      + countryName
+
+      ).done(function(cd){
+        cateData = cd;
+
+      $('.loading_animation').fadeOut(1000);
+      $('.search_bar').fadeIn(1000);
+      $('#extruderLeft').fadeIn(1000); //categories
+
+      createArticlesBox(cateData);
+
+      $('#keyword').val("");
+
+      var $containerHeight = $('#vmap').height();
+      $("html, body").animate({ scrollTop: ($containerHeight / 2) + 100 }, 'slow');
+
+    });
+  }); // end of categories menu click
 
 });
