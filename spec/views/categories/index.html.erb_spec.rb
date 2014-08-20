@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "categories/index.html.erb", :type => :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'should respond with a status 200' do
+    expect(response).to be_success
+    expect(response.status).to eq(200)
+  end
 end

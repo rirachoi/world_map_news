@@ -58,7 +58,7 @@ class UsersController < ApplicationController
     user = User.find params[:id]
     user.destroy
 
-    redirect_to users_path
+    redirect_to pages_path
   end
 
   private

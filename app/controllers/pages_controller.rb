@@ -4,13 +4,13 @@ class PagesController < ApplicationController
     @countries = Country.countries_list
     respond_to do |format|
       format.html {}
-      format.js { render json: @countries }
+      format.json { render json: @countries; return }
     end
 
     @categories = Category.all
     respond_to do |format|
       format.html {}
-      format.js { render json: @categories }
+      format.json { render json: @categories; return }
     end
   end
 

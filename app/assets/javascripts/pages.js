@@ -131,7 +131,7 @@ $(document).ready(function() {
       $('.btn_search').fadeIn(1000);
 
       var $this = $('#'+countryCodeInMap);
-      countryName = $this.attr('class');
+      countryName = $this.attr('class').split(',').shift();
       console.log(countryName)
     }
 
@@ -179,6 +179,8 @@ $(document).ready(function() {
 
         if (searchData.articles.length === 0 || undefined){
           console.log('data is wrong');
+          $('#msg_no_result').fadeIn(1000);
+          $('search_bar').fadeIn(1000);
         } else {
           createArticlesBox(searchData);
           $('#' + countryCodeInMap)

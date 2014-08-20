@@ -37,6 +37,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 gem 'httparty'
 # gem 'devise'
 
+gem 'capybara'
+
 group :development do
   gem 'pry-rails'
   gem 'better_errors'
