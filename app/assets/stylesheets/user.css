@@ -24,7 +24,7 @@
   background-color: rgba(200,200,200,0.5);
 }
 
-.submit_sign_up input, #submit{
+.submit_sign_up input, #submit, .btn_submit{
   margin-top: 3%;
   width: 510px;
   height: 50px;
@@ -35,8 +35,12 @@
   font-size: 20px;
 }
 
-.submit_sign_up input:hover, #submit:hover{
+.submit_sign_up input:hover, #submit:hover,.btn_submit:hover{
   background-color: rgba(225, 20, 50, 1);
+}
+
+.btn_submit{
+  width: 700px;
 }
 
 .user_form label, .sign_in label{

@@ -8,10 +8,16 @@
     <ul>
       <% @categories.each do |cate|%>
       <li>
-        <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>"
-        <% if @current_user.categories.present? %>
-          ckecked="<%= @current_user.categories%>"
-        <% end %>>
+
+        <% if @current_user.categories.pluck(:id).include?(cate.id) %>
+
+        <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>" checked="checked">
+
+        <% else %>
+
+        <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>">
+
+        <% end %>
 
         <label id="<%= cate.api_id%>" class="pref_category_name"><%= cate.title %></label>
       </li>

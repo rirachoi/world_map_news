@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
     end
     @current_user.save
 
-    redirect_to users_mynews
+    redirect_to users_mynews_path
   end
 
 end

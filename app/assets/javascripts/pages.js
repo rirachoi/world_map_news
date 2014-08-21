@@ -247,7 +247,6 @@ $(document).ready(function() {
     $('#article_container > div').hide();
     $('#article_container > div').empty();
     $('#'+countryCodeInMap).show();
-    userKeyword === null;
 
     $.getJSON(
       'http://api.feedzilla.com/v1/categories/'

@@ -20,7 +20,7 @@
 
     <div id="blank"></div>
 
-    <%= render :partial => 'pages/categories_menu' %>
+    <%= render :partial => 'pages/categories_menu' if @categories %>
 
     <div id="body_container" class="<%= params[:controller] %>-<%= params[:action] %>">
 
