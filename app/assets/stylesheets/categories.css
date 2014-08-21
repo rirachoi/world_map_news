@@ -233,8 +233,10 @@
 
 
 #user_category {
-  height: 300px;
+  height: 250px;
   width: 960px;
+  margin-bottom: 3%;
+  margin-left: 50px;
   overflow: auto;
 }
 
@@ -256,4 +258,8 @@
 
 #user_category div:hover{
   background-color: rgba(146, 26, 26, 0.8);
+}
+
+.users-mynews .loading_animation{
+  top: 800px;
 }

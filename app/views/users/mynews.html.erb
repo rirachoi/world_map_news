@@ -9,6 +9,11 @@
 
 <div id="vmap" class="vmap-mynews" style="width: 960px; height: 500px; display:none;"></div>
 
+<div class="loading_animation" style="display:none;" >
+  <%= image_tag('spinning_the_world.gif', :title => 'loading..') %>
+  <h2>LOADING....</h2>
+</div>
+
 <div class="search_bar">
   <%= form_tag("/pages", remote: true, method: 'get') do %>
     <%= text_field_tag(:keyword, nil, :placeholder => 'Type Keyword')%>

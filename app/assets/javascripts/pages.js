@@ -89,7 +89,13 @@ $(document).ready(function() {
       var originalUrl = data.articles[d].url;
 
       $artiDate = $('<p>'+dateOfArticle+'</p>').addClass('artiDate');
-      $artiTitle = $('<h3>'+titleOfArticle+'</h3>').addClass('artiTitle');
+      $artiTitle = $('<a><h3>'+titleOfArticle+'</h3></a>')
+          .addClass('artiTitle')
+          .attr({
+            'href':originalUrl,
+            'target':'_blank',
+            'title':'Read the full article'
+          });
       $artiSummary = $('<p>'+summaryOfArticle+'</p>').addClass('artiSummary');
       $artiOriginal = $('<a>Read More..</a>')
           .addClass('artiOriginal')
@@ -287,6 +293,10 @@ $(document).ready(function() {
 
     $('.users-mynews #vmap').fadeIn(1000);
     $('#article_container > div').empty();
+
+  var $containerHeight = $('#vmap').height();
+  $("html, body").animate({ scrollTop: ($containerHeight / 2) + 300 }, 'slow');
+
   });
 
 
@@ -294,8 +304,9 @@ $(document).ready(function() {
 ////// Clicked MY NEWS MAP
   $('.users-mynews #vmap').on('click', function(event){
     event.preventDefault();
-    $('#article_container > div').empty();
     countryCodeInMap = event.target.id.split('_').pop();
+    console.log(countryCodeInMap);
+    $('#article_container > div').empty();
     userKeyword = '';
     cateName = '';
 
@@ -332,12 +343,18 @@ $(document).ready(function() {
       $('.search_bar').fadeIn(1000);
       $('#extruderLeft').fadeIn(1000); //categories
 
-      createArticlesBox(userMapData);
-
-      $('#keyword').val("");
+      if (userMapData.articles.length === 0 || undefined){
+        console.log('data is wrong');
+        $('#msg_no_result').fadeIn(1000);
+        $('search_bar').fadeIn(1000);
+        $('#keyword').val("");
+      } else{
+        createArticlesBox(userMapData);
+        $('#keyword').val("");
+      }
 
       var $containerHeight = $('#vmap').height();
-      $("html, body").animate({ scrollTop: ($containerHeight / 2) + 200 }, 'slow');
+      $("html, body").animate({ scrollTop: ($containerHeight / 2) + 500 }, 'slow');
 
     });//end of get JSON
 
