@@ -1,0 +1,32 @@
+
+<h1><%= @user.username %>'s NEWS</h1>
+<h3>Your Categories :
+  <% @categories.each do |cate| %>
+    <%= cate.title %>
+  <% end %>
+</h3>
+
+<div id="vmap" class="vmap-mynews" style="width: 960px; height: 500px;"></div>
+
+<div class="search_bar">
+  <%= form_tag("/pages", remote: true, method: 'get') do %>
+    <%= text_field_tag(:keyword, nil, :placeholder => 'Type Keyword')%>
+    <%= button_tag("Search", class: 'btn_search') %>
+  <% end %>
+</div>
+
+<% @categories.each do |cate| %>
+  <div id="<%= cate.api_id%>">
+    <div id='article_container'>
+      <% @countries.each do |c|%>
+        <div id='<%=c[:code].downcase %>' class="<%= c[:name] %>" style='display:none;'>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div id="msg_no_result" style="display:none;">
+  <h1> <span>Sorry</span>, There are <span>no articles</span> about it..!!</h1>
+</div>
+

@@ -1,13 +1,24 @@
-<div id="categories_container">
-  <h1>CATEGORIES</h1>
-  <% @categories.each do |cate| %>
-    <div class="<%= cate.api_id %>">
-      <p><%= cate.title %></p>
-    </div>
-  <% end %>
-</div>
 
 <div id="vmap" style="width: 960px; height: 500px; display:none;"></div>
 
+
+<div id="categories_container">
+  <p>CATEGORIES</p>
+  <%= form_tag '/categories', :method => 'post', :class => "ac-custom ac-checkbox ac-checkmark", :authocomplete => false do %>
+    <ul>
+      <% @categories.each do |cate|%>
+      <li>
+        <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>"
+        <% if @current_user.categories.present? %>
+          ckecked="<%= @current_user.categories%>"
+        <% end %>>
+
+        <label id="<%= cate.api_id%>" class="pref_category_name"><%= cate.title %></label>
+      </li>
+      <% end %>
+    </ul>
+    <%= submit_tag "Submit", :class => 'btn_submit' %>
+  <% end %>
+</div>
 
 

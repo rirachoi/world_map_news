@@ -1,7 +1,7 @@
-var userKeyword;
+
 
 $(document).ready(function() {
-
+  var userKeyword;
   var countryCodeInMap;
   var countryName;
   var cateApiId;
@@ -51,6 +51,7 @@ $(document).ready(function() {
       }
     });
 
+    console.log(userKeyword);
     if(userKeyword) {
       $('#' + countryCodeInMap)
           .prepend($('<h2>NEWS FOR <span class="words">'
@@ -122,6 +123,42 @@ $(document).ready(function() {
   }// end of createArticlesBox
 
 
+  var doSearch = function(c){
+    userKeyword = $('#keyword').val();
+    console.log(userKeyword)
+    $('#msg_no_result').hide();
+    $('.loading_animation').fadeIn(1000);
+    $('#article_container > div').hide();
+    $('#article_container > div').empty();
+    $('#'+countryCodeInMap).show();
+
+    $.getJSON(
+      'http://api.feedzilla.com/v1/articles/search.json?q='
+      + encodeURIComponent(countryName)
+      + "&q="
+      + encodeURIComponent(userKeyword)
+    ).done(function(d){
+      searchData = d;
+
+      $('.loading_animation').fadeOut(1000);
+      $('.search_bar').fadeIn(1000);
+
+      if (searchData.articles.length === 0 || undefined){
+        console.log('data is wrong');
+        $('#msg_no_result').fadeIn(1000);
+        $('search_bar').fadeIn(1000);
+        $('#keyword').val("");
+      } else {
+        createArticlesBox(searchData);
+        $('#keyword').val("");
+      }
+
+      var $containerHeight = $('#vmap').height();
+      $("html, body").animate({ scrollTop: ($containerHeight / 3) + 100 }, 'slow');
+
+    });//end of get json
+  }// end of doSearch
+
 //////////////////////////////////////////////////////////////
 /////////////////////// END OF FUNCTIONS /////////////////////
 //////////////////////////////////////////////////////////////
@@ -134,8 +171,10 @@ $(document).ready(function() {
   $('#vmap').on('click', function(event){
   //// before JSON
     event.preventDefault();
+    $('#article_container > div').empty();
     countryCodeInMap = event.target.id.split('_').pop();
-    userKeyword === "";
+    userKeyword = '';
+    cateName = '';
 
     //console.log(countryCodeInMap);
     $('#msg_no_result').hide();
@@ -179,69 +218,36 @@ $(document).ready(function() {
 
     });//end of get JSON
 
-
-    var doSearch = function(c){
-      userKeyword = $('#keyword').val();
-      console.log(userKeyword)
-      $('#msg_no_result').hide();
-      $('.loading_animation').fadeIn(1000);
-      $('#article_container > div').hide();
-      $('#article_container > div').empty();
-      $('#'+countryCodeInMap).show();
-
-      $.getJSON(
-        'http://api.feedzilla.com/v1/articles/search.json?q='
-        + encodeURIComponent(countryName)
-        + "&q="
-        + encodeURIComponent(userKeyword)
-      ).done(function(d){
-        searchData = d;
-
-        $('.loading_animation').fadeOut(1000);
-        $('.search_bar').fadeIn(1000);
-
-        if (searchData.articles.length === 0 || undefined){
-          console.log('data is wrong');
-          $('#msg_no_result').fadeIn(1000);
-          $('search_bar').fadeIn(1000);
-          $('#keyword').val("");
-        } else {
-          createArticlesBox(searchData);
-          $('#keyword').val("");
-        }
-
-        var $containerHeight = $('#vmap').height();
-        $("html, body").animate({ scrollTop: ($containerHeight / 3) + 100 }, 'slow');
-
-      });//end of get json
-    }// end of doSearch
+  })//end of vmap click
 
 //////////// Search options
-    $('.btn_search').on('click', function(event){
+
+  $('.btn_search').on('click', function(event){
+    event.preventDefault();
+    doSearch();
+
+  });
+
+  $('#keyword').on('keydown', function(event) {
+    if (event.which === 13){
       event.preventDefault();
       doSearch();
 
-    });
-
-    $('#keyword').on('keydown', function(event) {
-      if (event.which === 13){
-        event.preventDefault();
-        doSearch();
-
-      }
-    });
-  })//end of vmap click
+    }
+  });
 
 ////////// Clicked categories menu
   $('#extruderLeft span').on('click', function(event){
     cateApiId = event.target.id.split('_').shift();
     cateName = event.target.id.split('_').pop();
+    userKeyword = "";
 
     $('#msg_no_result').hide();
     $('.loading_animation').fadeIn(1000);
     $('#article_container > div').hide();
     $('#article_container > div').empty();
     $('#'+countryCodeInMap).show();
+    userKeyword === null;
 
     $.getJSON(
       'http://api.feedzilla.com/v1/categories/'
@@ -258,7 +264,7 @@ $(document).ready(function() {
 
       createArticlesBox(cateData);
 
-      $('#keyword').val("");
+      // $('#keyword').val("");
 
       var $containerHeight = $('#vmap').height();
       $("html, body").animate({ scrollTop: ($containerHeight / 2) + 100 }, 'slow');

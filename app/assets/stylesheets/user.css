@@ -6,7 +6,7 @@
   display: block;
 }
 
-.user_form input, #user_native_country, .sign_in input{
+.user_form input, #user_native_country, .sign_in input, #native_country{
   width: 500px;
   padding: 10px;
   background-color: rgba(74, 70, 70, 0.8);
@@ -20,7 +20,7 @@
   font-size: 15px;
 }
 
-.user_form input:hover, #user_native_country:hover, .sign_in input:hover{
+.user_form input:hover, #user_native_country:hover, .sign_in input:hover, #native_country:hover{
   background-color: rgba(200,200,200,0.5);
 }
 

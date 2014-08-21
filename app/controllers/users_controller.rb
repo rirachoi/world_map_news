@@ -54,6 +54,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def mynews
+    @user = @current_user
+    unless @user.id == @current_user.id
+      redirect_to root_path
+    end
+
+    @categories = @user.categories
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @categories; return }
+    end
+
+    @countries = Country.countries_list
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @countries; return }
+    end
+  end
+
   def destroy
     user = User.find params[:id]
     user.destroy
