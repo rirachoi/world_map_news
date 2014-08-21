@@ -61,15 +61,8 @@ class UsersController < ApplicationController
     end
 
     @categories = @user.categories
-    # respond_to do |format|
-    #   format.html {}
-    #   format.json { render json: @categories; return }
-    # end
     @countries = Country.countries_list
-    # respond_to do |format|
-    #   format.html {}
-    #   format.json { render json: @countries; return }
-    # end
+
   end
 
   def destroy

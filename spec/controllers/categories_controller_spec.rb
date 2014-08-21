@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CategoriesController, :type => :controller do
 
-  # describe "GET index" do
+# describe "GET index" do
 
   #   before do
 
@@ -60,8 +60,8 @@ RSpec.describe CategoriesController, :type => :controller do
   #     end
   #   end # AS JSON
 
-  # end # GET INDEX
-context 'Country TEST' do
+# end # GET INDEX
+  context 'Country TEST' do
     describe "GET index" do
       describe "as HTML" do
         it 'should respond with a status 200' do
@@ -141,6 +141,7 @@ context 'Country TEST' do
         end
       end # AS JSON
     end
+  end
 
   describe "GET show" do
 

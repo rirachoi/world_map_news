@@ -6,11 +6,11 @@ class CategoriesController < ApplicationController
       format.json { render json: @categories; return }
     end
 
-    # @countries = Country.countries_list
-    # respond_to do |format|
-    #   format.html {}
-    #   format.json { render json: @countries; return }
-    # end
+    @countries = Country.countries_list
+    respond_to do |format|
+      format.html {}
+      format.json { render json: @countries; return }
+    end
     @user = @current_user
   end
 

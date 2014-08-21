@@ -6,10 +6,12 @@ $(document).ready(function() {
   var countryName;
   var cateApiId;
   var cateName;
+  var userCateApiId;
 
   var mapData;
   var searchData;
   var cateData;
+  var userMapData;
 
   var showTheWorldMap = function(){
     $('#vmap').vectorMap({
@@ -61,6 +63,11 @@ $(document).ready(function() {
       $('#' + countryCodeInMap)
           .prepend($('<h2>NEWS OF <span class="words">'
             + cateName.toUpperCase()+'</span> IN <span class="words">'
+            + countryName.toUpperCase() +'</span></h2>'));
+     } else if (userCateApiId){
+      $('#' + countryCodeInMap)
+          .prepend($('<h2>NEWS OF <span class="words">'
+            + userCateName.toUpperCase()+'</span> IN <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'));
      } else {
       $('#'+countryCodeInMap)
@@ -168,7 +175,7 @@ $(document).ready(function() {
 
 
 ///////// Clicked the map
-  $('#vmap').on('click', function(event){
+  $('.pages-index #vmap').on('click', function(event){
   //// before JSON
     event.preventDefault();
     $('#article_container > div').empty();
@@ -270,5 +277,71 @@ $(document).ready(function() {
 
     });
   }); // end of categories menu click
+
+
+////// Clicked MY NEWS CATEGORIES
+  $('#user_category div').on('click', function(event){
+    userCateApiId = event.target.className.split('_').shift();
+    userCateName = event.target.className.split('_').pop();
+    console.log(userCateApiId, userCateName);
+
+    $('.users-mynews #vmap').fadeIn(1000);
+    $('#article_container > div').empty();
+  });
+
+
+
+////// Clicked MY NEWS MAP
+  $('.users-mynews #vmap').on('click', function(event){
+    event.preventDefault();
+    $('#article_container > div').empty();
+    countryCodeInMap = event.target.id.split('_').pop();
+    userKeyword = '';
+    cateName = '';
+
+    $('#msg_no_result').hide();
+    if (countryCodeInMap === "" || undefined ){
+      alert('Please Select A Country On The Map');
+      $('#keyword').hide();
+      $('.btn_search').hide();
+      $('#article_container > div').empty();
+    } else {
+      $('.loading_animation').fadeIn(1000);
+      $('#article_container > div').hide();
+      $('#article_container > div').empty();
+      $('#'+countryCodeInMap).show();
+      $('#keyword').fadeIn(1000);
+      $('.btn_search').fadeIn(1000);
+
+      var $this = $('#'+countryCodeInMap);
+      countryName = $this.attr('class').split(',').shift();
+      console.log(countryName)
+    }
+
+     //// getting JSON
+    $.getJSON(
+      'http://api.feedzilla.com/v1/categories/'
+      + userCateApiId
+      +'/articles/search.json?q='
+      + countryName
+    ).done(function(data){
+
+      userMapData = data;
+
+      $('.loading_animation').fadeOut(1000);
+      $('.search_bar').fadeIn(1000);
+      $('#extruderLeft').fadeIn(1000); //categories
+
+      createArticlesBox(userMapData);
+
+      $('#keyword').val("");
+
+      var $containerHeight = $('#vmap').height();
+      $("html, body").animate({ scrollTop: ($containerHeight / 2) + 200 }, 'slow');
+
+    });//end of get JSON
+
+  }); //end of mynews map
+
 
 });

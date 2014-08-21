@@ -1,12 +1,13 @@
 
 <h1><%= @user.username %>'s NEWS</h1>
-<h3>Your Categories :
-  <% @categories.each do |cate| %>
-    <%= cate.title %>
-  <% end %>
-</h3>
 
-<div id="vmap" class="vmap-mynews" style="width: 960px; height: 500px;"></div>
+<div id='user_category'>
+  <% @categories.each do |cate| %>
+    <div class="<%= cate.api_id%>_<%= cate.title %>"><%= cate.title %></div>
+  <% end %>
+</div>
+
+<div id="vmap" class="vmap-mynews" style="width: 960px; height: 500px; display:none;"></div>
 
 <div class="search_bar">
   <%= form_tag("/pages", remote: true, method: 'get') do %>

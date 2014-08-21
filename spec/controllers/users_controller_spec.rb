@@ -378,4 +378,43 @@ RSpec.describe UsersController, :type => :controller do
 
   end # DELETE
 
+  describe "GET mynews" do
+    before do
+       @user1 = User.create!(
+        username: "user1",
+        email: "user1@test.com",
+        native_country: "Australia",
+        password:'user1-aus',
+        password_confirmation: 'user1-aus'
+      )
+       @user1.categories << Category.find_by(title: 'Art')
+       @user1.save
+
+       get :mynews, { :id => @user1.id }, { user_id: @user1.id }
+    end
+
+    describe 'The user logged in' do
+      # it "returns http success" do
+      #     expect(response).to be_success
+      # end
+
+      it 'should assign the requested user as @user' do
+        expect(assigns(session[:user_id])).to eq(@user1_id)
+      end
+
+      it 'should assgin @countries' do
+        expect(assigns(:countries)).to eq(Country.countries_list)
+      end
+
+      it 'should assgin User\'s categories as @categories' do
+        expect(assigns(:categories)).to eq(Category.find_by(title: 'Art'))
+      end
+    end
+
+    describe 'The user dosen\'t log in' do
+      it 'should redirect to root path' do
+        expect(response).to redirect_to(pages_path)
+      end
+    end
+  end
 end
