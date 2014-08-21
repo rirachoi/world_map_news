@@ -1,4 +1,4 @@
-<h1><%= @user.username %>'s Details</h1>
+<h1><span><%= @user.username %></span>'s Details</h1>
 
 <div class='user_info'>
   <p>Name : <%= @user.username %></p>
@@ -8,17 +8,17 @@
       <%= c[:name] if c[:code].downcase == @user.native_country %>
     <% end %>
   </p>
+   <%= link_to('Edit Your Details', edit_user_path(@user), class: "link-edit")%>
+</div>
 
+<div class="users_mynews_list">
+  <h3>My News Categories List</h3>
   <ul>
     <% @user.categories.each do |cate|%>
     <li><%= cate.title %></li>
     <% end %>
   </ul>
-
-  <div class='show_options'>
-    <%= link_to('Edit Your Details', edit_user_path(@user) )%>
-    <%= link_to('Manage Your News', categories_path)%>
-  </div>
+  <%= link_to('Edit My News', categories_path, class: "link-cate")%>
 </div>
 
 <div id="vmap" style="width: 960px; height: 500px; display:none;"></div>

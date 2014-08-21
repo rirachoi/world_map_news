@@ -178,7 +178,7 @@ $(document).ready(function() {
 
   showTheWorldMap();
   categoriesMenu();
-  $('.page_index #msg').text('SELECT A COUNTRY ON THE MAP');
+
 ///////// Clicked the map
   $('.pages-index #vmap').on('click', function(event){
   //// before JSON

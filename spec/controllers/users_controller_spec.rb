@@ -134,7 +134,7 @@ RSpec.describe UsersController, :type => :controller do
       end
     end # with vaild data
 
-    describe 'with INVAILD data' do
+    describe 'with INVALID data' do
       before do
         post :create, user: { username: "" }
       end
