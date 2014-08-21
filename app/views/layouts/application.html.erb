@@ -18,7 +18,9 @@
     <% end %>
     </div>
 
-    <div id="blank"></div>
+    <div id="blank" class="<%= params[:controller] %>_<%= params[:action] %>" >
+      <h2 id='msg'></h2>
+    </div>
 
     <%= render :partial => 'pages/categories_menu' if @categories %>
 

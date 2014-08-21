@@ -38,7 +38,25 @@ footer{
 }
 
 #blank{
+  margin-top: 40px;
   height:70px;
+  text-align: center;
+}
+
+.users_mynews #msg{
+  font-size: 40px;
+  color:rgba(225, 225, 225, 0.08);
+  font-family: 'Trebuchet MS';
+  position: relative;
+  top: 35px;
+}
+
+.pages_index #msg{
+  font-size: 40px;
+  color:rgba(225, 225, 225, 0.08);
+  font-family: 'Trebuchet MS';
+  position: relative;
+  top: 20px;
 }
 
 #world_map_news{
@@ -77,7 +95,7 @@ footer{
   z-index: 1;
   position: absolute;
   left: 50%;
-  top: 400px;
+  top: 450px;
   margin-left: -100px;
 }
 
@@ -183,13 +201,13 @@ footer{
   margin: auto;
   text-align: center;
   font-size: 40px;
-  color: rgba(225, 20, 20, 0.6);
+  color: rgba(225, 220, 220, 0.6);
 
 }
 
 #msg_no_result span{
   font-size: 50px;
-  color: red;
+  color: rgb(137, 12, 12);
 }
 
 /************* nav ***************/

@@ -178,8 +178,7 @@ $(document).ready(function() {
 
   showTheWorldMap();
   categoriesMenu();
-
-
+  $('.page_index #msg').text('SELECT A COUNTRY ON THE MAP');
 ///////// Clicked the map
   $('.pages-index #vmap').on('click', function(event){
   //// before JSON
@@ -307,6 +306,7 @@ $(document).ready(function() {
     countryCodeInMap = event.target.id.split('_').pop();
     console.log(countryCodeInMap);
     $('#article_container > div').empty();
+
     userKeyword = '';
     cateName = '';
 
@@ -341,7 +341,7 @@ $(document).ready(function() {
 
       $('.loading_animation').fadeOut(1000);
       $('.search_bar').fadeIn(1000);
-      $('#extruderLeft').fadeIn(1000); //categories
+      //$('#extruderLeft').fadeIn(1000); //categories
 
       if (userMapData.articles.length === 0 || undefined){
         console.log('data is wrong');

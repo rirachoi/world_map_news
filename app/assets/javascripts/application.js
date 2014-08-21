@@ -69,6 +69,8 @@ $(function() {
   $('.login-new #vmap').hide();
   $('#extruderLeft').hide();
 
+  $('.pages_index #msg').text('SELECT A COUNTRY ON THE MAP');
+  $('.users_mynews #msg').text('SELECT A CATEGORY FOR A COUNTRY');
 
 });
 
