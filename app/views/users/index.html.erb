@@ -2,7 +2,7 @@
 
 <div class ='users_info'>
   <% @users.each do |user| %>
-    <p><%= user.username %> </p>
+    <h2><%= user.username %> </h2>
     <p>Email : <%= user.email%></p>
     <p class='show_options'><%= link_to("Delete", user_path(user.id), :data => { :confirm => 'Are you sure you want to delete this?', :method => :delete }) %></p>
    <% end %>

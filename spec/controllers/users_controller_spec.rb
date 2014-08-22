@@ -387,34 +387,62 @@ RSpec.describe UsersController, :type => :controller do
         password:'user1-aus',
         password_confirmation: 'user1-aus'
       )
-       @user1.categories << Category.find_by(title: 'Art')
+
+       @category = Category.create!(
+        title: 'Art',
+        api_id: 4 )
+
+       @user1.categories << Category.first
        @user1.save
 
        get :mynews, { :id => @user1.id }, { user_id: @user1.id }
     end
 
     describe 'The user logged in' do
-      # it "returns http success" do
-      #     expect(response).to be_success
-      # end
+      it "returns http success" do
+          expect(response).to be_success
+      end
 
       it 'should assign the requested user as @user' do
         expect(assigns(session[:user_id])).to eq(@user1_id)
       end
 
       it 'should assgin @countries' do
-        expect(assigns(:countries)).to eq(Country.countries_list)
+        expect((assigns(:countries)).first).to eq((Country.countries_list).first)
       end
 
       it 'should assgin User\'s categories as @categories' do
-        expect(assigns(:categories)).to eq(Category.find_by(title: 'Art'))
+        expect(assigns(:categories)).to eq(@user1.categories)
       end
     end
 
     describe 'The user dosen\'t log in' do
-      it 'should redirect to root path' do
-        expect(response).to redirect_to(pages_path)
+      before do
+       @user2 = User.create!(
+        username: "user2",
+        email: "user2@test.com",
+        native_country: "Australia",
+        password:'user2-aus',
+        password_confirmation: 'user2-aus'
+      )
+
+       # @category = Category.create!(
+       #  title: 'Art',
+       #  api_id: 4 )
+
+       # @user2.categories << Category.first
+       # @user2.save
+
+       get :mynews, { :id => @user2.id }
       end
+
+      it "returns http success" do
+          expect(response).to be_success
+      end
+
+      # it 'should redirect to root path' do
+      #   expect(response).to redirect_to(pages_path)
+      # end
     end
   end
 end
