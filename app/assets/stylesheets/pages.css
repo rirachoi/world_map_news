@@ -210,6 +210,18 @@ footer{
   color: rgb(137, 12, 12);
 }
 
+.back_top {
+  display: none;
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  right: 5%;
+  bottom: 0;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+
 /************* nav ***************/
 
 

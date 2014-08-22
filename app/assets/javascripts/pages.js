@@ -179,10 +179,19 @@ $(document).ready(function() {
   showTheWorldMap();
   categoriesMenu();
 
+  $('.back_top').on('click', function(event){
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 'slow');
+    $('.btn_top').css({'transform':'rotateZ(360deg)'});
+
+  });
+
+
 ///////// Clicked the map
   $('.pages-index #vmap').on('click', function(event){
   //// before JSON
     event.preventDefault();
+    $('.pages-index .back_top').fadeIn(1000);
     $('#article_container > div').empty();
     countryCodeInMap = event.target.id.split('_').pop();
     userKeyword = '';
@@ -303,6 +312,7 @@ $(document).ready(function() {
 ////// Clicked MY NEWS MAP
   $('.users-mynews #vmap').on('click', function(event){
     event.preventDefault();
+    $('.users-mynews .back_top').fadeIn(1000);
     countryCodeInMap = event.target.id.split('_').pop();
     console.log(countryCodeInMap);
     $('#article_container > div').empty();
