@@ -1,5 +1,4 @@
 
-
 $(document).ready(function() {
   var userKeyword;
   var countryCodeInMap;
@@ -183,7 +182,6 @@ $(document).ready(function() {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, 'slow');
     $('.btn_top').css({'transform':'rotateZ(360deg)'});
-
   });
 
 
