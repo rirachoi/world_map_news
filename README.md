@@ -13,7 +13,7 @@ As an added extra, it incorprates international news feeds which enable the user
 World Map News
 ======
 
-* [Feedzilia-json-api] - JSON based API providing a set of world news feed
+* [Feedzilla-json-api] - JSON based API providing a set of world news feed
 * [Sublime Text] - awesome web-based text editor
 * [RSpec-gem] - a testing tool for the Ruby programming language
 * [Simplecov-gem] - a powerful configuration library and automatic merging of coverage across test suites
@@ -50,7 +50,7 @@ $ git clone https://github.com/rirachoi/world_map_news.git worldmapnews/
 
 **Free Software, Hell Yeah!**
 
-[Feedzilla-json-api]:https://code.google.com/p/feedzilla-api/
+[Feedzila-json-api]:https://code.google.com/p/feedzilla-api/
 [Sublime Text]:http://www.sublimetext.com/
 [RSpec-gem]:http://rspec.info/
 [Simplecov-gem]:https://rubygems.org/gems/simplecov
