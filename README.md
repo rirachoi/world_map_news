@@ -6,7 +6,7 @@ This is an international news application with the world map
 As an added extra, it incorprates international news feeds which enable the user to :
 
 - Search news based on geographical location
-- Optimize search results based on keywords or categories in the Country selected
+- Optimize search results based on keywords or categories in the country selected
 - Save search preferences
 
 
@@ -15,8 +15,8 @@ World Map News
 
 * [Feedzilia-json-api] - JSON based API providing a set of world news feed
 * [Sublime Text] - awesome web-based text editor
-* [RSpec] - a testing tool for the Ruby programming language
-* [Simplecov-ruby-gem] - a powerful configuration library and automatic merging of coverage across test suites
+* [RSpec-gem] - a testing tool for the Ruby programming language
+* [Simplecov-gem] - a powerful configuration library and automatic merging of coverage across test suites
 
 Project Demo
 =========
@@ -50,7 +50,7 @@ $ git clone https://github.com/rirachoi/world_map_news.git worldmapnews/
 
 **Free Software, Hell Yeah!**
 
-[Feedzilla]:https://code.google.com/p/feedzilla-api/
+[Feedzilla-json-api]:https://code.google.com/p/feedzilla-api/
 [Sublime Text]:http://www.sublimetext.com/
-[RSpec]:http://rspec.info/
-[Simplecov]:https://rubygems.org/gems/simplecov
+[RSpec-gem]:http://rspec.info/
+[Simplecov-gem]:https://rubygems.org/gems/simplecov
