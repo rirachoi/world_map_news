@@ -50,7 +50,7 @@ $ git clone https://github.com/rirachoi/world_map_news.git worldmapnews/
 
 **Free Software, Hell Yeah!**
 
-[Feedzila-json-api]:https://code.google.com/p/feedzilla-api/
+[Feedzilla-json-api]:https://code.google.com/p/feedzilla-api/
 [Sublime Text]:http://www.sublimetext.com/
 [RSpec-gem]:http://rspec.info/
 [Simplecov-gem]:https://rubygems.org/gems/simplecov
