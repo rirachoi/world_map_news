@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find params[:id]
     unless @user.id == @current_user.id
-      redirect_to root_path
+      redirect_to pages_path
     end
   end
 
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def show
     @user = @current_user
     if @user.nil?
-      redirect_to root_path
+      redirect_to pages_path
     end
     @user = User.find params[:id]
     respond_to do |format|
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   def mynews
     @user = @current_user
     unless @user.id == @current_user.id
-      redirect_to root_path
+      redirect_to pages_path
     end
 
     @categories = @user.categories

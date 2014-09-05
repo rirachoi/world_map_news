@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-08-29T10:57:03+10:00">2014-08-29T10:57:03+10:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-09-05T14:55:57+10:00">2014-09-05T14:55:57+10:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">94.79%</span></span>
+    (<span class="covered_percent"><span class="green">94.93%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.46
+         2.44
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>56</b> files in total.
-    <b>537</b> relevant lines. 
-    <span class="green"><b>509</b> lines covered</span> and
+    <b>552</b> relevant lines. 
+    <span class="green"><b>524</b> lines covered</span> and
     <span class="red"><b>28</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,7 +57,7 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>23.1</td>
+        <td>23.9</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>48</td>
         <td>42</td>
         <td>6</td>
-        <td>4.4</td>
+        <td>4.6</td>
       </tr>
       
       <tr>
@@ -187,7 +187,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>7.0</td>
+        <td>6.8</td>
       </tr>
       
       <tr>
@@ -393,11 +393,11 @@
       <tr>
         <td class="strong"><a href="#5aefa223359e6bd67439eb6f6c9cf0ffa9163b01" class="src_link" title="spec/controllers/users_controller_spec.rb">spec/controllers/users_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>448</td>
-        <td>163</td>
-        <td>163</td>
+        <td>496</td>
+        <td>178</td>
+        <td>178</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -682,14 +682,14 @@
           <code class="ruby">  def authenticate_user</code>
         </li>
       
-        <li class="covered" data-hits="86" data-linenumber="8">
-          <span class="hits">86</span>
+        <li class="covered" data-hits="89" data-linenumber="8">
+          <span class="hits">89</span>
           
           <code class="ruby">    if session[:user_id].present? #instead of comparing .nil? and == &quot;&quot;. only for rails</code>
         </li>
       
-        <li class="covered" data-hits="41" data-linenumber="9">
-          <span class="hits">41</span>
+        <li class="covered" data-hits="42" data-linenumber="9">
+          <span class="hits">42</span>
           
           <code class="ruby">      @current_user = User.where(:id =&gt; session[:user_id]).first # .find throws fatal error if nothing, .where will return nil if nothing else returns array</code>
         </li>
@@ -706,14 +706,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="86" data-linenumber="12">
-          <span class="hits">86</span>
+        <li class="covered" data-hits="89" data-linenumber="12">
+          <span class="hits">89</span>
           
           <code class="ruby">    if @current_user.nil?</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="13">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="49" data-linenumber="13">
+          <span class="hits">49</span>
           
           <code class="ruby">      session[:user_id] = nil</code>
         </li>
@@ -742,14 +742,14 @@
           <code class="ruby">  def check_if_logged_in</code>
         </li>
       
-        <li class="covered" data-hits="41" data-linenumber="18">
-          <span class="hits">41</span>
+        <li class="covered" data-hits="42" data-linenumber="18">
+          <span class="hits">42</span>
           
           <code class="ruby">    if @current_user.nil?</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="19">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="19">
+          <span class="hits">5</span>
           
           <code class="ruby">      redirect_to pages_path</code>
         </li>
@@ -1486,14 +1486,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="18">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="18">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user = User.create users_params</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="19">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="7" data-linenumber="19">
+          <span class="hits">7</span>
           
           <code class="ruby">    if @user.save</code>
         </li>
@@ -1522,8 +1522,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="24">
+          <span class="hits">4</span>
           
           <code class="ruby">      redirect_to new_user_path</code>
         </li>
@@ -1567,7 +1567,7 @@
         <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">      redirect_to root_path</code>
+          <code class="ruby">      redirect_to pages_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -1594,20 +1594,20 @@
           <code class="ruby">  def update</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="36">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="36">
+          <span class="hits">6</span>
           
           <code class="ruby">    @user = User.find params[:id]</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="37">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="37">
+          <span class="hits">6</span>
           
           <code class="ruby">    @user.update users_params</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="38">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="38">
+          <span class="hits">6</span>
           
           <code class="ruby">    if @user.save</code>
         </li>
@@ -1624,8 +1624,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="41">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="41">
+          <span class="hits">3</span>
           
           <code class="ruby">      redirect_to edit_user_path</code>
         </li>
@@ -1669,7 +1669,7 @@
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">      redirect_to root_path</code>
+          <code class="ruby">      redirect_to pages_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
@@ -1726,14 +1726,14 @@
           <code class="ruby">  def mynews</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="58">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="58">
+          <span class="hits">5</span>
           
           <code class="ruby">    @user = @current_user</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="59">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="59">
+          <span class="hits">5</span>
           
           <code class="ruby">    unless @user.id == @current_user.id</code>
         </li>
@@ -1741,7 +1741,7 @@
         <li class="missed" data-hits="0" data-linenumber="60">
           
           
-          <code class="ruby">      redirect_to root_path</code>
+          <code class="ruby">      redirect_to pages_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
@@ -1756,14 +1756,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="63">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="63">
+          <span class="hits">5</span>
           
           <code class="ruby">    @categories = @user.categories</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="64">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="5" data-linenumber="64">
+          <span class="hits">5</span>
           
           <code class="ruby">    @countries = Country.countries_list</code>
         </li>
@@ -1840,8 +1840,8 @@
           <code class="ruby">  def users_params</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="77">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="13" data-linenumber="77">
+          <span class="hits">13</span>
           
           <code class="ruby">    params.require(:user).permit(:username, :email, :native_country, :password, :password_confirmation)</code>
         </li>
@@ -2488,8 +2488,8 @@
           <code class="ruby">  def self.countries_list</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="35">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="24" data-linenumber="35">
+          <span class="hits">24</span>
           
           <code class="ruby">    countries_list = [</code>
         </li>
@@ -10837,8 +10837,8 @@
     <h3>spec/controllers/users_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>163</b> relevant lines. 
-      <span class="green"><b>163</b> lines covered</span> and
+      <b>178</b> relevant lines. 
+      <span class="green"><b>178</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -10876,160 +10876,160 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">  context &#39;Log in as an ADMIN&#39; do</code>
+          
+          <code class="ruby"># Users Index will be shown only to Admin.</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    describe &quot;GET index&quot; do</code>
+          <code class="ruby">  context &#39;Log in as an ADMIN&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">    describe &quot;GET index&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      # Create Users and an admin</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="11">
           <span class="hits">7</span>
           
           <code class="ruby">        3.times do |i|</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="11">
+        <li class="covered" data-hits="21" data-linenumber="12">
           <span class="hits">21</span>
           
           <code class="ruby">          User.create!(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">            username: &quot;User #{ i }&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">            email: &quot;user#{i}@test.com&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">            native_country: &quot;Australia&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">            password:&#39;user#{i}&#39;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">            password_confirmation: &#39;user#{i}&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">            )</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="20">
+        <li class="covered" data-hits="7" data-linenumber="21">
           <span class="hits">7</span>
           
           <code class="ruby">        @admin = User.create!(</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">          username: &quot;admin&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">          email: &quot;admin@test.com&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">          native_country: &quot;Australia&quot;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">          admin: true,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">          password:&#39;admin-aus&#39;,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">          password_confirmation: &#39;admin-aus&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">        )</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="29">
-          <span class="hits">7</span>
-          
-          <code class="ruby">        get :index, nil, { user_id: @admin.id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        # index url does not need to get id so it is nil.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="7" data-linenumber="31">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        get :index, nil , { user_id: @admin.id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -11038,10 +11038,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="33">
           
-          <code class="ruby">      describe &#39;as HTML&#39; do</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -11053,361 +11053,361 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &#39;should respond with a status 200&#39; do</code>
+          <code class="ruby">      describe &#39;as HTML&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="36">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to be_success</code>
+          <code class="ruby">        it &#39;should respond with a status 200&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response.status).to eq(200)</code>
+          <code class="ruby">          expect(response).to be_success</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(response.status).to eq(200)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="40">
           
-          <code class="ruby">        it &#39;should set an instance variable with the users&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(assigns(:users)).to be</code>
+          <code class="ruby">        it &#39;should set an instance variable with the users&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(assigns(:users).length).to eq(4)</code>
+          <code class="ruby">          expect(assigns(:users)).to be</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(assigns(:users)).to eq(User.all)</code>
+          <code class="ruby">          expect(assigns(:users).length).to eq(4)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(assigns(:users)).to eq(User.all)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="46">
           
-          <code class="ruby">        it &#39;should render the user index&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to render_template(&#39;index&#39;)</code>
+          <code class="ruby">        it &#39;should render the user index&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(response).to render_template(&#39;index&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
           
           
-          <code class="ruby">      end # AS HTML</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end # AS HTML</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="52">
           
-          <code class="ruby">      describe &#39;as JSON&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
+          <code class="ruby">      describe &#39;as JSON&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
           <code class="ruby">        before do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="54">
+        <li class="covered" data-hits="4" data-linenumber="55">
           <span class="hits">4</span>
           
           <code class="ruby">          get :index, :format =&gt; :json</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="57">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="57">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        it &#39;should respond with a status 200&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="58">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to be_success</code>
+          <code class="ruby">        it &#39;should respond with a status 200&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response.status).to eq(200)</code>
+          <code class="ruby">          expect(response).to be_success</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(response.status).to eq(200)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="62">
           
-          <code class="ruby">        it &#39;should give content type as JSON&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response.content_type).to eq(&#39;application/json&#39;)</code>
+          <code class="ruby">        it &#39;should give content type as JSON&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(response.content_type).to eq(&#39;application/json&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
           <code class="ruby">        it &#39;should parse as valid JSON&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="67">
+        <li class="covered" data-hits="2" data-linenumber="68">
           <span class="hits">2</span>
           
           <code class="ruby">          expect(lambda { JSON.parse(response.body) }).to_not raise_error</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="69">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        it &#39;should have the name of user in the JSON&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
-          <code class="ruby">          users = JSON.parse(response.body)</code>
+          <code class="ruby">        it &#39;should have the name of user in the JSON&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(users.length).to eq(4)</code>
+          <code class="ruby">          users = JSON.parse(response.body)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(users.first[&quot;username&quot;]).to eq(&quot;User 0&quot;)</code>
+          <code class="ruby">          expect(users.length).to eq(4)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(users.first[&quot;email&quot;]).to eq(&#39;user0@test.com&#39;)</code>
+          <code class="ruby">          expect(users.first[&quot;username&quot;]).to eq(&quot;User 0&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(users.first[&quot;native_country&quot;]).to eq(&#39;Australia&#39;)</code>
+          <code class="ruby">          expect(users.first[&quot;email&quot;]).to eq(&#39;user0@test.com&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(users.first[&quot;native_country&quot;]).to eq(&#39;Australia&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">      end # AS JSON</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end # AS JSON</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">    end # GET INDEX AS AN ADMIN</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end # GET INDEX AS AN ADMIN</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="83">
           
-          <code class="ruby">  context &#39;Log in as an USER&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="83">
-          <span class="hits">1</span>
           
-          <code class="ruby">    before do</code>
+          <code class="ruby">  #When a user who is not an admin tried to see index page</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="84">
           <span class="hits">1</span>
           
-          <code class="ruby">      @user = User.create!(</code>
+          <code class="ruby">  context &#39;Log in as an USER&#39; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">        username: &quot;user1&quot;,</code>
+          <code class="ruby">    #Create a single user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">    before do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">      @user = User.create!(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
           
           
-          <code class="ruby">        admin: false,</code>
+          <code class="ruby">        username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
           
           
-          <code class="ruby">        password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">        email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="90">
           
           
-          <code class="ruby">        password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby">      )</code>
+          <code class="ruby">        admin: false,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        password:&#39;user1-aus&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="93">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="93">
           
-          <code class="ruby">      get :index, nil, {user_id: @user.id}</code>
+          
+          <code class="ruby">        password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
@@ -11419,211 +11419,211 @@
         <li class="covered" data-hits="1" data-linenumber="96">
           <span class="hits">1</span>
           
+          <code class="ruby">      get :index, nil, {user_id: @user.id}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
+          
           <code class="ruby">    describe &#39;GET index&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="97">
+        <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
           <code class="ruby">      it &#39;should redirect to root path&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="98">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">        expect(response).to redirect_to(root_path)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="99">
+        <li class="never" data-hits="" data-linenumber="102">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="never" data-hits="" data-linenumber="103">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="101">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">  end # GET INDEX AS AN USER</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="103">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;GET new&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="104">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;returns http success&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="106">
           <span class="hits">1</span>
           
+          <code class="ruby">  describe &quot;GET new&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="107">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;returns http success&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="108">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      get :new</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
+          
           <code class="ruby">      expect(response).to be_success</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="109">
-          
-          
-          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">
           
           
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="111">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="112">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="111">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;POST /users/&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="112">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    describe &quot;with VAILD data&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="113">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  ####### CREATE A NEW USER - It was challenging..but I made it yay!!</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="114">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">  describe &quot;POST /users/&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="115">
+          
+          
+          <code class="ruby">    # When user correctly filled all personal data.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="116">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &quot;with VALID data&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="117">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      describe &quot;When the user saved&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="118">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        before do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="119">
           <span class="hits">3</span>
           
-          <code class="ruby">        post :create, user:{</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="116">
-          
-          
-          <code class="ruby">          username: &quot;user1&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="117">
-          
-          
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="118">
-          
-          
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="119">
-          
-          
-          <code class="ruby">          password:&#39;user1_aus&#39;,</code>
+          <code class="ruby">          post :create, user:{</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="120">
           
           
-          <code class="ruby">          password_confirmation: &#39;user1_aus&#39;</code>
+          <code class="ruby">            username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="121">
           
           
-          <code class="ruby">          }</code>
+          <code class="ruby">            email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="122">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">            native_country: &quot;Australia&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="123">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="123">
           
-          <code class="ruby">      it &#39;automatically log the user in&#39; do</code>
+          
+          <code class="ruby">            password:&#39;user1_aus&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="124">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="124">
           
-          <code class="ruby">        expect(session[:user_id]).to eq(User.first.id)</code>
+          
+          <code class="ruby">            password_confirmation: &#39;user1_aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="125">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">          }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="126">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="127">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="127">
           
-          <code class="ruby">      it &#39;should redirect to pages&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="128">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response.status).to eq(302)</code>
+          <code class="ruby">        it &#39;should increase the number of User&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="129">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response).to redirect_to( pages_path )</code>
+          <code class="ruby">          expect(User.count).to eq(1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="130">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="131">
@@ -11635,49 +11635,49 @@
         <li class="covered" data-hits="1" data-linenumber="132">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;should increase the number of User&#39; do</code>
+          <code class="ruby">        it &#39;automatically log the user in&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="133">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(User.count).to eq(1)</code>
+          <code class="ruby">          expect(session[:user_id]).to eq(User.first.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="134">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="135">
           
           
-          <code class="ruby">    end # with vaild data</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="136">
+        <li class="covered" data-hits="1" data-linenumber="136">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        it &#39;should redirect to pages&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="137">
           <span class="hits">1</span>
           
-          <code class="ruby">    describe &#39;with INVALID data&#39; do</code>
+          <code class="ruby">          expect(response.status).to eq(302)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="138">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">          expect(response).to redirect_to( pages_path )</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="139">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="139">
           
-          <code class="ruby">        post :create, user: { username: &quot;&quot; }</code>
+          
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="140">
@@ -11695,151 +11695,151 @@
         <li class="covered" data-hits="1" data-linenumber="142">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;should redirect to the new template&#39; do</code>
+          <code class="ruby">      describe &quot;When the user didn\&#39;t save&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="143">
           
-          <code class="ruby">        expect(response.status).to eq(302)</code>
+          
+          <code class="ruby">        # user is not saved because the data is invalid</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="144">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response).to redirect_to(new_user_path )</code>
+          <code class="ruby">        before do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="145">
+        <li class="covered" data-hits="2" data-linenumber="145">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">          post :create, user:{</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="146">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            username: &quot;user1&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="147">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="147">
           
-          <code class="ruby">      it &#39;should not increase the number of User&#39; do</code>
+          
+          <code class="ruby">            email: &quot;user1@test.com&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="148">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="148">
           
-          <code class="ruby">        expect(User.count).to eq(0)</code>
+          
+          <code class="ruby">            native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="149">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">            password:&#39;user1_aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="150">
           
           
-          <code class="ruby">    end # with invaild data</code>
+          <code class="ruby">            password_confirmation: &#39;user2_aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="151">
           
           
-          <code class="ruby">  end # POST USERS</code>
+          <code class="ruby">          }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="152">
           
           
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="153">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="153">
+        <li class="covered" data-hits="1" data-linenumber="154">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;GET show&quot; do</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="154">
-          
-          
-          <code class="ruby"></code>
+          <code class="ruby">        it &#39;shouldn\&#39;t increase the number of User&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="155">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;When user log in&#39; do</code>
+          <code class="ruby">          expect(User.count).to eq(0)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="156">
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">        it &quot;should redirect to new_user_path&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="157">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="1" data-linenumber="159">
+          <span class="hits">1</span>
           
-          <code class="ruby">        @user1 = User.create!(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="158">
-          
-          
-          <code class="ruby">          username: &quot;user1&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="159">
-          
-          
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">          expect(response).to redirect_to( new_user_path )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="160">
           
           
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="161">
           
           
-          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="162">
           
           
-          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">    end # with VALID data</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="163">
           
           
-          <code class="ruby">        )</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="164">
-          
-          
-          <code class="ruby">        #sign_in(@user1)</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="165">
-          <span class="hits">7</span>
-          
-          <code class="ruby">        get :show, { :id =&gt; @user1.id }, { user_id: @user1.id }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="166">
-          
-          
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="164">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;with INVALID data&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="165">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="166">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        post :create, user: { username: &quot;&quot; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="167">
@@ -11857,25 +11857,25 @@
         <li class="covered" data-hits="1" data-linenumber="169">
           <span class="hits">1</span>
           
-          <code class="ruby">      describe &quot;as HTML&quot; do</code>
+          <code class="ruby">      it &#39;should redirect to the new template&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="170">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &quot;returns http success&quot; do</code>
+          <code class="ruby">        expect(response.status).to eq(302)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="171">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response).to be_success</code>
+          <code class="ruby">        expect(response).to redirect_to(new_user_path )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="172">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="173">
@@ -11887,49 +11887,49 @@
         <li class="covered" data-hits="1" data-linenumber="174">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &#39;should assign the requested user as @user&#39; do</code>
+          <code class="ruby">      it &#39;should not increase the number of User&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="175">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(assigns(:user)).to eq(@user1)</code>
+          <code class="ruby">        expect(User.count).to eq(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="176">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="177">
           
           
+          <code class="ruby">    end # with INVALID data</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="178">
+          
+          
+          <code class="ruby">  end # POST USERS</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="179">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="178">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        it &#39;should render the user show&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="179">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          expect(response).to render_template(&#39;show&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="180">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">  # User&#39;s show page</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="181">
+        <li class="covered" data-hits="1" data-linenumber="181">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end # AS HTML</code>
+          <code class="ruby">  describe &quot;GET show&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="182">
@@ -11941,55 +11941,55 @@
         <li class="covered" data-hits="1" data-linenumber="183">
           <span class="hits">1</span>
           
-          <code class="ruby">      describe &quot;as JSON&quot; do</code>
+          <code class="ruby">    context &#39;When user logs in&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="184">
           <span class="hits">1</span>
           
-          <code class="ruby">        before do</code>
+          <code class="ruby">      before do</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="185">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="7" data-linenumber="185">
+          <span class="hits">7</span>
           
-          <code class="ruby">          get :show, {:id =&gt; @user1.id, :format =&gt; :json }</code>
+          <code class="ruby">        @user1 = User.create!(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="186">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">          username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="187">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="188">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="188">
           
-          <code class="ruby">        it &#39;should respond with a status 200&#39; do</code>
+          
+          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="189">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="189">
           
-          <code class="ruby">          expect(response).to be_success</code>
+          
+          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="190">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="190">
           
-          <code class="ruby">          expect(response.status).to eq(200)</code>
+          
+          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="191">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">        )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="192">
@@ -11998,22 +11998,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="193">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="7" data-linenumber="193">
+          <span class="hits">7</span>
           
-          <code class="ruby">        it &#39;should give content type as JSON&#39; do</code>
+          <code class="ruby">        get :show, { :id =&gt; @user1.id }, { user_id: @user1.id }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="194">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="194">
           
-          <code class="ruby">          expect(response.content_type).to eq(&#39;application/json&#39;)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="195">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="196">
@@ -12025,79 +12025,79 @@
         <li class="covered" data-hits="1" data-linenumber="197">
           <span class="hits">1</span>
           
-          <code class="ruby">        it &#39;should parse as valid JSON&#39; do</code>
+          <code class="ruby">      describe &quot;as HTML&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="198">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="198">
+          <span class="hits">1</span>
           
-          <code class="ruby">          expect(lambda { JSON.parse(response.body) }).to_not raise_error</code>
+          <code class="ruby">        it &quot;returns http success&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="199">
+        <li class="covered" data-hits="1" data-linenumber="199">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(response).to be_success</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="200">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="201">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="201">
           
-          <code class="ruby">        it &#39;should have the name of user in the JSON&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="202">
           <span class="hits">1</span>
           
-          <code class="ruby">          user = JSON.parse(response.body)</code>
+          <code class="ruby">        it &#39;should assign the requested user as @user&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="203">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(response.body).to eq(@user1.to_json)</code>
+          <code class="ruby">          expect(assigns(:user)).to eq(@user1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="204">
           
           
-          <code class="ruby">          # this is same as,</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="205">
           
           
-          <code class="ruby">          ## expect(user[&quot;username&quot;]).to eq(&quot;user1&quot;)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="206">
+        <li class="covered" data-hits="1" data-linenumber="206">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          ## expect(user[&quot;email&quot;]).to eq(&#39;user1@test.com&#39;)</code>
+          <code class="ruby">        it &#39;should render the user show&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="207">
+        <li class="covered" data-hits="1" data-linenumber="207">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          ## expect(user[&quot;native_country&quot;]).to eq(&#39;Australia&#39;)</code>
+          <code class="ruby">          expect(response).to render_template(&#39;show&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="208">
           
           
-          <code class="ruby">          ## expect(user[&quot;native_language&quot;]).to eq(&#39;English&#39;)</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="209">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">      end # AS HTML</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="210">
@@ -12106,310 +12106,310 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="211">
+        <li class="covered" data-hits="1" data-linenumber="211">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end # AS JSON</code>
+          <code class="ruby">      describe &quot;as JSON&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="212">
+        <li class="covered" data-hits="1" data-linenumber="212">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end # GET SHOW / USER.PRESENT?</code>
+          <code class="ruby">        before do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="213">
+        <li class="covered" data-hits="4" data-linenumber="213">
+          <span class="hits">4</span>
+          
+          <code class="ruby">          get :show, {:id =&gt; @user1.id, :format =&gt; :json }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="214">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="215">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="214">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &#39;When the user is NILL&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="215">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      before do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="216">
           <span class="hits">1</span>
           
-          <code class="ruby">        @user1 = User.create!(</code>
+          <code class="ruby">        it &#39;should respond with a status 200&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="217">
+        <li class="covered" data-hits="1" data-linenumber="217">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          username: &quot;user1&quot;,</code>
+          <code class="ruby">          expect(response).to be_success</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="218">
+        <li class="covered" data-hits="1" data-linenumber="218">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">          expect(response.status).to eq(200)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="219">
           
           
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="220">
           
           
-          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="221">
+        <li class="covered" data-hits="1" data-linenumber="221">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">        it &#39;should give content type as JSON&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="222">
+        <li class="covered" data-hits="1" data-linenumber="222">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        )</code>
+          <code class="ruby">          expect(response.content_type).to eq(&#39;application/json&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="223">
           
           
-          <code class="ruby">        #sign_in(@user1)</code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="224">
+        <li class="never" data-hits="" data-linenumber="224">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="225">
           <span class="hits">1</span>
           
-          <code class="ruby">        get :show, { id: @user1.id }, {user_id: 1222}</code>
+          <code class="ruby">        it &#39;should parse as valid JSON&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="225">
+        <li class="covered" data-hits="2" data-linenumber="226">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">        # this means the user is not loged in! no current user id</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="226">
-          
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">          expect(lambda { JSON.parse(response.body) }).to_not raise_error</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="227">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="228">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="228">
           
-          <code class="ruby">      it &#39;should redirect to root_path&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="229">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response).to redirect_to(pages_path)</code>
+          <code class="ruby">        it &#39;should have the name of user in the JSON&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="230">
+        <li class="covered" data-hits="1" data-linenumber="230">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">          user = JSON.parse(response.body)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="231">
+        <li class="covered" data-hits="1" data-linenumber="231">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end # GET SHOW / USER.NIL?</code>
+          <code class="ruby">          expect(response.body).to eq(@user1.to_json)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="232">
           
           
-          <code class="ruby">  end # GET SHOW</code>
+          <code class="ruby">          # this is same as,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="233">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          ## expect(user[&quot;username&quot;]).to eq(&quot;user1&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="234">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="234">
           
-          <code class="ruby">  describe &quot;GET edit&quot; do</code>
+          
+          <code class="ruby">          ## expect(user[&quot;email&quot;]).to eq(&#39;user1@test.com&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="235">
           
           
+          <code class="ruby">          ## expect(user[&quot;native_country&quot;]).to eq(&#39;Australia&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="236">
+          
+          
+          <code class="ruby">          ## expect(user[&quot;native_language&quot;]).to eq(&#39;English&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="237">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="238">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="236">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    context &#39;When the user\&#39;s id is same as current user\&#39;s id&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="237">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      before do</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="238">
-          <span class="hits">3</span>
-          
-          <code class="ruby">        @user1 = User.create!(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="239">
           
           
-          <code class="ruby">          username: &quot;user1&quot;,</code>
+          <code class="ruby">      end # AS JSON</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="240">
           
           
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">    end # GET SHOW / USER.PRESENT?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="241">
           
           
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="242">
           
           
-          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">    # access to the show page without loggin in</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="243">
+        <li class="covered" data-hits="1" data-linenumber="243">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">    context &#39;When the user doesn\&#39;t log in&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="244">
+        <li class="covered" data-hits="1" data-linenumber="244">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        )</code>
+          <code class="ruby">      before do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="245">
+        <li class="covered" data-hits="1" data-linenumber="245">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        @user1 = User.create!(</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="246">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="246">
           
-          <code class="ruby">        get :edit, { :id =&gt; @user1.id }, { user_id: @user1.id }</code>
+          
+          <code class="ruby">          username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="247">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="248">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="249">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="250">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="250">
           
-          <code class="ruby">      it &quot;returns http success&quot; do</code>
+          
+          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="251">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="251">
           
-          <code class="ruby">        expect(response).to be_success</code>
+          
+          <code class="ruby">        )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="252">
           
           
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="253">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="254">
+        <li class="covered" data-hits="1" data-linenumber="253">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;should assign the requested user as @user&#39; do</code>
+          <code class="ruby">        get :show, { id: @user1.id }, { user_id: nil}</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="255">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="254">
           
-          <code class="ruby">        expect(assigns(session[:user_id])).to eq(@user1_id)</code>
+          
+          <code class="ruby">        # this means the user doesn&#39;t log in! no current user id</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="255">
+          
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="256">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="257">
+        <li class="covered" data-hits="1" data-linenumber="257">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      it &#39;should redirect to pages_path&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="258">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &quot;should render the user edit&quot; do</code>
+          <code class="ruby">        expect(response).to redirect_to(pages_path)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="259">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(response).to render_template(&#39;edit&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="260">
+        <li class="never" data-hits="" data-linenumber="259">
           
           
           <code class="ruby">      end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="260">
+          
+          
+          <code class="ruby">    end # GET SHOW / USER.NIL?</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="261">
           
           
-          <code class="ruby">    end # GET EDIT / USER.ID === CURRENT_USER.ID</code>
+          <code class="ruby">  end # GET SHOW</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="262">
@@ -12421,67 +12421,67 @@
         <li class="covered" data-hits="1" data-linenumber="263">
           <span class="hits">1</span>
           
-          <code class="ruby">    context &#39;When the user\&#39;s id is NOT equal to current user\&#39;s id&#39; do</code>
+          <code class="ruby">  describe &quot;GET edit&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="264">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="264">
           
-          <code class="ruby">      before do</code>
+          
+          <code class="ruby">    # Access to Edit page when user loged in</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="265">
           <span class="hits">1</span>
           
+          <code class="ruby">    context &#39;When the user\&#39;s id is same as current user\&#39;s id&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="266">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="267">
+          <span class="hits">3</span>
+          
           <code class="ruby">        @user1 = User.create!(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="266">
-          
-          
-          <code class="ruby">          username: &quot;user1&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="267">
-          
-          
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="268">
           
           
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">          username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="269">
           
           
-          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="270">
           
           
-          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="271">
           
           
-          <code class="ruby">        )</code>
+          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="272">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="273">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="273">
           
-          <code class="ruby">        get :edit, { id: @user1.id }</code>
+          
+          <code class="ruby">        )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="274">
@@ -12490,10 +12490,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="275">
+        <li class="covered" data-hits="3" data-linenumber="275">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        get :edit, { :id =&gt; @user1.id }, { user_id: @user1.id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="276">
@@ -12502,34 +12502,34 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="277">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &#39;should redirect to root path&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="278">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        expect(response).to redirect_to(pages_path)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="279">
+        <li class="never" data-hits="" data-linenumber="277">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="280">
+        <li class="never" data-hits="" data-linenumber="278">
           
           
-          <code class="ruby">    end # GET EDIT / USER.ID !=== CURRENT_USER.ID</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="279">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &quot;returns http success&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="280">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(response).to be_success</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="281">
           
           
-          <code class="ruby">  end # GET EDIT</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="282">
@@ -12541,115 +12541,115 @@
         <li class="never" data-hits="" data-linenumber="283">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      # make sure this user&#39;s id is same as session user&#39;s id</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="284">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;PUT update&quot; do</code>
+          <code class="ruby">      it &#39;should assign the requested user as @user&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="285">
           <span class="hits">1</span>
           
-          <code class="ruby">    describe &quot;with VAILD data&quot; do</code>
+          <code class="ruby">        expect(assigns(session[:user_id])).to eq(@user1_id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="286">
+        <li class="never" data-hits="" data-linenumber="286">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="287">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="288">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">      it &quot;should render the user edit&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="287">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="289">
+          <span class="hits">1</span>
           
-          <code class="ruby">        @user1 = User.create(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="288">
-          
-          
-          <code class="ruby">          username: &quot;user1&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="289">
-          
-          
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">        expect(response).to render_template(&#39;edit&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="290">
           
           
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="291">
           
           
-          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">    end # GET EDIT / USER.ID === CURRENT_USER.ID</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="292">
           
           
-          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="293">
-          
-          
-          <code class="ruby">        )</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="294">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="295">
+        <li class="covered" data-hits="1" data-linenumber="293">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        # user: { actual data to edit! }</code>
+          <code class="ruby">    context &#39;When the user\&#39;s id is NOT equal to current user\&#39;s id&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="296">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="1" data-linenumber="294">
+          <span class="hits">1</span>
           
-          <code class="ruby">        put :update, { id: @user1.id, user: {</code>
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="295">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        @user1 = User.create!(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="296">
+          
+          
+          <code class="ruby">          username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="297">
           
           
-          <code class="ruby">          username: @user1.username,</code>
+          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="298">
           
           
-          <code class="ruby">          email: @user1.email,</code>
+          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="299">
           
           
-          <code class="ruby">          native_country: @user1.native_country,</code>
+          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="300">
           
           
-          <code class="ruby">        }}, { user_id: @user1.id }</code>
+          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="301">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="302">
@@ -12658,64 +12658,64 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="303">
+        <li class="covered" data-hits="1" data-linenumber="303">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        get :edit, { id: @user1.id }, { user_id: 1234 }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="304">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="305">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="306">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="306">
           
-          <code class="ruby">      it &quot;updates the requested user&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="307">
           <span class="hits">1</span>
           
-          <code class="ruby">        @user1.reload</code>
+          <code class="ruby">      it &#39;should redirect to pages path&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="308">
+        <li class="covered" data-hits="1" data-linenumber="308">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        expect(response).to redirect_to(pages_path)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="309">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="310">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="310">
           
-          <code class="ruby">      it &quot;should assign the requested user as @user&quot; do</code>
+          
+          <code class="ruby">    end # GET EDIT / USER.ID !=== CURRENT_USER.ID</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="311">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="311">
           
-          <code class="ruby">        expect(assigns(:user)).to eq(@user1)</code>
+          
+          <code class="ruby">  end # GET EDIT</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="312">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="313">
@@ -12724,22 +12724,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="314">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="314">
           
-          <code class="ruby">      it &quot;should redirect to the user show&quot; do</code>
+          
+          <code class="ruby">  ###### UPDATE user&#39;s details. It was confusing...but I made it!!!!!!</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="315">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response).to redirect_to(user_path(assigns(:user)) )</code>
+          <code class="ruby">  describe &quot;PUT update&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="316">
+        <li class="covered" data-hits="1" data-linenumber="316">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">    describe &quot;with VALID data&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="317">
@@ -12748,136 +12748,136 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="318">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="319">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="320">
+        <li class="covered" data-hits="1" data-linenumber="318">
           <span class="hits">1</span>
           
-          <code class="ruby">    describe &quot;with INVAILD data&quot; do</code>
+          <code class="ruby">      describe &quot;When the changes is saved&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="321">
+        <li class="covered" data-hits="1" data-linenumber="319">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">        before do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="322">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="320">
+          <span class="hits">3</span>
           
-          <code class="ruby">        @user1 = User.create(</code>
+          <code class="ruby">          @user1 = User.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="321">
+          
+          
+          <code class="ruby">            username: &quot;user1&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="322">
+          
+          
+          <code class="ruby">            email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="323">
           
           
-          <code class="ruby">          username: &quot;user1&quot;,</code>
+          <code class="ruby">            native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="324">
           
           
-          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">            password:&#39;user1-aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="325">
           
           
-          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">            password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="326">
           
           
-          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">          )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="327">
           
           
-          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="328">
           
           
-          <code class="ruby">        )</code>
+          <code class="ruby">          #  { user&#39;s id, user: - write actual data to edit!- }, { session user.id}</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="329">
+        <li class="covered" data-hits="3" data-linenumber="329">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">          put :update, { id: @user1.id, user: {</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="330">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="330">
           
-          <code class="ruby">        put :update, { id: @user1.id, user: {</code>
+          
+          <code class="ruby">            username: @user1.username,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="331">
           
           
-          <code class="ruby">          username: @user1.username,</code>
+          <code class="ruby">            email: @user1.email,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="332">
           
           
-          <code class="ruby">          email: &quot;&quot;,</code>
+          <code class="ruby">            native_country: @user1.native_country,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="333">
           
           
-          <code class="ruby">          native_country: @user1.native_country,</code>
+          <code class="ruby">          }}, { user_id: @user1.id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="334">
           
           
-          <code class="ruby">        }}, { user_id: @user1.id }</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="335">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="336">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        # show the edit page with the user&#39;s details</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="337">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &quot;should assign the requested user as @user&quot; do</code>
+          <code class="ruby">        it &quot;updates the requested user&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="338">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(assigns(:user)).to eq(@user1)</code>
+          <code class="ruby">          @user1.reload</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="339">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="340">
@@ -12886,322 +12886,322 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="341">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="341">
           
-          <code class="ruby">      it &quot;re-direct to the user edit&quot; do</code>
+          
+          <code class="ruby">        # The edit user is same as the user accessed the edit page</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="342">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response.body).to redirect_to(edit_user_path(@user1))</code>
+          <code class="ruby">        it &quot;should assign the requested user as @user&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="343">
+        <li class="covered" data-hits="1" data-linenumber="343">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">          expect(assigns(:user)).to eq(@user1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="344">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="345">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="346">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="347">
+        <li class="covered" data-hits="1" data-linenumber="346">
+          <span class="hits">1</span>
           
+          <code class="ruby">        it &quot;should redirect to the user show&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="347">
+          <span class="hits">1</span>
           
-          <code class="ruby">  end # PUT UPDATE</code>
+          <code class="ruby">          expect(response).to redirect_to(user_path(assigns(:user)) )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="348">
           
           
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="349">
+          
+          
+          <code class="ruby">      end # when user is saved</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="350">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="349">
+        <li class="covered" data-hits="1" data-linenumber="351">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;DELETE user&quot; do</code>
+          <code class="ruby">      describe &quot;When the changes are not saved&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="350">
+        <li class="covered" data-hits="1" data-linenumber="352">
           <span class="hits">1</span>
           
-          <code class="ruby">    before do</code>
+          <code class="ruby">        before do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="351">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="353">
+          <span class="hits">1</span>
           
-          <code class="ruby">      @user1 = User.create!(</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="352">
-          
-          
-          <code class="ruby">        username: &quot;user1&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="353">
-          
-          
-          <code class="ruby">        email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">          @user1 = User.create(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="354">
           
           
-          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">            username: &quot;user1&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="355">
           
           
-          <code class="ruby">        password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">            email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="356">
           
           
-          <code class="ruby">        password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">            native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="357">
           
           
-          <code class="ruby">      )</code>
+          <code class="ruby">            password:&#39;user1-aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="358">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="359">
           
           
-          <code class="ruby">      # @admin = User.create!(</code>
+          <code class="ruby">          )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="360">
           
           
-          <code class="ruby">      #   username: &quot;user2&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="361">
           
           
-          <code class="ruby">      #   email: &quot;user2@test.com&quot;,</code>
+          <code class="ruby">          # { user&#39;s id, user: - write actual data to edit!- }, { session user.id}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="362">
           
           
-          <code class="ruby">      #   native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">          # this won&#39;t be saved because the email is wrong data</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="363">
+        <li class="covered" data-hits="1" data-linenumber="363">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      #   password:&#39;user2-aus&#39;,</code>
+          <code class="ruby">          put :update, { id: @user1.id, user: {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="364">
           
           
-          <code class="ruby">      #   password_confirmation: &#39;user2-aus&#39;</code>
+          <code class="ruby">            username: @user1.username,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="365">
           
           
-          <code class="ruby">      # )</code>
+          <code class="ruby">            email: &quot;&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="366">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">            native_country: @user1.native_country,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="367">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">          }}, { user_id: @user1.id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="368">
           
           
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="369">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="369">
+        <li class="never" data-hits="" data-linenumber="370">
+          
+          
+          <code class="ruby">        # show the edit page with the user&#39;s details</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="371">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;should destroy the requested user&quot; do</code>
+          <code class="ruby">        it &#39;should redirect to eidt_path&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="370">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="372">
+          <span class="hits">1</span>
           
-          <code class="ruby">       expect{ delete :destroy, id: @user1.id, user_id: @user1.id</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="371">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        }.to change{User.count}.by(0)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="372">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">          expect(response).to redirect_to(edit_user_path(assigns(:user)))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="373">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="374">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="374">
           
-          <code class="ruby">    it &quot;should re-direct to the root&quot; do</code>
+          
+          <code class="ruby">      end # when the changes are not saved</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="375">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="375">
           
-          <code class="ruby">      delete :destroy, id: @user1.id, user_id: @user1.id</code>
+          
+          <code class="ruby">    end # with valid data</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="376">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(response).to redirect_to(pages_path)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="377">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="378">
+        <li class="never" data-hits="" data-linenumber="376">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="379">
+        <li class="covered" data-hits="1" data-linenumber="377">
+          <span class="hits">1</span>
           
+          <code class="ruby">    describe &quot;with INVALID data&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="378">
+          <span class="hits">1</span>
           
-          <code class="ruby">  end # DELETE</code>
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="379">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        @user1 = User.create(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="380">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          username: &quot;user1&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="381">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="381">
           
-          <code class="ruby">  describe &quot;GET mynews&quot; do</code>
+          
+          <code class="ruby">          email: &quot;user1@test.com&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="382">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="382">
           
-          <code class="ruby">    before do</code>
+          
+          <code class="ruby">          native_country: &quot;Australia&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="383">
-          <span class="hits">5</span>
+        <li class="never" data-hits="" data-linenumber="383">
           
-          <code class="ruby">       @user1 = User.create!(</code>
+          
+          <code class="ruby">          password:&#39;user1-aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="384">
           
           
-          <code class="ruby">        username: &quot;user1&quot;,</code>
+          <code class="ruby">          password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="385">
           
           
-          <code class="ruby">        email: &quot;user1@test.com&quot;,</code>
+          <code class="ruby">        )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="386">
           
           
-          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="387">
           
           
-          <code class="ruby">        password:&#39;user1-aus&#39;,</code>
+          <code class="ruby">        # when the user submits empty email address(invalid data)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="388">
+        <li class="covered" data-hits="2" data-linenumber="388">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">        password_confirmation: &#39;user1-aus&#39;</code>
+          <code class="ruby">        put :update, { id: @user1.id, user: {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="389">
           
           
-          <code class="ruby">      )</code>
+          <code class="ruby">          username: @user1.username,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="390">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">          email: &quot;&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="391">
-          <span class="hits">5</span>
+        <li class="never" data-hits="" data-linenumber="391">
           
-          <code class="ruby">       @category = Category.create!(</code>
+          
+          <code class="ruby">          native_country: @user1.native_country,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="392">
           
           
-          <code class="ruby">        title: &#39;Art&#39;,</code>
+          <code class="ruby">        }}, { user_id: @user1.id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="393">
           
           
-          <code class="ruby">        api_id: 4 )</code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="394">
@@ -13210,64 +13210,64 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="395">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="1" data-linenumber="395">
+          <span class="hits">1</span>
           
-          <code class="ruby">       @user1.categories &lt;&lt; Category.first</code>
+          <code class="ruby">      it &quot;should assign the requested user as @user&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="396">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="1" data-linenumber="396">
+          <span class="hits">1</span>
           
-          <code class="ruby">       @user1.save</code>
+          <code class="ruby">        expect(assigns(:user)).to eq(@user1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="397">
           
           
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="398">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="398">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="1" data-linenumber="399">
+          <span class="hits">1</span>
           
-          <code class="ruby">       get :mynews, { :id =&gt; @user1.id }, { user_id: @user1.id }</code>
+          <code class="ruby">      it &quot;re-direct to the user edit&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="399">
+        <li class="covered" data-hits="1" data-linenumber="400">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(response.body).to redirect_to(edit_user_path(@user1))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="401">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="402">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="400">
+        <li class="never" data-hits="" data-linenumber="403">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="401">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    describe &#39;The user logged in&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="402">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      it &quot;returns http success&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="403">
-          <span class="hits">1</span>
-          
-          <code class="ruby">          expect(response).to be_success</code>
+          <code class="ruby">  end # PUT UPDATE</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="404">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="405">
@@ -13276,70 +13276,70 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="406">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="406">
           
-          <code class="ruby">      it &#39;should assign the requested user as @user&#39; do</code>
+          
+          <code class="ruby">  # Destroy user.</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="407">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(assigns(session[:user_id])).to eq(@user1_id)</code>
+          <code class="ruby">  describe &quot;DELETE user&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="408">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="409">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="410">
+        <li class="covered" data-hits="1" data-linenumber="408">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &#39;should assgin @countries&#39; do</code>
+          <code class="ruby">    before do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="411">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="409">
+          <span class="hits">2</span>
           
-          <code class="ruby">        expect((assigns(:countries)).first).to eq((Country.countries_list).first)</code>
+          <code class="ruby">      @user1 = User.create!(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="410">
+          
+          
+          <code class="ruby">        username: &quot;user1&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="411">
+          
+          
+          <code class="ruby">        email: &quot;user1@test.com&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="412">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="413">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        password:&#39;user1-aus&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="414">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="414">
           
-          <code class="ruby">      it &#39;should assgin User\&#39;s categories as @categories&#39; do</code>
+          
+          <code class="ruby">        password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="415">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="415">
           
-          <code class="ruby">        expect(assigns(:categories)).to eq(@user1.categories)</code>
+          
+          <code class="ruby">      )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="416">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="417">
@@ -13354,181 +13354,469 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="419">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="419">
           
-          <code class="ruby">    describe &#39;The user dosen\&#39;t log in&#39; do</code>
+          
+          <code class="ruby">    # checking the number of users</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="420">
           <span class="hits">1</span>
           
-          <code class="ruby">      before do</code>
+          <code class="ruby">    it &quot;should destroy the requested user&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="421">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="421">
+          <span class="hits">2</span>
           
-          <code class="ruby">       @user2 = User.create!(</code>
+          <code class="ruby">      expect{ delete :destroy, id: @user1.id, user_id: @user1.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="422">
+        <li class="covered" data-hits="2" data-linenumber="422">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">        username: &quot;user2&quot;,</code>
+          <code class="ruby">        }.to change{User.count}.by(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="423">
           
           
-          <code class="ruby">        email: &quot;user2@test.com&quot;,</code>
+          <code class="ruby">      # because the only user has been deleted the number of users is zero.</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="424">
           
           
-          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="425">
           
           
-          <code class="ruby">        password:&#39;user2-aus&#39;,</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="426">
           
           
-          <code class="ruby">        password_confirmation: &#39;user2-aus&#39;</code>
+          <code class="ruby">    # after delete going to index page to see the users list(for admin)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="427">
+        <li class="covered" data-hits="1" data-linenumber="427">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      )</code>
+          <code class="ruby">    it &quot;should re-direct to the root&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="428">
+        <li class="covered" data-hits="1" data-linenumber="428">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      delete :destroy, id: @user1.id, user_id: @user1.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="429">
+        <li class="covered" data-hits="1" data-linenumber="429">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">       # @category = Category.create!(</code>
+          <code class="ruby">      expect(response).to redirect_to(pages_path)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="430">
           
           
-          <code class="ruby">       #  title: &#39;Art&#39;,</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="431">
           
           
-          <code class="ruby">       #  api_id: 4 )</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="432">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end # DELETE</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="433">
           
           
-          <code class="ruby">       # @user2.categories &lt;&lt; Category.first</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="434">
           
           
-          <code class="ruby">       # @user2.save</code>
+          <code class="ruby">  # Accessing user&#39;s customized categories page.</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="435">
+        <li class="covered" data-hits="1" data-linenumber="435">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">  describe &quot;GET mynews&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="436">
           <span class="hits">1</span>
           
-          <code class="ruby">       get :mynews, { :id =&gt; @user2.id }</code>
+          <code class="ruby">    before do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="437">
+        <li class="covered" data-hits="5" data-linenumber="437">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">      @user1 = User.create!(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="438">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        username: &quot;user1&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="439">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="439">
           
-          <code class="ruby">      it &quot;returns http success&quot; do</code>
+          
+          <code class="ruby">        email: &quot;user1@test.com&quot;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="440">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="440">
           
-          <code class="ruby">          expect(response).to be_success</code>
+          
+          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="441">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        password:&#39;user1-aus&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="442">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        password_confirmation: &#39;user1-aus&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="443">
           
           
-          <code class="ruby">      # it &#39;should redirect to root path&#39; do</code>
+          <code class="ruby">      )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="444">
           
           
-          <code class="ruby">      #   expect(response).to redirect_to(pages_path)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="445">
           
           
-          <code class="ruby">      # end</code>
+          <code class="ruby">      # Creating a category - because the category test DB is empty</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="446">
+        <li class="covered" data-hits="5" data-linenumber="446">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      @category = Category.create!(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="447">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">        title: &#39;Art&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="448">
+          
+          
+          <code class="ruby">        api_id: 4 )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="449">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="450">
+          
+          
+          <code class="ruby">      # push the new category to user&#39;s categories (user&#39;s category preference)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="451">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @user1.categories &lt;&lt; Category.first</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="452">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      @user1.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="453">
+          
+          
+          <code class="ruby">      # make sure save this!</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="454">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="455">
+          <span class="hits">5</span>
+          
+          <code class="ruby">      get :mynews, { :id =&gt; @user1.id }, { user_id: @user1.id }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="456">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="457">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="458">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;The user logged in&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="459">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &quot;returns http success&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="460">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(response).to be_success</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="461">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="462">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="463">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;should assign the requested user as @user&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="464">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(assigns(session[:user_id])).to eq(@user1_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="465">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="466">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="467">
+          
+          
+          <code class="ruby">      # because countries come from class method it doesn&#39;t need to create.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="468">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;should assgin @countries&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="469">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect((assigns(:countries)).first).to eq((Country.countries_list).first)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="470">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="471">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="472">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;should assgin User\&#39;s categories as @categories&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="473">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(assigns(:categories)).to eq(@user1.categories)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="474">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="475">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="476">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="477">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &#39;The user dosen\&#39;t log in&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="478">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="479">
+          <span class="hits">1</span>
+          
+          <code class="ruby">       @user2 = User.create!(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="480">
+          
+          
+          <code class="ruby">        username: &quot;user2&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="481">
+          
+          
+          <code class="ruby">        email: &quot;user2@test.com&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="482">
+          
+          
+          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="483">
+          
+          
+          <code class="ruby">        password:&#39;user2-aus&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="484">
+          
+          
+          <code class="ruby">        password_confirmation: &#39;user2-aus&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="485">
+          
+          
+          <code class="ruby">      )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="486">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="487">
+          
+          
+          <code class="ruby">       # set the session&#39;s id to random number.</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="488">
+          <span class="hits">1</span>
+          
+          <code class="ruby">       get :mynews, { :id =&gt; @user2.id }, { user_id: 1233 }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="489">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="490">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="491">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;should redirect to root path&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="492">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(response).to redirect_to(pages_path)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="493">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="494">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="495">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="496">
           
           
           <code class="ruby">end</code>

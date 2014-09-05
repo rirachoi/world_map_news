@@ -186,7 +186,7 @@ $(document).ready(function() {
 
 
 ///////// Clicked the map
-  $('.pages-index #vmap').on('click', function(event){
+  $('.pages-index #vmap svg').on('click', function(event){
   //// before JSON
     event.preventDefault();
     $('.pages-index .back_top').fadeIn(1000);
@@ -308,7 +308,7 @@ $(document).ready(function() {
 
 
 ////// Clicked MY NEWS MAP
-  $('.users-mynews #vmap').on('click', function(event){
+  $('.users-mynews #vmap svg').on('click', function(event){
     event.preventDefault();
     $('.users-mynews .back_top').fadeIn(1000);
     countryCodeInMap = event.target.id.split('_').pop();

@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe UsersController, :type => :controller do
 
 
+# Users Index will be shown only to Admin.
   context 'Log in as an ADMIN' do
     describe "GET index" do
+      # Create Users and an admin
       before do
-
         3.times do |i|
           User.create!(
             username: "User #{ i }",
@@ -26,12 +27,15 @@ RSpec.describe UsersController, :type => :controller do
           password_confirmation: 'admin-aus'
         )
 
-        get :index, nil, { user_id: @admin.id }
+        #### you can also do,
+        #### before(:each) { User.create( username: ---, email: --- )}
+
+        # index url does not need to get id so it is nil.
+        get :index, nil , { user_id: @admin.id }
 
       end
 
       describe 'as HTML' do
-
         it 'should respond with a status 200' do
           expect(response).to be_success
           expect(response.status).to eq(200)
@@ -79,7 +83,9 @@ RSpec.describe UsersController, :type => :controller do
     end # GET INDEX AS AN ADMIN
   end
 
+  #When a user who is not an admin tried to see index page
   context 'Log in as an USER' do
+    #Create a single user
     before do
       @user = User.create!(
         username: "user1",
@@ -107,32 +113,56 @@ RSpec.describe UsersController, :type => :controller do
     end
   end
 
-
+  ####### CREATE A NEW USER - It was challenging..but I made it yay!!
   describe "POST /users/" do
-    describe "with VAILD data" do
-
-      before do
-        post :create, user:{
-          username: "user1",
-          email: "user1@test.com",
-          native_country: "Australia",
-          password:'user1_aus',
-          password_confirmation: 'user1_aus'
+    # When user correctly filled all personal data.
+    describe "with VALID data" do
+      describe "When the user saved" do
+        before do
+          post :create, user:{
+            username: "user1",
+            email: "user1@test.com",
+            native_country: "Australia",
+            password:'user1_aus',
+            password_confirmation: 'user1_aus'
           }
-      end
-      it 'automatically log the user in' do
-        expect(session[:user_id]).to eq(User.first.id)
+        end
+
+        it 'should increase the number of User' do
+          expect(User.count).to eq(1)
+        end
+
+        it 'automatically log the user in' do
+          expect(session[:user_id]).to eq(User.first.id)
+        end
+
+        it 'should redirect to pages' do
+          expect(response.status).to eq(302)
+          expect(response).to redirect_to( pages_path )
+        end
       end
 
-      it 'should redirect to pages' do
-        expect(response.status).to eq(302)
-        expect(response).to redirect_to( pages_path )
-      end
+      describe "When the user didn\'t save" do
+        # user is not saved because the data is invalid
+        before do
+          post :create, user:{
+            username: "user1",
+            email: "user1@test.com",
+            native_country: "Australia",
+            password:'user1_aus',
+            password_confirmation: 'user2_aus'
+          }
+        end
 
-      it 'should increase the number of User' do
-        expect(User.count).to eq(1)
+        it 'shouldn\'t increase the number of User' do
+          expect(User.count).to eq(0)
+        end
+
+        it "should redirect to new_user_path" do
+          expect(response).to redirect_to( new_user_path )
+        end
       end
-    end # with vaild data
+    end # with VALID data
 
     describe 'with INVALID data' do
       before do
@@ -147,12 +177,13 @@ RSpec.describe UsersController, :type => :controller do
       it 'should not increase the number of User' do
         expect(User.count).to eq(0)
       end
-    end # with invaild data
+    end # with INVALID data
   end # POST USERS
 
+  # User's show page
   describe "GET show" do
 
-    context 'When user log in' do
+    context 'When user logs in' do
       before do
         @user1 = User.create!(
           username: "user1",
@@ -161,7 +192,7 @@ RSpec.describe UsersController, :type => :controller do
           password:'user1-aus',
           password_confirmation: 'user1-aus'
         )
-        #sign_in(@user1)
+
         get :show, { :id => @user1.id }, { user_id: @user1.id }
 
       end
@@ -211,7 +242,8 @@ RSpec.describe UsersController, :type => :controller do
       end # AS JSON
     end # GET SHOW / USER.PRESENT?
 
-    context 'When the user is NILL' do
+    # access to the show page without loggin in
+    context 'When the user doesn\'t log in' do
       before do
         @user1 = User.create!(
           username: "user1",
@@ -220,19 +252,19 @@ RSpec.describe UsersController, :type => :controller do
           password:'user1-aus',
           password_confirmation: 'user1-aus'
         )
-        #sign_in(@user1)
-        get :show, { id: @user1.id }, {user_id: 1222}
-        # this means the user is not loged in! no current user id
+
+        get :show, { id: @user1.id }, { user_id: nil}
+        # this means the user doesn't log in! no current user id
       end
 
-      it 'should redirect to root_path' do
+      it 'should redirect to pages_path' do
         expect(response).to redirect_to(pages_path)
       end
     end # GET SHOW / USER.NIL?
   end # GET SHOW
 
   describe "GET edit" do
-
+    # Access to Edit page when user loged in
     context 'When the user\'s id is same as current user\'s id' do
       before do
         @user1 = User.create!(
@@ -251,6 +283,7 @@ RSpec.describe UsersController, :type => :controller do
         expect(response).to be_success
       end
 
+      # make sure this user's id is same as session user's id
       it 'should assign the requested user as @user' do
         expect(assigns(session[:user_id])).to eq(@user1_id)
       end
@@ -270,19 +303,81 @@ RSpec.describe UsersController, :type => :controller do
           password_confirmation: 'user1-aus'
         )
 
-        get :edit, { id: @user1.id }
+        get :edit, { id: @user1.id }, { user_id: 1234 }
 
       end
 
-      it 'should redirect to root path' do
+      it 'should redirect to pages path' do
         expect(response).to redirect_to(pages_path)
       end
     end # GET EDIT / USER.ID !=== CURRENT_USER.ID
   end # GET EDIT
 
 
+  ###### UPDATE user's details. It was confusing...but I made it!!!!!!
   describe "PUT update" do
-    describe "with VAILD data" do
+    describe "with VALID data" do
+
+      describe "When the changes is saved" do
+        before do
+          @user1 = User.create(
+            username: "user1",
+            email: "user1@test.com",
+            native_country: "Australia",
+            password:'user1-aus',
+            password_confirmation: 'user1-aus'
+          )
+
+          #  { user's id, user: - write actual data to edit!- }, { session user.id}
+          put :update, { id: @user1.id, user: {
+            username: @user1.username,
+            email: @user1.email,
+            native_country: @user1.native_country,
+          }}, { user_id: @user1.id }
+        end
+
+        # show the edit page with the user's details
+        it "updates the requested user" do
+          @user1.reload
+        end
+
+        # The edit user is same as the user accessed the edit page
+        it "should assign the requested user as @user" do
+          expect(assigns(:user)).to eq(@user1)
+        end
+
+        it "should redirect to the user show" do
+          expect(response).to redirect_to(user_path(assigns(:user)) )
+        end
+      end # when user is saved
+
+      describe "When the changes are not saved" do
+        before do
+          @user1 = User.create(
+            username: "user1",
+            email: "user1@test.com",
+            native_country: "Australia",
+            password:'user1-aus',
+            password_confirmation: 'user1-aus'
+          )
+
+          # { user's id, user: - write actual data to edit!- }, { session user.id}
+          # this won't be saved because the email is wrong data
+          put :update, { id: @user1.id, user: {
+            username: @user1.username,
+            email: "",
+            native_country: @user1.native_country,
+          }}, { user_id: @user1.id }
+        end
+
+        # show the edit page with the user's details
+        it 'should redirect to eidt_path' do
+          expect(response).to redirect_to(edit_user_path(assigns(:user)))
+        end
+      end # when the changes are not saved
+    end # with valid data
+
+    describe "with INVALID data" do
       before do
         @user1 = User.create(
           username: "user1",
@@ -292,41 +387,7 @@ RSpec.describe UsersController, :type => :controller do
           password_confirmation: 'user1-aus'
         )
 
-        # user: { actual data to edit! }
-        put :update, { id: @user1.id, user: {
-          username: @user1.username,
-          email: @user1.email,
-          native_country: @user1.native_country,
-        }}, { user_id: @user1.id }
-
-
-
-      end
-
-      it "updates the requested user" do
-        @user1.reload
-      end
-
-      it "should assign the requested user as @user" do
-        expect(assigns(:user)).to eq(@user1)
-      end
-
-      it "should redirect to the user show" do
-        expect(response).to redirect_to(user_path(assigns(:user)) )
-      end
-
-    end
-
-    describe "with INVAILD data" do
-      before do
-        @user1 = User.create(
-          username: "user1",
-          email: "user1@test.com",
-          native_country: "Australia",
-          password:'user1-aus',
-          password_confirmation: 'user1-aus'
-        )
-
+        # when the user submits empty email address(invalid data)
         put :update, { id: @user1.id, user: {
           username: @user1.username,
           email: "",
@@ -341,11 +402,11 @@ RSpec.describe UsersController, :type => :controller do
       it "re-direct to the user edit" do
         expect(response.body).to redirect_to(edit_user_path(@user1))
       end
-
     end
-
   end # PUT UPDATE
 
+
+  # Destroy user.
   describe "DELETE user" do
     before do
       @user1 = User.create!(
@@ -356,21 +417,17 @@ RSpec.describe UsersController, :type => :controller do
         password_confirmation: 'user1-aus'
       )
 
-      # @admin = User.create!(
-      #   username: "user2",
-      #   email: "user2@test.com",
-      #   native_country: "Australia",
-      #   password:'user2-aus',
-      #   password_confirmation: 'user2-aus'
-      # )
-
     end
 
+    # checking the number of users
     it "should destroy the requested user" do
-       expect{ delete :destroy, id: @user1.id, user_id: @user1.id
+      expect{ delete :destroy, id: @user1.id, user_id: @user1.id
         }.to change{User.count}.by(0)
+        # to change{User, "count"}
+      # because the only user has been deleted the number of users is zero.
     end
 
+    # after delete going to index page to see the users list(for admin)
     it "should re-direct to the root" do
       delete :destroy, id: @user1.id, user_id: @user1.id
       expect(response).to redirect_to(pages_path)
@@ -378,9 +435,10 @@ RSpec.describe UsersController, :type => :controller do
 
   end # DELETE
 
+  # Accessing user's customized categories page.
   describe "GET mynews" do
     before do
-       @user1 = User.create!(
+      @user1 = User.create!(
         username: "user1",
         email: "user1@test.com",
         native_country: "Australia",
@@ -388,14 +446,17 @@ RSpec.describe UsersController, :type => :controller do
         password_confirmation: 'user1-aus'
       )
 
-       @category = Category.create!(
+      # Creating a category - because the category test DB is empty
+      @category = Category.create!(
         title: 'Art',
         api_id: 4 )
 
-       @user1.categories << Category.first
-       @user1.save
+      # push the new category to user's categories (user's category preference)
+      @user1.categories << Category.first
+      @user1.save
+      # make sure save this!
 
-       get :mynews, { :id => @user1.id }, { user_id: @user1.id }
+      get :mynews, { :id => @user1.id }, { user_id: @user1.id }
     end
 
     describe 'The user logged in' do
@@ -407,6 +468,7 @@ RSpec.describe UsersController, :type => :controller do
         expect(assigns(session[:user_id])).to eq(@user1_id)
       end
 
+      # because countries come from class method it doesn't need to create.
       it 'should assgin @countries' do
         expect((assigns(:countries)).first).to eq((Country.countries_list).first)
       end
@@ -426,23 +488,13 @@ RSpec.describe UsersController, :type => :controller do
         password_confirmation: 'user2-aus'
       )
 
-       # @category = Category.create!(
-       #  title: 'Art',
-       #  api_id: 4 )
-
-       # @user2.categories << Category.first
-       # @user2.save
-
-       get :mynews, { :id => @user2.id }
+       # set the session's id to random number.
+       get :mynews, { :id => @user2.id }, { user_id: 1233 }
       end
 
-      it "returns http success" do
-          expect(response).to be_success
+      it 'should redirect to root path' do
+        expect(response).to redirect_to(pages_path)
       end
-
-      # it 'should redirect to root path' do
-      #   expect(response).to redirect_to(pages_path)
-      # end
     end
   end
 end
