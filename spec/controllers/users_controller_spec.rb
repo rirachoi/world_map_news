@@ -417,6 +417,12 @@ RSpec.describe UsersController, :type => :controller do
         password_confirmation: 'user1-aus'
       )
 
+      delete :destroy, { id: @user1.id}, { user_id: @user1.id }
+
+    end
+
+    it "should assign the requested user as @user" do
+        expect(assigns(:user)).to eq(@user1)
     end
 
     # checking the number of users
@@ -429,7 +435,6 @@ RSpec.describe UsersController, :type => :controller do
 
     # after delete going to index page to see the users list(for admin)
     it "should re-direct to the root" do
-      delete :destroy, id: @user1.id, user_id: @user1.id
       expect(response).to redirect_to(pages_path)
     end
 

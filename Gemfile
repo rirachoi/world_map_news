@@ -35,9 +35,6 @@ gem 'rails_12factor', group: :production
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'httparty'
-# gem 'devise'
-
-gem 'capybara'
 
 group :development do
   gem 'pry-rails'

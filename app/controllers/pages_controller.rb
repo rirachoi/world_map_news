@@ -14,4 +14,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def about
+  end
+
+  def contact
+  end
+
 end

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(:email => params[:email])
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to pages_path
     else
       flash[:notice] = "Invalid login. Please try again"
       redirect_to login_path
@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path
+    redirect_to pages_path
   end
 end

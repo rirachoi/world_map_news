@@ -2,65 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CategoriesController, :type => :controller do
 
-# describe "GET index" do
-
-  #   before do
-
-  #     3.times do |i|
-  #       Category.create!(
-  #         title: "Category #{ i }",
-  #         api_id: "#{ i }",
-  #         )
-  #     end
-  #   get :index
-  #   end
-
-  #   describe 'as HTML' do
-
-  #     it 'should respond with a status 200' do
-  #       expect(response).to be_success
-  #       expect(response.status).to eq(200)
-  #     end
-
-  #     it 'should set an instance variable with the categories' do
-  #       expect(assigns(:categories)).to be
-  #       expect(assigns(:categories).length).to eq(3)
-  #       expect(assigns(:categories)).to eq(Category.all)
-  #     end
-
-  #     it 'should render the categories index' do
-  #       expect(response).to render_template('index')
-  #     end
-
-  #   end # AS HTML
-
-  #   describe 'as JSON' do
-  #     before do
-  #       get :index, :format => :json
-  #     end
-
-  #     it 'should respond with a status 200' do
-  #       expect(response).to be_success
-  #       expect(response.status).to eq(200)
-  #     end
-
-  #     it 'should give content type as JSON' do
-  #       expect(response.content_type).to eq('application/json')
-  #     end
-
-  #     it 'should parse as valid JSON' do
-  #       expect(lambda { JSON.parse(response.body) }).to_not raise_error
-  #     end
-
-  #     it 'should have the name of category in the JSON' do
-  #       categories = JSON.parse(response.body)
-  #       expect(categories.length).to eq(3)
-  #       expect(categories.first["title"]).to eq("Category 0")
-  #       expect(categories.first["api_id"]).to eq(0)
-  #     end
-  #   end # AS JSON
-
-# end # GET INDEX
+  ## GET INDEX
   context 'Country TEST' do
     describe "GET index" do
       describe "as HTML" do
@@ -70,6 +12,7 @@ RSpec.describe CategoriesController, :type => :controller do
           expect(response.status).to eq(200)
         end
 
+        # Becasue County is class method so it dosen't need to be created.
         it 'should assgin @countries as countries' do
           get :index
           expect((assigns(:countries)).first).to eq((Country.countries_list).first)
@@ -96,7 +39,7 @@ RSpec.describe CategoriesController, :type => :controller do
 
         it 'should have the name of countires in the JSON' do
           countires = JSON.parse(response.body)
-          #expect(countires).to eq(assigns(:countries))
+          #expect(assigns(:countries)).to eq(countries)
         end
       end # AS JSON
     end
@@ -194,6 +137,51 @@ RSpec.describe CategoriesController, :type => :controller do
 
     end # AS JSON
   end # GET SHOW
+
+  # #Create the user's preference categories - mynews
+  # describe "POST /categories/" do
+  #   describe "create user's categories" do
+  #     before do
+  #       @user1 = User.create!(
+  #         username: "user1",
+  #         email: "user1@test.com",
+  #         native_country: "Australia",
+  #         password:'user1_aus',
+  #         password_confirmation: 'user1_aus'
+  #       )
+
+  #       @category1 = Category.create!(
+  #         title: 'Art',
+  #         api_id: 4 )
+
+  #       @category2 = Category.create!(
+  #         title: 'Sports',
+  #         api_id: 2 )
+
+  #       #session[:user_id] == @user1.id
+  #       # push the new category to user's categories (user's category preference)
+  #       @user1.categories << Category.first
+  #       @user1.save
+
+  #       post :create, { user_id: @user1.id, :pre_category => 2 }
+
+  #     end
+
+  #     it 'should clear the current user\'s categories' do
+  #       expect((session[:user_id])).to eq(@user1.id)
+  #       expect(@user1.categories.first).to eq(@category1)
+  #     end
+
+  #     it 'should assign pre_category\'s api id to user\'s categories' do
+  #       expect((session[:user_id]).categories.last.api_id).to eq(2)
+  #     end
+
+  #     it 'should redirect to mynews_path' do
+  #       expect(response.status).to eq(302)
+  #       expect(response).to redirect_to( users_mynews_path(@user1.id))
+  #     end
+  #   end # create user's categories
+  # end # POST/categories
 end
 
 

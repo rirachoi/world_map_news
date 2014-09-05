@@ -81,6 +81,23 @@ RSpec.describe PagesController, :type => :controller do
           #expect(categories).to eq(assigns(:categories))
         end
       end # AS JSON
+    end # Get index
+  end # Context
+
+  describe "GET about" do
+    it 'should respond with a status 200' do
+      get :about
+      expect(response).to be_success
+      expect(response.status).to eq(200)
     end
   end
+
+  describe "GET contact" do
+    it 'should respond with a status 200' do
+      get :contact
+      expect(response).to be_success
+      expect(response.status).to eq(200)
+    end
+  end
+
 end

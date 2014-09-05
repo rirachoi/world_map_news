@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/users/mynews' => 'users#mynews'
 
   resources :pages, :only => [:index]
+  get '/pages/about' => 'pages#about'
+  get '/pages/contact' => 'pages#contact'
+
   resources :users
   resources :categories, :only => [:index, :show, :create]
   resources :countries, :only => [:index, :show]
