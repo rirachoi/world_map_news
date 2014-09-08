@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_if_logged_in, :except => [:new, :create]
+  before_action :check_if_logged_in, :except => [:new, :create, :contact]
   before_action :check_if_admin, :only => [:index]
 
   def index
@@ -62,7 +62,12 @@ class UsersController < ApplicationController
 
     @categories = @user.categories
     @countries = Country.countries_list
+  end
 
+  def contact
+    if @current_user.present?
+      @user = @current_user
+    end
   end
 
   def destroy

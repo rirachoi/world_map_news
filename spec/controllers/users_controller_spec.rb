@@ -494,11 +494,46 @@ RSpec.describe UsersController, :type => :controller do
       )
 
        # set the session's id to random number.
-       get :mynews, { :id => @user2.id }, { user_id: 1233 }
+       get :mynews, { :id => @user2.id }, { user_id: 2 }
       end
 
       it 'should redirect to root path' do
         expect(response).to redirect_to(pages_path)
+      end
+    end
+  end
+
+
+  context "GET Contact" do
+    describe "When the user logged in" do
+    # It should find the user's details and filled out the input for email
+      before do
+       @user2 = User.create!(
+        username: "user2",
+        email: "user2@test.com",
+        native_country: "Australia",
+        password:'user2-aus',
+        password_confirmation: 'user2-aus'
+      )
+
+       get :contact, { :id => @user2.id }, { user_id: @user2.id }
+      end
+
+      it "returns http success" do
+          expect(response).to be_success
+      end
+
+      it 'should assign the requested user as @user' do
+        expect(assigns(session[:user_id])).to eq(@user1_id)
+      end
+
+    end
+
+    describe "When the user doesn\'t logg in" do
+      it 'should respond with a status 200' do
+        get :contact
+        expect(response).to be_success
+        expect(response.status).to eq(200)
       end
     end
   end

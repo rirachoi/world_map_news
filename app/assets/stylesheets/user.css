@@ -11,25 +11,8 @@
 .sign_in input,
 #user_native_country,
 #native_country,
-#contact-form #contact-email{
+#contact-form input{
   width: 700px;
-  padding: 10px;
-  background-color: rgba(74, 70, 70, 0.8);
-  border: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius:10px 0;
-  box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
-  outline: none;
-  color: #FFF;
-  font-size: 25px;
-}
-
-#contact-form #first,
-#contact-form #last{
-  width: 330px;
-  display: inline-block;
-  margin-right: 20px;
   padding: 10px;
   background-color: rgba(74, 70, 70, 0.8);
   border: 0;
@@ -69,8 +52,7 @@
 .submit_sign_up input,
 .btn_submit,
 #submit,
-#send-button
-{
+footer #send-button{
   margin-top: 3%;
   width: 720px;
   height: 50px;

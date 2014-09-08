@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-09-05T23:35:47+10:00">2014-09-05T23:35:47+10:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-09-08T16:00:41+10:00">2014-09-08T16:00:41+10:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.43%</span></span>
+    (<span class="covered_percent"><span class="green">98.46%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.47
+         2.48
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>54</b> files in total.
-    <b>575</b> relevant lines. 
-    <span class="green"><b>566</b> lines covered</span> and
+    <b>586</b> relevant lines. 
+    <span class="green"><b>577</b> lines covered</span> and
     <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -57,13 +57,13 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>25.8</td>
+        <td>26.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#e0d1321a5322f24eb4a2938c049ff330c156eaa4" class="src_link" title="app/controllers/categories_controller.rb">app/controllers/categories_controller.rb</a></td>
         <td class="red strong">73.91 %</td>
-        <td>39</td>
+        <td>40</td>
         <td>23</td>
         <td>17</td>
         <td>6</td>
@@ -83,11 +83,11 @@
       <tr>
         <td class="strong"><a href="#3bf7b92fa4ec68dc32686492ff8af973d1134c6e" class="src_link" title="app/controllers/pages_controller.rb">app/controllers/pages_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>23</td>
-        <td>12</td>
-        <td>12</td>
+        <td>20</td>
+        <td>11</td>
+        <td>11</td>
         <td>0</td>
-        <td>6.3</td>
+        <td>6.8</td>
       </tr>
       
       <tr>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#131bf26c0e7bc7eb61f80ea71860e8c3f26615ed" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="green strong">93.75 %</td>
-        <td>79</td>
+        <td class="green strong">94.12 %</td>
+        <td>84</td>
+        <td>51</td>
         <td>48</td>
-        <td>45</td>
         <td>3</td>
-        <td>4.8</td>
+        <td>4.6</td>
       </tr>
       
       <tr>
@@ -373,11 +373,11 @@
       <tr>
         <td class="strong"><a href="#b032c1280283bcf2a69e1e8f58b3a5b724910138" class="src_link" title="spec/controllers/pages_controller_spec.rb">spec/controllers/pages_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>103</td>
-        <td>56</td>
-        <td>56</td>
+        <td>94</td>
+        <td>51</td>
+        <td>51</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -393,9 +393,9 @@
       <tr>
         <td class="strong"><a href="#5aefa223359e6bd67439eb6f6c9cf0ffa9163b01" class="src_link" title="spec/controllers/users_controller_spec.rb">spec/controllers/users_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>505</td>
-        <td>180</td>
-        <td>180</td>
+        <td>540</td>
+        <td>194</td>
+        <td>194</td>
         <td>0</td>
         <td>1.5</td>
       </tr>
@@ -662,14 +662,14 @@
           <code class="ruby">  def authenticate_user</code>
         </li>
       
-        <li class="covered" data-hits="97" data-linenumber="8">
-          <span class="hits">97</span>
+        <li class="covered" data-hits="99" data-linenumber="8">
+          <span class="hits">99</span>
           
           <code class="ruby">    if session[:user_id].present? #instead of comparing .nil? and == &quot;&quot;. only for rails</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="9">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="48" data-linenumber="9">
+          <span class="hits">48</span>
           
           <code class="ruby">      @current_user = User.where(:id =&gt; session[:user_id]).first # .find throws fatal error if nothing, .where will return nil if nothing else returns array</code>
         </li>
@@ -686,8 +686,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="97" data-linenumber="12">
-          <span class="hits">97</span>
+        <li class="covered" data-hits="99" data-linenumber="12">
+          <span class="hits">99</span>
           
           <code class="ruby">    if @current_user.nil?</code>
         </li>
@@ -950,79 +950,85 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    # make sure clear old preference because it is checkbox</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">    @current_user.categories.clear</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">    # get values from add my news and find api_id</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
           <code class="ruby">    params[:pref_category].each do |id|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
           <code class="ruby">      category = Category.find_by(:api_id =&gt; id)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="32">
           
           
           <code class="ruby">      @current_user.categories &lt;&lt; category</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="33">
+        <li class="missed" data-hits="0" data-linenumber="34">
           
           
           <code class="ruby">    @current_user.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="35">
+        <li class="missed" data-hits="0" data-linenumber="36">
           
           
           <code class="ruby">    redirect_to users_mynews_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby"></code>
@@ -1079,8 +1085,8 @@
     <h3>app/controllers/pages_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>12</b> relevant lines. 
-      <span class="green"><b>12</b> lines covered</span> and
+      <b>11</b> relevant lines. 
+      <span class="green"><b>11</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1202,25 +1208,7 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def contact</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
@@ -1371,10 +1359,10 @@
         <div class="source_table" id="131bf26c0e7bc7eb61f80ea71860e8c3f26615ed">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="green">93.75 %</span> covered</h4>
+    <h4><span class="green">94.12 %</span> covered</h4>
     <div>
-      <b>48</b> relevant lines. 
-      <span class="green"><b>45</b> lines covered</span> and
+      <b>51</b> relevant lines. 
+      <span class="green"><b>48</b> lines covered</span> and
       <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
@@ -1391,7 +1379,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :check_if_logged_in, :except =&gt; [:new, :create]</code>
+          <code class="ruby">  before_action :check_if_logged_in, :except =&gt; [:new, :create, :contact]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -1769,79 +1757,79 @@
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">  def destroy</code>
+          <code class="ruby">  def contact</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="69">
+        <li class="covered" data-hits="3" data-linenumber="68">
           <span class="hits">3</span>
           
-          <code class="ruby">    @user = User.find params[:id]</code>
+          <code class="ruby">    if @current_user.present?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="70">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="69">
+          <span class="hits">2</span>
           
-          <code class="ruby">    @user.destroy</code>
+          <code class="ruby">      @user = @current_user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="72">
-          <span class="hits">3</span>
-          
-          <code class="ruby">    redirect_to pages_path</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="72">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
+        <li class="covered" data-hits="1" data-linenumber="73">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="74">
+          <span class="hits">3</span>
           
-          <code class="ruby">  def users_params</code>
+          <code class="ruby">    @user = User.find params[:id]</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="77">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="3" data-linenumber="75">
+          <span class="hits">3</span>
           
-          <code class="ruby">    params.require(:user).permit(:username, :email, :native_country, :password, :password_confirmation)</code>
+          <code class="ruby">    @user.destroy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="77">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    redirect_to pages_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
@@ -1851,6 +1839,36 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def users_params</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="82">
+          <span class="hits">13</span>
+          
+          <code class="ruby">    params.require(:user).permit(:username, :email, :native_country, :password, :password_confirmation)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
           
           
           <code class="ruby">end</code>
@@ -8417,7 +8435,7 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  root :to =&gt; &#39;pages#index&#39;</code>
+          <code class="ruby">  root :to =&gt; &#39;pages#about&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
@@ -8429,37 +8447,37 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  get &#39;/users/mynews&#39; =&gt; &#39;users#mynews&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
           <code class="ruby">  resources :pages, :only =&gt; [:index]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">  get &#39;/pages/about&#39; =&gt; &#39;pages#about&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  get &#39;/pages/contact&#39; =&gt; &#39;pages#contact&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/users/mynews&#39; =&gt; &#39;users#mynews&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  get &#39;/users/contact&#39; =&gt; &#39;users#contact&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
@@ -9899,8 +9917,8 @@
     <h3>spec/controllers/pages_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>56</b> relevant lines. 
-      <span class="green"><b>56</b> lines covered</span> and
+      <b>51</b> relevant lines. 
+      <span class="green"><b>51</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -10469,60 +10487,6 @@
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="95">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  describe &quot;GET contact&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;should respond with a status 200&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="97">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      get :contact</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="98">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(response).to be_success</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="99">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      expect(response.status).to eq(200)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="101">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="102">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
           <code class="ruby">end</code>
         </li>
       
@@ -10841,8 +10805,8 @@
     <h3>spec/controllers/users_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>180</b> relevant lines. 
-      <span class="green"><b>180</b> lines covered</span> and
+      <b>194</b> relevant lines. 
+      <span class="green"><b>194</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -13829,7 +13793,7 @@
         <li class="covered" data-hits="1" data-linenumber="497">
           <span class="hits">1</span>
           
-          <code class="ruby">       get :mynews, { :id =&gt; @user2.id }, { user_id: 1233 }</code>
+          <code class="ruby">       get :mynews, { :id =&gt; @user2.id }, { user_id: 2 }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="498">
@@ -13875,6 +13839,216 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="505">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="506">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="507">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  context &quot;GET Contact&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="508">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &quot;When the user logged in&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="509">
+          
+          
+          <code class="ruby">    # It should find the user&#39;s details and filled out the input for email</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="510">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      before do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="511">
+          <span class="hits">2</span>
+          
+          <code class="ruby">       @user2 = User.create!(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="512">
+          
+          
+          <code class="ruby">        username: &quot;user2&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="513">
+          
+          
+          <code class="ruby">        email: &quot;user2@test.com&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="514">
+          
+          
+          <code class="ruby">        native_country: &quot;Australia&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="515">
+          
+          
+          <code class="ruby">        password:&#39;user2-aus&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="516">
+          
+          
+          <code class="ruby">        password_confirmation: &#39;user2-aus&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="517">
+          
+          
+          <code class="ruby">      )</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="518">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="519">
+          <span class="hits">2</span>
+          
+          <code class="ruby">       get :contact, { :id =&gt; @user2.id }, { user_id: @user2.id }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="520">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="521">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="522">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &quot;returns http success&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="523">
+          <span class="hits">1</span>
+          
+          <code class="ruby">          expect(response).to be_success</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="524">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="525">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="526">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;should assign the requested user as @user&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="527">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(assigns(session[:user_id])).to eq(@user1_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="528">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="529">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="530">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="531">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="532">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    describe &quot;When the user doesn\&#39;t logg in&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="533">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &#39;should respond with a status 200&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="534">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        get :contact</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="535">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(response).to be_success</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="536">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(response.status).to eq(200)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="537">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="538">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="539">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="540">
           
           
           <code class="ruby">end</code>

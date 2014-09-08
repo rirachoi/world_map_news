@@ -91,13 +91,4 @@ RSpec.describe PagesController, :type => :controller do
       expect(response.status).to eq(200)
     end
   end
-
-  describe "GET contact" do
-    it 'should respond with a status 200' do
-      get :contact
-      expect(response).to be_success
-      expect(response.status).to eq(200)
-    end
-  end
-
 end

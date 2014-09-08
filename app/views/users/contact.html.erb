@@ -2,10 +2,10 @@
 
 <div id="contact-form">
   <form action='mailto:rira.nunu.choi@gmail.com?subject=Dear World Map News Manager' enctype='text/plain' method='post' role='form' >
-    <p><input id='first' name='first_name' placeholder='First Name' type='text'>
-      <input id='last' name='last_name' placeholder='Last Name' type='text'></p>
-    <p><input id='contact-email' placeholder='E-mail Address' type='text'></p>
-    <p><textarea id="message" name='message' placeholder='Leave your message'></textarea></p>
+
+    <p><input id='From' name='From'  placeholder='Your Name' type='text' value=<%= @user.username.gsub(/ /,"-") if @user %>></p>
+    <p><input id='contact-email' placeholder='E-mail Address' type='text' value=<%= @user.email if @user %>></p>
+    <p><textarea id="message" name='Message' placeholder='Leave your message'></textarea></p>
 
       <footer>
         <input type="submit" value="Send" id='send-button'>

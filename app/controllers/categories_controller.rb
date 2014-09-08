@@ -24,6 +24,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
+    # make sure clear old preference because it is checkbox
     @current_user.categories.clear
     # get values from add my news and find api_id
     params[:pref_category].each do |id|

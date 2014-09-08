@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   root :to => 'pages#about'
 
-  get '/users/mynews' => 'users#mynews'
-
   resources :pages, :only => [:index]
   get '/pages/about' => 'pages#about'
-  get '/pages/contact' => 'pages#contact'
 
+
+  get '/users/mynews' => 'users#mynews'
+  get '/users/contact' => 'users#contact'
   resources :users
   resources :categories, :only => [:index, :show, :create]
   resources :countries, :only => [:index, :show]
