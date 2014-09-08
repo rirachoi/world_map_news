@@ -1,5 +1,5 @@
 /*!
- * jQVMap Version 1.0 
+ * jQVMap Version 1.0
  *
  * http://jqvmap.com
  *
@@ -28,8 +28,8 @@
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	background: #000000;
-	padding: 3px;
+	background: rgba(0,0,0,0.5);
+	padding: 10px;
 	color: white;
 	width: 10px;
 	height: 10px;
@@ -43,7 +43,7 @@
 }
 .jqvmap-zoomout
 {
-	top: 30px;
+	top: 45px;
 }
 .jqvmap-region
 {

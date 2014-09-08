@@ -43,7 +43,7 @@ footer{
   text-align: center;
 }
 
-.users_mynews #msg{
+.users_mynews #msg, {
   font-size: 40px;
   color:rgba(225, 225, 225, 0.5);
   font-family: 'Trebuchet MS';
@@ -57,6 +57,14 @@ footer{
   font-family: 'Trebuchet MS';
   position: relative;
   top: 20px;
+}
+
+.pages_about #msg{
+  font-size: 50px;
+  color:rgba(225, 225, 225, 0.5);
+  font-family: 'Trebuchet MS';
+  position: relative;
+  top: 35px;
 }
 
 #world_map_news{
@@ -334,17 +342,75 @@ ul.sdt_menu li div.sdt_box a:hover{
 }
 
 
-/************ contact ************/
+/************ about ************/
 
 
+#earth-gif{
+  width: 300px;
+  height: 300px;
+  margin: 5% auto 5% auto;
+}
 
+.wmn-intro {
+  text-align: center;
+}
 
-@media (max-width: 600px) {
+.wmn-intro article {
+  font-size: 25px;
+  width: 600px;
+  margin-left: 20%;
+  text-align: center;
+  padding-bottom: 50px;
+  border-bottom: 1px dashed #0B75AF;
+}
+
+.wmn-intro article .strong{
+  font-size: 30px;
+  color: #fff;
+}
+
+.wmn-intro #join-us{
+  font-size: 17px;
+  color: #0B75AF;
+}
+
+.wmn-intro h2 {
+  font-size: 40px;
+  color:#0B75AF;
+}
+
+@media (max-width: 1024px) {
   #body_container, #nav_container {
-    margin: 3%;
+    margin: auto;
   }
 
-  #vmap{
-    max-width: 550px;
+  #body_container #contact-form,
+  #body_container .user_form,
+  #body_container .sign_in{
+    max-width: 800px;
+    margin-left: 12%;
   }
+
+  .jqvmap-zoomin, .jqvmap-zoomout{
+    position: absolute;
+    left: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    color: white;
+    width: 10px;
+    height: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 10px;
+    text-align: center;
+    outline: none;
+  }
+
+  .jqvmap-zoomout{
+    top:70px;
+  }
+
 }

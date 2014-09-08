@@ -71,6 +71,7 @@ $(function() {
 
   $('.pages_index #msg').text('SELECT A COUNTRY ON THE MAP');
   $('.users_mynews #msg').text('SELECT A CATEGORY FOR A COUNTRY');
+  $('.pages_about #msg').text('World Map News');
 
 });
 
