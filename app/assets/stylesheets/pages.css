@@ -45,7 +45,7 @@ footer{
 
 .users_mynews #msg{
   font-size: 40px;
-  color:rgba(225, 225, 225, 0.08);
+  color:rgba(225, 225, 225, 0.5);
   font-family: 'Trebuchet MS';
   position: relative;
   top: 35px;
@@ -53,7 +53,7 @@ footer{
 
 .pages_index #msg{
   font-size: 40px;
-  color:rgba(225, 225, 225, 0.08);
+  color:rgba(225, 225, 225, 0.5);
   font-family: 'Trebuchet MS';
   position: relative;
   top: 20px;
@@ -332,6 +332,12 @@ ul.sdt_menu li div.sdt_box a:first-child{
 ul.sdt_menu li div.sdt_box a:hover{
   color:#fff;
 }
+
+
+/************ contact ************/
+
+
+
 
 @media (max-width: 600px) {
   #body_container, #nav_container {
