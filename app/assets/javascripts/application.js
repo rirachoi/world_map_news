@@ -68,6 +68,7 @@ $(function() {
   $('.countries-index #vmap').hide();
   $('.login-new #vmap').hide();
   $('#extruderLeft').hide();
+  $('#user_category').show();
 
   $('.pages_index #msg').text('SELECT A COUNTRY ON THE MAP');
   $('.users_mynews #msg').text('SELECT A CATEGORY FOR A COUNTRY');

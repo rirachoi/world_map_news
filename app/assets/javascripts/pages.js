@@ -226,7 +226,7 @@ $(document).ready(function() {
 
       $('.loading_animation').fadeOut(1000);
       $('.search_bar').fadeIn(1000);
-      $('#extruderLeft').fadeIn(1000); //categories
+      $('#extruderLeft').fadeIn(1000); //categories side bar
 
       createArticlesBox(mapData);
 

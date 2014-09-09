@@ -1,5 +1,5 @@
 
-<div id='user_category'>
+<div id='user_category' style="display:none;">
   <% @categories.each do |cate| %>
     <div class="<%= cate.api_id%>_<%= cate.title %>"><%= cate.title %></div>
   <% end %>
