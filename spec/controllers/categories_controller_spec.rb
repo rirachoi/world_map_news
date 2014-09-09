@@ -138,50 +138,52 @@ RSpec.describe CategoriesController, :type => :controller do
     end # AS JSON
   end # GET SHOW
 
-  # #Create the user's preference categories - mynews
-  # describe "POST /categories/" do
-  #   describe "create user's categories" do
-  #     before do
-  #       @user1 = User.create!(
-  #         username: "user1",
-  #         email: "user1@test.com",
-  #         native_country: "Australia",
-  #         password:'user1_aus',
-  #         password_confirmation: 'user1_aus'
-  #       )
+  #Create the user's preference categories - mynews
+  describe "POST /categories/" do
+    describe "create user's categories" do
+      before do
+        @user1 = User.create!(
+          username: "user1",
+          email: "user1@test.com",
+          native_country: "Australia",
+          password:'user1_aus',
+          password_confirmation: 'user1_aus'
+        )
 
-  #       @category1 = Category.create!(
-  #         title: 'Art',
-  #         api_id: 4 )
+        @category1 = Category.create!(
+          title: 'Art',
+          api_id: 4 )
 
-  #       @category2 = Category.create!(
-  #         title: 'Sports',
-  #         api_id: 2 )
+        @category2 = Category.create!(
+          title: 'Sports',
+          api_id: 2 )
 
-  #       #session[:user_id] == @user1.id
-  #       # push the new category to user's categories (user's category preference)
-  #       @user1.categories << Category.first
-  #       @user1.save
+        # push the new category to user's categories (user's category preference)
+        @user1.categories << Category.first
+        @user1.save
 
-  #       post :create, { user_id: @user1.id, :pre_category => 2 }
+        # post :create, { category }, { user.id }
+        # Because I am creating category so I have to pass category first and then user's id
+        post :create, { :pref_category => [2] }, { :user_id => @user1.id }
 
-  #     end
+      end
 
-  #     it 'should clear the current user\'s categories' do
-  #       expect((session[:user_id])).to eq(@user1.id)
-  #       expect(@user1.categories.first).to eq(@category1)
-  #     end
+      it 'should clear the current user\'s categories' do
+        expect((session[:user_id])).to eq(@user1.id)
+        expect(@user1.categories.first).not_to eq(@category1)
+        expect(@user1.categories.last).to eq(@category2)
+      end
 
-  #     it 'should assign pre_category\'s api id to user\'s categories' do
-  #       expect((session[:user_id]).categories.last.api_id).to eq(2)
-  #     end
+      it 'should assign pre_category\'s api id to user\'s categories' do
+        expect(@user1.categories.last.api_id).to eq(2)
+      end
 
-  #     it 'should redirect to mynews_path' do
-  #       expect(response.status).to eq(302)
-  #       expect(response).to redirect_to( users_mynews_path(@user1.id))
-  #     end
-  #   end # create user's categories
-  # end # POST/categories
+      it 'should redirect to mynews_path' do
+        expect(response.status).to eq(302)
+        expect(response).to redirect_to( users_mynews_path)
+      end
+    end # create user's categories
+  end # POST/categories
 end
 
 

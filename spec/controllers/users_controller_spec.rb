@@ -303,7 +303,7 @@ RSpec.describe UsersController, :type => :controller do
           password_confirmation: 'user1-aus'
         )
 
-        get :edit, { id: @user1.id }, { user_id: 1234 }
+        get :edit, { id: @user1.id } # , { user_id: 1234 }
 
       end
 
