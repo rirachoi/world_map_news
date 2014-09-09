@@ -53,22 +53,24 @@ $(document).ready(function() {
     });
 
     console.log(userKeyword);
-    if(userKeyword) {
+
+
+    if(userKeyword) { // When used earch bar with a keyword
       $('#' + countryCodeInMap)
           .prepend($('<h2>NEWS FOR <span class="words">'
             + userKeyword.toUpperCase()+'</span> IN <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'));
-     } else if(cateName){
+     } else if(cateName){ // When used Category bar
       $('#' + countryCodeInMap)
           .prepend($('<h2>NEWS OF <span class="words">'
             + cateName.toUpperCase()+'</span> IN <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'));
-     } else if (userCateApiId){
+     } else if (userCateApiId){ // Used mynews - saved the user's category preference
       $('#' + countryCodeInMap)
           .prepend($('<h2>NEWS OF <span class="words">'
             + userCateName.toUpperCase()+'</span> IN <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'));
-     } else {
+     } else { // When clicked a country on the map - 5 of Top news
       $('#'+countryCodeInMap)
           .prepend($('<h2>TOP NEWS FOR <span class="words">'
             + countryName.toUpperCase() +'</span></h2>'))
@@ -181,7 +183,6 @@ $(document).ready(function() {
   $('.back_top').on('click', function(event){
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, 'slow');
-    $('.btn_top').css({'transform':'rotateZ(360deg)'});
   });
 
 
@@ -192,21 +193,29 @@ $(document).ready(function() {
     $('.pages-index .back_top').fadeIn(1000);
     $('#article_container > div').empty();
     countryCodeInMap = event.target.id.split('_').pop();
+    // Make sure to empty the key word and category's name
+    // Prevent from being overwritten keyword and get right one
+    // So the user will get right api with right keyword(search query) and display the word
     userKeyword = '';
     cateName = '';
 
     //console.log(countryCodeInMap);
     $('#msg_no_result').hide();
     if (countryCodeInMap === "" || undefined ){
+      // When the user click the sea
       alert('Please Select A Country On The Map');
       $('#keyword').hide();
       $('.btn_search').hide();
+      // Empty all data of articles and request again when the user click the map
       $('#article_container > div').empty();
     } else {
       $('.loading_animation').fadeIn(1000);
       $('#article_container > div').hide();
+      // Empty all data of articles and request again when the user click the map
       $('#article_container > div').empty();
+      // Matching country code on the map and html div's id which has each country code per div
       $('#'+countryCodeInMap).show();
+      // Display search bar
       $('#keyword').fadeIn(1000);
       $('.btn_search').fadeIn(1000);
 
@@ -228,8 +237,10 @@ $(document).ready(function() {
       $('.search_bar').fadeIn(1000);
       $('#extruderLeft').fadeIn(1000); //categories side bar
 
+      // Calling function with data and it will create an article box
       createArticlesBox(mapData);
 
+      // Clear search keyword so user doesn't have to delete it by hand.
       $('#keyword').val("");
 
       var $containerHeight = $('#vmap').height();
@@ -241,23 +252,25 @@ $(document).ready(function() {
 
 //////////// Search options
 
+  // Getting result with click
   $('.btn_search').on('click', function(event){
     event.preventDefault();
     doSearch();
-
   });
 
+  // Getting result with enter key
   $('#keyword').on('keydown', function(event) {
     if (event.which === 13){
       event.preventDefault();
       doSearch();
-
     }
   });
 
 ////////// Clicked categories menu
   $('#extruderLeft span').on('click', function(event){
+    // To request api data, need to get category's id given by api site
     cateApiId = event.target.id.split('_').shift();
+    // To display the category's name as a header of the article box
     cateName = event.target.id.split('_').pop();
     userKeyword = "";
 
