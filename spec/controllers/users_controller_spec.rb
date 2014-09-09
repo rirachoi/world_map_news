@@ -494,7 +494,7 @@ RSpec.describe UsersController, :type => :controller do
       )
 
        # set the session's id to random number.
-       get :mynews, { :id => @user2.id }, { user_id: 2 }
+       get :mynews, { :id => @user2.id }, { user_id: 32456789 }
       end
 
       it 'should redirect to root path' do

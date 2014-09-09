@@ -162,7 +162,7 @@ RSpec.describe CategoriesController, :type => :controller do
         @user1.categories << Category.first
         @user1.save
 
-        # post :create, { category }, { user.id }
+        # post :create, { category.id-[array] }, { user.id }
         # Because I am creating category so I have to pass category first and then user's id
         post :create, { :pref_category => [2] }, { :user_id => @user1.id }
 
