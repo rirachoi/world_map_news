@@ -50,6 +50,12 @@ $ git clone https://github.com/rirachoi/world_map_news.git worldmapnews/
 
 **Free Software, Hell Yeah!**
 
+
+Background Story - World Map News
+===================================
+
+![alt tag](http://i.imgur.com/7bexGhS.jpg)
+
 [Feedzilla-json-api]:https://code.google.com/p/feedzilla-api/
 [Sublime Text]:http://www.sublimetext.com/
 [RSpec-gem]:http://rspec.info/
