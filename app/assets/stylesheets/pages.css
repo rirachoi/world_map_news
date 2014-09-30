@@ -492,4 +492,10 @@ ul.sdt_menu li div.sdt_box a:hover{
     font-size: 17px;
   }
 
+  .pages_index #msg{
+    margin: 60px auto 0 auto;
+    font-size: 20px;
+  }
+
+
 }
