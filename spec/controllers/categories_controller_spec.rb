@@ -5,7 +5,7 @@ RSpec.describe CategoriesController, :type => :controller do
   ## GET INDEX
   context 'Country TEST' do
     describe "GET index" do
-      describe "as HTML" do
+      describe "as HTML " do
         it 'should respond with a status 200' do
           get :index
           expect(response).to be_success

@@ -11,11 +11,11 @@
 
         <% if @current_user.categories.pluck(:id).include?(cate.id) %>
 
-        <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>" checked="checked">
+          <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>" checked="checked">
 
         <% else %>
 
-        <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>">
+          <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>">
 
         <% end %>
 

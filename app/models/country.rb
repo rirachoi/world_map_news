@@ -31,6 +31,10 @@ class Country < ActiveRecord::Base
   #   saerch_result = HTTParty.get( url )
   # end
 
+
+  # .invert
+  # Make it as single hash so it does not have to go through and User .invert to using country code.
+  # hash_key_is_countrycode = countries_list.invert
   def self.countries_list
     countries_list = [
       {name: 'Afghanistan', code: 'AF'},

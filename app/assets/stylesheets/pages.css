@@ -10,6 +10,7 @@ a{
 }
 
 body{
+  width: 100%;
   max-width: 1000px;
   margin: auto;
   background-color: rgba(0,0,0,0.9);
@@ -33,6 +34,7 @@ footer{
 
 #body_container{
   max-width:  960px;
+  width: 95%;
   margin: auto;
 
 }
@@ -164,10 +166,12 @@ footer{
   margin: auto;
   padding: 10px;
   display: none;
+  width: 100%;
 }
 
 .search_bar input {
-  width: 700px;
+  max-width: 700px;
+  width: 70%;
   height: 20px;
   padding: 10px;
   margin: 3%;
@@ -344,42 +348,55 @@ ul.sdt_menu li div.sdt_box a:hover{
 
 /************ about ************/
 
+.about-image{
+  padding-top: 35px;
+  width: 90%;
+  margin: auto;
+}
 
 #earth-gif{
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   margin: 5% auto 5% auto;
 }
 
 .wmn-intro {
   text-align: center;
+  width: 70%;
+  margin: auto;
 }
 
-.wmn-intro article {
-  font-size: 25px;
-  width: 600px;
-  margin-left: 20%;
+.wmn-intro .about-article {
+  font-size: 15px;
+  width: 100%;
+  max-width: 457px;
+  margin: auto;
   text-align: center;
-  padding-bottom: 50px;
-  border-bottom: 1px dashed #0B75AF;
+  padding-top: 25px;
 }
 
-.wmn-intro article .strong{
-  font-size: 30px;
+.wmn-intro .about-article .strong{
+  font-size: 20px;
   color: #fff;
 }
 
 .wmn-intro #join-us{
   font-size: 17px;
+  text-align: center;
+  width: 100%;
   color: #0B75AF;
+  padding: 0.5em 1em 0.5em 1em;
+  border-bottom: 1px dashed #0B75AF;
 }
 
 .wmn-intro h2 {
-  font-size: 40px;
+  font-size: 30px;
   color:#0B75AF;
 }
 
-@media (max-width: 1024px) {
+
+
+@media (max-width: 1024px) and (min-width: 550px){
   #body_container, #nav_container {
     margin: auto;
   }
@@ -411,6 +428,68 @@ ul.sdt_menu li div.sdt_box a:hover{
 
   .jqvmap-zoomout{
     top:70px;
+  }
+
+  .wmn-intro{
+    width: 80%;
+  }
+
+  #earth-gif{
+    width: 200px;
+    height: 200px;
+    margin: 1em auto 1em auto;
+  }
+
+  #nav_container{
+    margin-left: 5%;
+  }
+
+
+}
+
+@media (max-width: 600px) and (min-width: 250px){
+  .wmn-intro{
+    width: 90%;
+  }
+
+  .msg{
+    font-size: 30px;
+  }
+
+  #nav_container{
+    margin-left: 3%;
+  }
+
+  #world_map_news{
+    font-size: 20px;
+  }
+
+  .title_letter{
+    font-size: 40px;
+  }
+
+  .artiSummery,
+  .article_info{
+    display: none;
+    display: none;
+  }
+
+  .content_article{
+    width: 95%;
+  }
+
+  .artiOriginal{
+    margin-left: 0;
+  }
+
+  .single_article{
+    min-height: 300px;
+  }
+
+  .search_bar button{
+    width: 75px;
+    height: 45px;
+    font-size: 17px;
   }
 
 }
