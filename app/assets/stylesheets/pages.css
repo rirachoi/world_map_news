@@ -709,7 +709,7 @@ ul.sdt_menu li div.sdt_box a:hover{
 
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 319px){
   #body_container,
   #nav_container,
   #vmap, .search_bar,
