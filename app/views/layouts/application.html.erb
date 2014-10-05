@@ -5,29 +5,35 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   </head>
   <body>
+    <!-- NAV TEMPLATE -->
     <div id="nav_container">
+      <!-- WORLD MAP NEW LOGO -->
       <a href='/' title='World Map'>
         <h1 id="world_map_news"><span class='title_letter'>W</span>ORLD <span class='title_letter'>M</span>AP <span class='title_letter'>N</span>EWS</h1>
       </a>
+      <!-- NAVS -->
       <% if @current_user %>
         <%= render :partial => 'layouts/usernav' %>
+        <%= render :partial => 'layouts/mobile_usernav' %>
       <% else %>
         <%= render :partial => 'layouts/nav' %>
+        <%= render :partial => 'layouts/mobile_nav' %>
       <% end %>
     </div>
-
+    <!-- HEADER MESSAGES -->
     <div id="blank" class="<%= params[:controller] %>_<%= params[:action] %>" >
       <h2 id='msg'></h2>
     </div>
-
+    <!-- CATEGORIES MENU TEMPALTE -->
     <%= render :partial => 'pages/categories_menu' if @categories %>
 
+    <!-- BODY CONTAINER -->
     <div id="body_container" class="<%= params[:controller] %>-<%= params[:action] %>">
-
       <%= yield %>
-
     </div>
 
     <footer></footer>

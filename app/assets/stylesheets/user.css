@@ -1,11 +1,14 @@
 .user_form, .sign_in, #contact-form{
-  max-width: 960px;
-  width: 100%;
+  width: 960px;
   margin: auto;
 }
 
-.user_form p, #contact-form p{
+.user_form p,
+#contact-form p,
+.sign_in p{
   display: block;
+  padding: 10px 0;
+  margin: auto;
 }
 
 .user_form input,
@@ -24,11 +27,12 @@
   outline: none;
   color: #FFF;
   font-size: 25px;
+  margin: auto;
 }
 
 #contact-form #message{
   width: 70%;
-  height: 400px;
+  height: 200px;
   margin-right: 20px;
   padding: 10px;
   background-color: rgba(74, 70, 70, 0.8);
@@ -50,27 +54,6 @@
   background-color: rgba(200,200,200,0.5);
 }
 
-.submit_sign_up input,
-.btn_submit,
-#submit,
-footer #send-button{
-  margin-top: 3%;
-  width: 72%;
-  height: 50px;
-  border-radius: 0 10px;
-  padding: 10px;
-  background-color: rgba(146, 26, 26, 0.8);
-  color: white;
-  font-size: 25px;
-}
-
-.submit_sign_up input:hover,
-#submit:hover,
-.btn_submit:hover,
-#send-button:hover,
-#send-button:hover{
-  background-color: rgba(225, 20, 50, 1);
-}
 
 .user_form label,
 .sign_in label{
@@ -148,31 +131,82 @@ footer #send-button{
   background-color: red;
 }
 
+.submit_sign_up input,
+.btn_submit,
+#submit,
+#contact-form #send-button{
+  margin-top: 3%;
+  width: 72%;
+  height: 50px;
+  border-radius: 0 10px;
+  padding: 10px;
+  background-color: rgba(146, 26, 26, 0.8);
+  color: white;
+  font-size: 25px;
+}
 
-@media (max-width: 700px) and (min-width: 250px){
+.submit_sign_up input:hover,
+#submit:hover,
+.btn_submit:hover,
+#contact-form #send-button:hover{
+  background-color: rgba(225, 20, 50, 1);
+}
+
+
+
+@media (max-width: 960px){
+  .user_form, .sign_in, #contact-form{
+    width: 100%;
+  }
+
   .user_form input,
   .sign_in input,
   #user_native_country,
   #native_country,
   #contact-form input,
   #contact-form #message{
-    width: 93%;
+    width: 600px;
   }
 
   .submit_sign_up input,
   .btn_submit,
   #submit,
-  footer #send-button,
+  #contact-form #send-button,
   #user_native_country{
-    width: 97%;
+    width: 600px;
   }
 
   #blank{
     margin-top: 0;
+  }
+}
 
+@media (max-width: 640px){
+  .user_form input,
+  .sign_in input,
+  #user_native_country,
+  #native_country,
+  #contact-form input,
+  #contact-form #message{
+    width: 95%;
+    font-size: 20px;
+    margin: auto;
   }
 
+  .user_form label,
+  .sign_in label{
+    font-size: 25px;
+  }
 
+  .submit_sign_up input,
+  .btn_submit,
+  #submit,
+  #contact-form #send-button,
+  #user_native_country{
+    width: 98%;
+    font-size: 20px;
+    margin: auto;
+  }
 
 }
 

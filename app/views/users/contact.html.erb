@@ -1,4 +1,4 @@
- <div id="vmap" style="width: 960px; height: 500px; display:none"></div>
+ <div id="vmap" style="display:none"></div>
 
 <div id="contact-form">
   <form action='mailto:rira.nunu.choi@gmail.com?subject=Dear World Map News Manager' enctype='text/plain' method='post' role='form' >
@@ -7,8 +7,6 @@
     <p><input id='contact-email' placeholder='E-mail Address' type='text' value=<%= @user.email if @user %>></p>
     <p><textarea id="message" name='Message' placeholder='Leave your message'></textarea></p>
 
-      <footer>
-        <input type="submit" value="Send" id='send-button'>
-      </footer>
+    <p><input type="submit" value="Send" id='send-button'><p>
   </form>
 </div>

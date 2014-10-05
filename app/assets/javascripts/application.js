@@ -64,6 +64,22 @@ $(function() {
        .animate({'top':'25px'},500);
   });
 
+
+  // mobile nav
+
+
+  $('.icon-menu').click(function() {
+    $('.mobile-nav').animate({
+      left: "0px"
+    }, 200);
+  });
+
+  $('.icon-close').click(function() {
+    $('.mobile-nav').animate({
+      left: "-205px"
+    }, 200);
+  });
+
   $('.categories-index #vmap').hide();
   $('.countries-index #vmap').hide();
   $('.login-new #vmap').hide();
@@ -73,18 +89,4 @@ $(function() {
   $('.pages_index #msg').text('SELECT A COUNTRY ON THE MAP');
   $('.users_mynews #msg').text('SELECT A CATEGORY FOR A COUNTRY');
   $('.pages_about #msg').text('World Map News');
-
 });
-
-
-
-// $(document).ready(function(){
-//   $(window).scroll(function(e){
-//     parallax();
-//   });
-
-//   function parallax(){
-//     var scrolled = $(window).scrollTop();
-//     $('body').css('top',-(scrolled*0.2)+'px');
-//   }
-// });

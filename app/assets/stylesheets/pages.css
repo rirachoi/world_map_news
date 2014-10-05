@@ -3,15 +3,20 @@
 *{
   text-decoration: none;
   list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 a{
   color: #FFF;
 }
 
-body{
+html,body{
   width: 100%;
-  max-width: 1000px;
+}
+
+body{
   margin: auto;
   background-color: rgba(0,0,0,0.9);
   color: rgb(153, 150, 150);
@@ -40,7 +45,6 @@ footer{
 }
 
 #blank{
-  margin-top: 40px;
   height:70px;
   text-align: center;
 }
@@ -90,6 +94,13 @@ footer{
 #world_map_news, .nav{
   display: inline-block;
   vertical-align: middle;
+}
+
+/* PAGE CSS */
+
+#vmap{
+  width: 100%;
+  height: 400px;
 }
 
 .content_article{
@@ -381,12 +392,26 @@ ul.sdt_menu li div.sdt_box a:hover{
 }
 
 .wmn-intro #join-us{
+  display: block;
   font-size: 17px;
   text-align: center;
   width: 100%;
   color: #0B75AF;
-  padding: 0.5em 1em 0.5em 1em;
-  border-bottom: 1px dashed #0B75AF;
+  padding: 0;
+}
+
+#join-us a{
+  margin: 10px;
+  width: 150px;
+  display: inline-block;
+  font-size: 23px;
+  padding: 5px;
+  background-color: #0B75AF;
+  border: 2px solid rgba(225, 225, 225, 0.2);
+}
+
+#join-us a:hover{
+  opacity: 0.7;
 }
 
 .wmn-intro h2 {
@@ -394,21 +419,122 @@ ul.sdt_menu li div.sdt_box a:hover{
   color:#0B75AF;
 }
 
+/* HIDE MOBILE NAV AND DISABLE TO CLICK */
+
+#mobile-usernav, #mobile-nav{
+  opacity: 0;
+  position: fixed;
+  top:0;
+  color: white;
+  background-color: rgba(33, 31, 31, 1);
+  z-index: -10;
+  margin: auto;
+  padding: 0;
+  left: -205px;
+  height: 100%;
+  position: fixed;
+  width: 205px;
+}
+
+.icon-menu {
+  opacity: 0;
+  z-index: -10;
+  pointer-events: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  width: 200px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.icon-close img{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#mobile-usernav ul, #mobile-nav ul{
+  margin: auto;
+  padding: 0;
+}
+
+#mobile-usernav li, #mobile-nav li{
+  display: block;
+  vertical-align: top;
+  font-size: 30px;
+  width: 100%;
+  margin:auto;
+}
+
+#mobile-usernav li a, #mobile-nav li a{
+  display: block;
+  pointer-events: none;
+}
+
+#mobile-usernav li > a,
+#mobile-nav li > a{
+  font-size: 25px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.toggle-nav a{
+  padding: 10px 0;
+  width:100%;
+  border-top: 1px solid rgba(33, 31, 31, 1);
+  border-bottom: 1px solid rgba(33, 31, 31, 1);
+  margin: auto;
+  font-size: 18px;
+  text-align: center;
+  background:transparent url(overlay.png) no-repeat bottom left;
+
+}
 
 
-@media (max-width: 1024px) and (min-width: 550px){
-  #body_container, #nav_container {
+.toggle-nav img{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.users_contact,
+.users_new,
+.sessions_new,
+.users_index{
+  display: none;
+}
+
+
+
+
+@media screen and (max-width: 960px){
+  *{
+    padding: 0;
+    margin: 0;
+  }
+
+  #body_container,
+  #nav_container {
     margin: auto;
+    width: 100%;
   }
 
-  #body_container #contact-form,
-  #body_container .user_form,
-  #body_container .sign_in{
-    max-width: 800px;
-    margin-left: 12%;
+  #vmap{
+    width: 100%;
+    padding: 0;
+    margin:auto;
   }
 
-  .jqvmap-zoomin, .jqvmap-zoomout{
+  #blank{
+    padding-top: 50px;
+  }
+
+  .jqvmap-zoomin,
+  .jqvmap-zoomout{
     position: absolute;
     left: 10px;
     -webkit-border-radius: 5px;
@@ -435,40 +561,103 @@ ul.sdt_menu li div.sdt_box a:hover{
   }
 
   #earth-gif{
-    width: 200px;
-    height: 200px;
-    margin: 1em auto 1em auto;
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    padding-bottom: 20px;
   }
 
   #nav_container{
-    margin-left: 5%;
+    width: 100%;
   }
 
+  #world_map_news{
+    display: none;
+  }
 
 }
 
-@media (max-width: 600px) and (min-width: 250px){
+@media screen and (max-width: 640px){
   .wmn-intro{
     width: 90%;
+  }
+
+   #blank{
+    padding-top: 0;
   }
 
   .msg{
     font-size: 30px;
   }
 
-  #nav_container{
-    margin-left: 3%;
+
+  #join-us p{
+    width: 180px;
+    margin: auto;
   }
 
-  #world_map_news{
+  .pages_index #msg,
+  .pages_about #msg{
+    margin:auto;
+    font-size: 2em;
+  }
+
+  .jqvmap-zoomout{
+    top:10px;
+    left: 70px;
+  }
+
+  #vmap{
+    height: 350px;
+    top:30px;
+    margin-bottom: 50px;
+  }
+
+  .extruder .voice a.label{
     font-size: 20px;
   }
 
-  .title_letter{
-    font-size: 40px;
+  .back_top{
+    width: 100px;
+    height: 100px;
   }
 
-  .artiSummery,
+  .single_article{
+    min-height: 150px;
+    padding-top: 50px;
+  }
+
+  .single_article h2{
+    font-size: 20px;
+  }
+
+  #article_container div > h2{
+    text-align: center;
+  }
+
+  .words{
+    display: block;
+    font-size: 30px;
+  }
+
+
+  .loading_animation{
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  top: 350px;
+  }
+
+  .loading_animation img{
+    width: 100px;
+    height: 100px;
+  }
+
+  .artiTitle h3{
+    font-size: 25px;
+  }
+
+  .artiSummary,
   .article_info{
     display: none;
     display: none;
@@ -482,20 +671,58 @@ ul.sdt_menu li div.sdt_box a:hover{
     margin-left: 0;
   }
 
-  .single_article{
-    min-height: 300px;
+  .search_bar{
+    margin: auto;
+    padding: 10px 0;
+    display: none;
   }
 
-  .search_bar button{
-    width: 75px;
-    height: 45px;
-    font-size: 17px;
+  .search_bar input {
+    width: 70%;
+    padding: 5px 0;
+    font-size: 15px;
   }
 
-  .pages_index #msg{
-    margin: 60px auto 0 auto;
-    font-size: 20px;
+  .search_bar button {
+    width: 20%;
+    padding: 3px 0;
+    font-size: 15px;
   }
 
+  .nav{
+    display: none;
+  }
 
+  #mobile-usernav, #mobile-nav, .icon-menu{
+    opacity: 1;
+    z-index: 1;
+  }
+
+  #mobile-usernav li a, #mobile-nav li a, .icon-menu{
+    pointer-events: auto;
+  }
+
+  #mobile-usernav li > a,
+  #mobile-nav li > a{
+    pointer-events: none;
+  }
+
+}
+
+@media screen and (max-width: 320px){
+  #body_container,
+  #nav_container,
+  #vmap, .search_bar,
+  #mobile-usernav, #mobile-nav,
+  .wmn-intro{
+    width: 320px;
+  }
+
+  .content_article, .single_article{
+    width: 300px;
+    min-height: 150px;
+  }
+  .artiTitle h3{
+    font-size: 25px;
+  }
 }

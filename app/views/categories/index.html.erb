@@ -1,14 +1,12 @@
+<div id="vmap"></div>
 
-<div id="vmap" style="width: 960px; height: 500px; display:none;"></div>
-
-
+<!-- CATEGORY MANAGEMENT CONTAINER -->
 <div id="categories_container">
   <p>CATEGORIES</p>
   <%= form_tag '/categories', :method => 'post', :class => "ac-custom ac-checkbox ac-checkmark", :authocomplete => false do %>
     <ul>
       <% @categories.each do |cate|%>
       <li>
-
         <% if @current_user.categories.pluck(:id).include?(cate.id) %>
 
           <input id="<%= cate.api_id%>" name="pref_category[]" type="checkbox" value="<%= cate.api_id%>" checked="checked">

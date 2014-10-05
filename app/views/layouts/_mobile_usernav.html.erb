@@ -1,0 +1,45 @@
+<div class="icon-menu">
+  &#9776; Menu
+</div>
+
+<div id="mobile-usernav" class="mobile-nav">
+  <div class="icon-close">
+    <img src="http://i.imgur.com/HYHfIlx.png">
+  </div>
+  <ul >
+    <li>
+      <a href="#" class="navName">HOME</a>
+      <div class="toggle-nav">
+        <a href="/pages">NEWS</a>
+        <%= link_to 'My Account', user_path(@current_user) %>
+        <%= link_to 'Sign Out', login_path, :data => {:method => :delete, :confirm => 'Really logout?'} %>
+      </div>
+    </li>
+
+    <li>
+      <a href="#" class="navName">MY NEWS</a>
+      <div class="toggle-nav">
+        <%= link_to 'Add My News', categories_path %>
+        <%= link_to 'View My News Map', users_mynews_path %>
+      </div>
+    </li>
+
+    <% if @current_user.try(:admin) %>
+      <li>
+        <a href="#" class="navName">SETTING</a>
+        <div class="toggle-nav">
+          <%= link_to 'General Settings', '#' %>
+          <%= link_to 'View Users', users_path %>
+        </div>
+      </li>
+    <% else %>
+      <li>
+        <a href="#" class="navName">ABOUT US</a>
+        <div class="toggle-nav">
+          <%= link_to 'World Map News', pages_about_path %>
+          <%= link_to 'Email', users_contact_path %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

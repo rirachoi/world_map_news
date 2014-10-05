@@ -1,29 +1,35 @@
+<!-- PAGE INDEX TEMPLATE -->
+  <!-- LOADING IMAGE -->
+  <div class="loading_animation" style="display:none;" >
+    <%= image_tag('spinning_the_world.gif', :title => 'loading..') %>
+    <h2>LOADING....</h2>
+  </div>
 
-<div class="loading_animation" style="display:none;" >
-  <%= image_tag('spinning_the_world.gif', :title => 'loading..') %>
-  <h2>LOADING....</h2>
-</div>
+  <!-- MAP -->
+  <div id="vmap"></div>
 
-<div id="vmap" style="width: 960px; height: 500px;"></div>
+  <!-- SEARCH BAR -->
+  <div class="search_bar">
+    <%= form_tag("/pages", remote: true, method: 'get') do %>
+      <%= text_field_tag(:keyword, nil, :placeholder => 'Type Keyword')%>
+      <%= button_tag("Search", class: 'btn_search') %>
+    <% end %>
+  </div>
 
-<div class="search_bar">
-  <%= form_tag("/pages", remote: true, method: 'get') do %>
-    <%= text_field_tag(:keyword, nil, :placeholder => 'Type Keyword')%>
-    <%= button_tag("Search", class: 'btn_search') %>
-  <% end %>
-</div>
+  <!-- ERROR MESSAGE -->
+  <div id="msg_no_result" style="display:none;">
+    <h1> <span>Sorry.</span> There are <span>no articles</span> about it..!!</h1>
+  </div>
 
-<div id="msg_no_result" style="display:none;">
-  <h1> <span>Sorry.</span> There are <span>no articles</span> about it..!!</h1>
-</div>
+  <!-- ARTICLE CONTAINER -->
+  <div id='article_container'>
+    <% @countries.each do |c|%>
+      <div id='<%=c[:code].downcase %>' class="<%= c[:name] %>" style='display:none;'></div>
+    <% end %>
+  </div>
 
-<div id='article_container'>
-  <% @countries.each do |c|%>
-    <div id='<%=c[:code].downcase %>' class="<%= c[:name] %>" style='display:none;'></div>
-  <% end %>
-</div>
-
-<div id='btn_nav'>
-  <%=image_tag ('top.png'), title: "TOP", class: "back_top" %>
-</div>
+  <!-- TOP BUTTON -->
+  <div id='btn_nav'>
+    <%=image_tag ('top.png'), title: "TOP", class: "back_top" %>
+  </div>
 

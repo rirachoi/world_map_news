@@ -1,0 +1,33 @@
+<div class="icon-menu">
+  &#9776; Menu
+</div>
+
+<div id="mobile-nav" class="mobile-nav">
+  <div class="icon-close">
+    <img src="http://i.imgur.com/HYHfIlx.png">
+  </div>
+  <ul>
+    <li class="navName">
+      <a href="#">HOME</a>
+      <div class="toggle-nav">
+        <a href="/pages"><%= image_tag('spinning_earth.gif') %></a>
+      </div>
+    </li>
+
+    <li class="navName">
+      <a href="#">MY NEWS</a>
+      <div class="toggle-nav">
+        <%= link_to 'Sign Up', new_user_path %>
+        <%= link_to 'Sign In', login_path %>
+      </div>
+    </li>
+
+    <li class="navName">
+      <a href="#">ABOUT US</a>
+      <div class="toggle-nav">
+        <%= link_to 'World Map News', pages_about_path %>
+        <%= link_to 'Email', users_contact_path%>
+      </div>
+    </li>
+  </ul>
+</div>
