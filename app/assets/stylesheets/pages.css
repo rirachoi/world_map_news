@@ -434,6 +434,7 @@ ul.sdt_menu li div.sdt_box a:hover{
   height: 100%;
   position: fixed;
   width: 205px;
+  overflow: auto;
 }
 
 .icon-menu {
@@ -693,13 +694,18 @@ ul.sdt_menu li div.sdt_box a:hover{
     display: none;
   }
 
+
   #mobile-usernav, #mobile-nav, .icon-menu{
-    opacity: 1000;
+    opacity: 1;
     z-index: 1000;
   }
 
   #mobile-usernav li a, #mobile-nav li a, .icon-menu{
     pointer-events: auto;
+  }
+
+  #mobile-usernav ul, #mobile-nav ul{
+    padding-bottom: 50px;
   }
 
   #mobile-usernav li > a,
@@ -713,7 +719,6 @@ ul.sdt_menu li div.sdt_box a:hover{
   #body_container,
   #nav_container,
   #vmap, .search_bar,
-  #mobile-usernav, #mobile-nav,
   .wmn-intro{
     width: 320px;
   }
