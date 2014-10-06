@@ -21,9 +21,21 @@
   background-color: rgba(74, 70, 70, 0.8);
   border: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius:10px 0;
-  box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-appearance: none;
+  -webkit-border-radius:10px 0;
+     -moz-border-radius:10px 0;
+          border-radius:10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+          box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  -webkit-border-radius:10px 0;
+     -moz-border-radius:10px 0;
+          border-radius:10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+          box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
   outline: none;
   color: #FFF;
   font-size: 25px;
@@ -39,8 +51,14 @@
   border: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
-  border-radius:10px 0;
-  box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  -webkit-border-radius:10px 0;
+     -moz-border-radius:10px 0;
+          border-radius:10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+          box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
   outline: none;
   color: #FFF;
   font-size: 25px;
@@ -65,18 +83,49 @@
   width: 72%;
   text-indent: 0.01px;
   text-overflow: "";
-  border-radius:10px 0;;
   padding: 10px;
-  box-shadow: inset 0 0 5px rgba(225,225,225,0.7);
+  -webkit-appearance: none;
+     -moz-appearance: none;
+  -webkit-border-radius:10px 0;
+     -moz-border-radius:10px 0;
+          border-radius:10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+          box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+}
+
+.users-show .user_info,
+.users-show .users_mynews_list{
+  width: 90%;
+  margin: auto;
+}
+
+.users-show .user_box{
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  -webkit-border-radius:5px;
+   -moz-border-radius:5px;
+        border-radius:5px;
 }
 
 .users-show .user_info p,
 .users-show .users_mynews_list li,
 .users-index  p,
 .users-index  h2{
-  font-size: 20px;
+  margin: auto;
+  font-size: 25px;
   padding: 5px;
   font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+.users_mynews_list li{
+  min-width: 200px;
+  width: 20%;
+  display: inline-block;
+}
+
+.users-show .users_mynews_list .user_box{
+  max-height: 250px;
+  overflow: auto;
 }
 
 
@@ -100,9 +149,13 @@
   background-color: rgba(146, 26, 26, 0.8);
   border: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius:10px 0;
-  box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-appearance: none;
+  -webkit-border-radius:10px 0;
+     -moz-border-radius:10px 0;
+          border-radius:10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+          box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
   color: #FFF;
 }
 
@@ -113,16 +166,20 @@
 .users-show .link-edit,
 .users-show .link-cate {
   display: block;
-  margin: 2% 0 0 0;
+  margin: 2% 0 0 60%;
   font-size: 20px;
-  width: 300px;
+  width: 35%;
   padding: 10px;
   background-color: rgba(146, 26, 26, 0.8);
   border: 0;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  border-radius:10px 0;
-  box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-appearance: none;
+  -webkit-border-radius:10px 0;
+     -moz-border-radius:10px 0;
+          border-radius:10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+     -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+          box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
   color: #FFF;
 }
 
@@ -138,7 +195,9 @@
   margin-top: 3%;
   width: 72%;
   height: 50px;
-  border-radius: 0 10px;
+  -webkit-border-radius: 0 10px;
+     -moz-border-radius: 0 10px;
+          border-radius: 0 10px;
   padding: 10px;
   background-color: rgba(146, 26, 26, 0.8);
   color: white;
@@ -151,7 +210,6 @@
 #contact-form #send-button:hover{
   background-color: rgba(225, 20, 50, 1);
 }
-
 
 
 @media (max-width: 960px){
@@ -178,6 +236,12 @@
 
   #blank{
     margin-top: 0;
+  }
+
+  .users-show .link-edit,
+  .users-show .link-cate{
+    margin-left: 50%;
+    width: 45%
   }
 }
 
@@ -206,6 +270,23 @@
     width: 98%;
     font-size: 20px;
     margin: auto;
+  }
+
+  .users-show h1 {
+    font-size: 20px;
+    color:rgba(225, 225, 225, 0.3);
+    font-family: 'Trebuchet MS';
+  }
+
+  .users-show h1 span, .users-index h1{
+    font-size: 35px;
+    color:rgba(225, 225, 225, 0.5);
+  }
+
+  .users-show .link-edit,
+  .users-show .link-cate{
+    margin-left: 0;
+    width: 95%;
   }
 
 }

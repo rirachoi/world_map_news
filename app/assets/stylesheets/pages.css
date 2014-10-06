@@ -27,11 +27,6 @@ footer{
   height: 50px;
 }
 
-#main_img{
-  margin: 2%;
-  width: 960px;
-}
-
 #nav_container{
   max-width: 960px;
   margin: auto;
@@ -48,6 +43,101 @@ footer{
   height:70px;
   text-align: center;
 }
+
+
+#world_map_news{
+  font-size: 30px;
+  margin: 2% 0 2% 0;
+  margin-right: 70px;
+  color: rgba(225, 225, 225, 0.5);
+  font-family: 'Codystar', sans-serif;
+  border-bottom: 1px solid rgba(225, 225, 225, 0.3);
+}
+
+.title_letter{
+  font-size: 50px;
+  color: rgba(225, 225, 225, 0.7);
+}
+
+.nav{
+  width: 500px;
+}
+
+#world_map_news, .nav{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.users_contact, .users_new,
+.sessions_new, .users_index,
+.categories_index, .users_show{
+  display: none;
+}
+
+
+/* ABOUT */
+
+.about-image{
+  padding-top: 35px;
+  width: 90%;
+  margin: auto;
+}
+
+#earth-gif{
+  width: 200px;
+  height: 200px;
+  margin: 5% auto 5% auto;
+}
+
+.wmn-intro {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+.wmn-intro .about-article {
+  font-size: 15px;
+  width: 100%;
+  max-width: 457px;
+  margin: auto;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.wmn-intro .about-article .strong{
+  font-size: 20px;
+  color: #fff;
+}
+
+.wmn-intro #join-us{
+  display: block;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+  color: #0B75AF;
+  padding: 0;
+}
+
+#join-us a{
+  margin: 10px;
+  width: 150px;
+  display: inline-block;
+  font-size: 23px;
+  padding: 5px;
+  background-color: #0B75AF;
+  border: 2px solid rgba(225, 225, 225, 0.2);
+}
+
+#join-us a:hover{
+  opacity: 0.7;
+}
+
+.wmn-intro h2 {
+  font-size: 30px;
+  color:#0B75AF;
+}
+
+/* MY NEWS */
 
 .users_mynews #msg, {
   font-size: 40px;
@@ -71,29 +161,6 @@ footer{
   font-family: 'Trebuchet MS';
   position: relative;
   top: 35px;
-}
-
-#world_map_news{
-  font-size: 30px;
-  margin: 2% 0 2% 0;
-  margin-right: 70px;
-  color: rgba(225, 225, 225, 0.5);
-  font-family: 'Codystar', sans-serif;
-  border-bottom: 1px solid rgba(225, 225, 225, 0.3);
-}
-
-.title_letter{
-  font-size: 50px;
-  color: rgba(225, 225, 225, 0.7);
-}
-
-.nav{
-  width: 500px;
-}
-
-#world_map_news, .nav{
-  display: inline-block;
-  vertical-align: middle;
 }
 
 /* PAGE CSS */
@@ -233,19 +300,22 @@ footer{
   color: rgb(137, 12, 12);
 }
 
-.back_top {
-  display: none;
+.back_top, .btn_back_top {
   position: fixed;
   width: 150px;
   height: 150px;
   right: 5%;
   bottom: 0;
-  opacity: 0.5;
+  opacity: 0.7;
   cursor: pointer;
 }
 
+.back_top{
+  display: none;
+}
 
-/************* nav ***************/
+
+/* NAV */
 
 
 ul.sdt_menu{
@@ -357,70 +427,8 @@ ul.sdt_menu li div.sdt_box a:hover{
 }
 
 
-/************ about ************/
-
-.about-image{
-  padding-top: 35px;
-  width: 90%;
-  margin: auto;
-}
-
-#earth-gif{
-  width: 200px;
-  height: 200px;
-  margin: 5% auto 5% auto;
-}
-
-.wmn-intro {
-  text-align: center;
-  width: 70%;
-  margin: auto;
-}
-
-.wmn-intro .about-article {
-  font-size: 15px;
-  width: 100%;
-  max-width: 457px;
-  margin: auto;
-  text-align: center;
-  padding-top: 25px;
-}
-
-.wmn-intro .about-article .strong{
-  font-size: 20px;
-  color: #fff;
-}
-
-.wmn-intro #join-us{
-  display: block;
-  font-size: 17px;
-  text-align: center;
-  width: 100%;
-  color: #0B75AF;
-  padding: 0;
-}
-
-#join-us a{
-  margin: 10px;
-  width: 150px;
-  display: inline-block;
-  font-size: 23px;
-  padding: 5px;
-  background-color: #0B75AF;
-  border: 2px solid rgba(225, 225, 225, 0.2);
-}
-
-#join-us a:hover{
-  opacity: 0.7;
-}
-
-.wmn-intro h2 {
-  font-size: 30px;
-  color:#0B75AF;
-}
-
+/* MOBILE NAV */
 /* HIDE MOBILE NAV AND DISABLE TO CLICK */
-
 #mobile-usernav, #mobile-nav{
   opacity: 0;
   position: fixed;
@@ -495,21 +503,11 @@ ul.sdt_menu li div.sdt_box a:hover{
 
 }
 
-
 .toggle-nav img{
   width: 50px;
   height: 50px;
   text-align: center;
 }
-
-.users_contact,
-.users_new,
-.sessions_new,
-.users_index{
-  display: none;
-}
-
-
 
 
 @media screen and (max-width: 960px){
@@ -539,8 +537,8 @@ ul.sdt_menu li div.sdt_box a:hover{
     position: absolute;
     left: 10px;
     -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
     background: rgba(0,0,0,0.5);
     padding: 20px;
     color: white;
@@ -576,6 +574,10 @@ ul.sdt_menu li div.sdt_box a:hover{
     display: none;
   }
 
+  #user_category{
+    width:600px;
+  }
+
 }
 
 @media screen and (max-width: 640px){
@@ -590,7 +592,6 @@ ul.sdt_menu li div.sdt_box a:hover{
   .msg{
     font-size: 30px;
   }
-
 
   #join-us p{
     width: 180px;
@@ -623,12 +624,14 @@ ul.sdt_menu li div.sdt_box a:hover{
     height: 100px;
   }
 
+  /* NEWS CSS */
+
   .single_article{
     min-height: 150px;
     padding-top: 50px;
   }
 
-  .single_article h2{
+  .single_article h2, #msg_no_result h2{
     font-size: 20px;
   }
 
@@ -690,10 +693,32 @@ ul.sdt_menu li div.sdt_box a:hover{
     font-size: 15px;
   }
 
+  #user_category{
+    width: 320px;
+    margin-bottom: 20px;
+  }
+
+  #user_category div{
+    width: 85%;
+  }
+
+  .users-mynews .loading_animation{
+    top: 450px;
+  }
+
+  #msg_no_result h1{
+    font-size: 25px;
+  }
+
+  #msg_no_result span{
+    font-size: 40px;
+  }
+
+  /* MOBILE NAV */
+
   .nav{
     display: none;
   }
-
 
   #mobile-usernav, #mobile-nav, .icon-menu{
     opacity: 1;

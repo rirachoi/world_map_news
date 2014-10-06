@@ -1,3 +1,4 @@
+<!-- USER CATEGORIES -->
 
 <div id='user_category' style="display:none;">
   <% @categories.each do |cate| %>
@@ -5,13 +6,16 @@
   <% end %>
 </div>
 
+<!-- USER NEWS MAP -->
 <div id="vmap" class="vmap-mynews" style="display:none;"></div>
 
+<!-- USER NEWS LAODING ANIMATION -->
 <div class="loading_animation" style="display:none;" >
   <%= image_tag('spinning_the_world.gif', :title => 'loading..') %>
   <h2>LOADING....</h2>
 </div>
 
+<!-- USER SEARCH BAR -->
 <div class="search_bar">
   <%= form_tag("/pages", remote: true, method: 'get') do %>
     <%= text_field_tag(:keyword, nil, :placeholder => 'Type Keyword')%>
@@ -19,6 +23,7 @@
   <% end %>
 </div>
 
+<!-- CATEGORIES SIDE BAR -->
 <% @categories.each do |cate| %>
   <div id="<%= cate.api_id%>">
     <div id='article_container'>
@@ -30,9 +35,12 @@
   </div>
 <% end %>
 
+<!-- ERROR MESSEAGE -->
 <div id="msg_no_result" style="display:none;">
   <h1> <span>Sorry!</span> There are <span>no articles</span> about it..!!</h1>
 </div>
+
+<!-- BUTTON TO TOP -->
 
 <div id='btn_nav'>
   <%=image_tag ('top.png'), title: "TOP", class: "back_top" %>

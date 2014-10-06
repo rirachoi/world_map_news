@@ -1,24 +1,29 @@
-<h1><span><%= @user.username %></span>'s Details</h1>
-
 <div class='user_info'>
-  <p>Name : <%= @user.username %></p>
-  <p>Email : <%= @user.email %></p>
-  <p>Native Country :
-    <% Country.countries_list.each do |c|%>
-      <%= c[:name] if c[:code].downcase == @user.native_country %>
-    <% end %>
-  </p>
-   <%= link_to('Edit Your Details', edit_user_path(@user), class: "link-edit")%>
+  <h1>
+    <span><%= @user.username %></span>'s Details
+  </h1>
+  <div class="user_box">
+    <p>Name : <%= @user.username %></p>
+    <p>Email : <%= @user.email %></p>
+    <p>Native Country :
+      <% Country.countries_list.each do |c|%>
+        <%= c[:name] if c[:code].downcase == @user.native_country %>
+      <% end %>
+    </p>
+  </div>
+  <%= link_to('Edit Your Details', edit_user_path(@user), class: "link-edit" )%>
 </div>
 
 <div class="users_mynews_list">
   <h1><span>My News</span> Categories List</h1>
-  <ul>
-    <% @user.categories.each do |cate|%>
-    <li><%= cate.title %></li>
-    <% end %>
-  </ul>
+  <div class="user_box">
+    <ul>
+      <% @user.categories.each do |cate|%>
+      <li><%= cate.title %></li>
+      <% end %>
+    </ul>
+  </div>
   <%= link_to('Edit My News', categories_path, class: "link-cate")%>
 </div>
 
-<div id="vmap" style="width: 960px; height: 500px; display:none;"></div>
+<div id="vmap" style="display:none;"></div>

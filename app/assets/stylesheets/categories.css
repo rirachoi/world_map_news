@@ -238,28 +238,37 @@
 
 
 #user_category {
-  height: 190px;
+  height: 130px;
   max-width: 960px;
   width: 100%;
-  margin: auto auto 1.5em 1.5em;
+  margin: auto;
   overflow: auto;
+  margin-bottom: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+         border-radius: 5px;
 }
 
 #user_category div{
   display: inline-block;
-  width: 150px;
-  height: 40px;
+  width: 20%;
+  min-width: 150px;
   padding: 10px;
-  margin: 1em 0.5em 0 0 ;
-  background-color: rgba(74, 70, 70, 0.8);
-  border: 0;
+  margin: 0.5em;
+  background-color: rgba(30, 58, 114, 0.8);
   -webkit-appearance: none;
   -moz-appearance: none;
-  border-radius: 10px 0;
-  box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+  -webkit-border-radius: 10px 0;
+     -moz-border-radius: 10px 0;
+         border-radius: 10px 0;
+  -webkit-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+    -moz-box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
+         box-shadow: inset 0 0 5px rgba(168, 147, 147, 0.7);
   color: #FFF;
   font-size: 20px;
   cursor: pointer;
+  text-align: center;
 }
 
 #user_category div:hover{
@@ -267,6 +276,6 @@
 }
 
 .users-mynews .loading_animation{
-  top: 750px;
+  top: 550px;
 }
 

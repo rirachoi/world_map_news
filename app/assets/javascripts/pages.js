@@ -185,6 +185,11 @@ $(document).ready(function() {
     $("html, body").animate({ scrollTop: 0 }, 'slow');
   });
 
+  $('.btn_back_top').on('click', function(event){
+    event.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 'slow');
+  });
+
 
 ///////// Clicked the map
   $('.pages-index #vmap svg').on('click', function(event){

@@ -2,7 +2,7 @@
 
 <!-- CATEGORY MANAGEMENT CONTAINER -->
 <div id="categories_container">
-  <p>CATEGORIES</p>
+  <h1> SET YOUR PREFERENCE </h1>
   <%= form_tag '/categories', :method => 'post', :class => "ac-custom ac-checkbox ac-checkmark", :authocomplete => false do %>
     <ul>
       <% @categories.each do |cate|%>
@@ -23,6 +23,11 @@
     </ul>
     <%= submit_tag "Submit", :class => 'btn_submit' %>
   <% end %>
+</div>
+
+<!-- BUTTON TO TOP -->
+<div class='btn_nav_top'>
+  <%=image_tag ('top.png'), title: "TOP", class: "btn_back_top" %>
 </div>
 
 
