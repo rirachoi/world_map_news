@@ -694,8 +694,8 @@ ul.sdt_menu li div.sdt_box a:hover{
   }
 
   #mobile-usernav, #mobile-nav, .icon-menu{
-    opacity: 1;
-    z-index: 1;
+    opacity: 1000;
+    z-index: 1000;
   }
 
   #mobile-usernav li a, #mobile-nav li a, .icon-menu{
