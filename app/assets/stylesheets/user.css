@@ -117,6 +117,10 @@
   font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
 }
 
+.users_mynews_list{
+  padding-top: 20px;
+}
+
 .users_mynews_list li{
   min-width: 200px;
   width: 20%;
@@ -283,10 +287,21 @@
     color:rgba(225, 225, 225, 0.5);
   }
 
+  .users-show .user_box p,
+  .users-show .user_box li{
+    font-size: 20px;
+    width: 95%;
+  }
+
   .users-show .link-edit,
   .users-show .link-cate{
     margin-left: 0;
     width: 95%;
+  }
+
+  .users_mynews #msg {
+    font-size: 25px;
+    top: 0;
   }
 
 }

@@ -139,12 +139,12 @@ footer{
 
 /* MY NEWS */
 
-.users_mynews #msg, {
+.users_mynews #msg {
   font-size: 40px;
   color:rgba(225, 225, 225, 0.5);
   font-family: 'Trebuchet MS';
   position: relative;
-  top: 35px;
+  top:-20px;
 }
 
 .pages_index #msg{
@@ -160,7 +160,6 @@ footer{
   color:rgba(225, 225, 225, 0.5);
   font-family: 'Trebuchet MS';
   position: relative;
-  top: 35px;
 }
 
 /* PAGE CSS */
